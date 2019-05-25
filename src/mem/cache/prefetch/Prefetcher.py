@@ -491,3 +491,28 @@ class PIFPrefetcher(QueuedPrefetcher):
         if not isinstance(simObj, SimObject):
             raise TypeError("argument must be of SimObject type")
         self.addEvent(HWPProbeEventRetiredInsts(self, simObj,"RetiredInstsPC"))
+
+class PerceptronPrefetcher(QueuedPrefetcher):
+    type = 'PerceptronPrefetcher'
+    cxx_class = "PerceptronPrefetcher"
+    cxx_header = "mem/cache/prefetch/perceptron.hh"
+
+    # Do not consult stride prefetcher on instruction accesses
+    """
+    on_inst = False
+
+    max_conf = Param.Int(7, "Maximum confidence level")
+    thresh_conf = Param.Int(4, "Threshold confidence level")
+    min_conf = Param.Int(0, "Minimum confidence level")
+    start_conf = Param.Int(4, "Starting confidence for new entries")
+
+    table_sets = Param.Int(16, "Number of sets in PC lookup table")
+    table_assoc = Param.Int(4, "Associativity of PC lookup table")
+    use_master_id = Param.Bool(True, "Use master id based history")
+
+    degree = Param.Int(4, "Number of prefetches to generate")
+
+    # Get replacement policy
+    replacement_policy = Param.BaseReplacementPolicy(RandomRP(),
+        "Replacement policy")
+    """
