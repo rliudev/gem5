@@ -1,130 +1,107 @@
-#ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
-#define __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
+#ifndef PERCEPTRON
+#define PERCEPTRON
 
-#include <string>
-#include <unordered_map>
 #include <vector>
 
-#include "base/types.hh"
-#include "mem/cache/prefetch/queued.hh"
-#include "mem/cache/replacement_policies/replaceable_entry.hh"
-#include "mem/packet.hh"
+#include "base/random.hh"
 
-class BaseReplacementPolicy;
-struct PerceptronPrefetcherParams;
+/*
+ * Creates a single perceptron object that can do branch prediction with just
+ * the global history and a vectore of learning weights
+ * Author:  Victor Fu
+ *          Thomas Chang
+ *          Rach Liu
+ *          Daan Leiva
+ */
 
-class PerceptronPrefetcher : public QueuedPrefetcher
+class Perceptron
 {
-  protected:
-    // const int maxConf;
-    // const int threshConf;
-    // const int minConf;
-    // const int startConf;
+private:
+  int size; // the size of weights vector
+  std::vector<int> weights; // the weights of the perceptron
+public:
+  /**
+   * Perceptron constructor
+   * @param size Number of inputs to the perceptron. Size of weights vector
+   */
+  Perceptron(int size)
+  {
+    // initialize weights vector to 0s
+    weights.resize(size, 0);
+    for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
+      {
+	*it = 0;
+      }
+  }
 
-    // const int pcTableAssoc;
-    // const int pcTableSets;
+  /**
+   * Generates a prediction based on the branch history provided
+   * @param global_history vector of the branch history. taken = 1, not taken = -1
+   * @return branch is predicted to be taken if output >= 0. Not taken if output < 0
+   */
+  int predict(std::vector<int> global_history)
+  {
+    int prediction = 0;
+    // this is the perceptron calculation y = w_0 + SUM[x_i*w_i]
+    // we assume the first element in global_history is 1
+    // so instead we can write it as y = SUM[x_i*w_i]
+    for(int i = 0; i < global_history.size(); i++)
+      {
+	prediction += global_history[i] * weights[i];
+      }
+    return prediction;
+  }
 
-    // const bool useMasterId;
+  /*
+   * Carries out a single training iteration. updates weights vector
+   * @param min_confidence limit on whether or not you update the percetron
+   * @param global_history vector of all the global history used to predict
+   * @param prev_branch_pred previous perceptron output. taken >= 0, not taken < 0
+   * @param prev_branch_act actual result from last branch. taken = 1, not take = -1
+   */
+  void train(int min_confidence, std::vector<int> global_history, int prev_branch_pred, int prev_branch_act)
+  {
+    // if both elements have the same sign then the prediction was done correctly
+    // equal signs being multiplied > 0, different result in a negative value
+    bool correct_prediction = ((prev_branch_pred * prev_branch_act) > 0);
 
-    // const int degree;
+    // we train the perceptron if it got the prediction wrong
+    // or if it the output isn't above a certain threshold
+    if(!correct_prediction || (abs(prev_branch_pred) <= min_confidence))
+      {
+	for(int i = 0; i < weights.size(); i++)
+	  {
+	    // update each weight
+	    weights[i] = weights[i] + prev_branch_act * global_history[i];
+	    // prevent single weight sizes from becoming larger than the confidence
+	    if(abs(weights[i]) > min_confidence)
+	      {
+		if(weights[i] < 0)
+		  {
+		    weights[i] = min_confidence * -1;
+		  }
+		else
+		  {
+		    weights[i] = min_confidence;
+		  }
+	      }
 
-    // /** Replacement policy used in the PC tables. */
-    // BaseReplacementPolicy* replacementPolicy;
+	  }
+      }
+  }
 
-    // struct StrideEntry : public ReplaceableEntry
-    // {
-    //     /** Default constructor */
-    //     StrideEntry();
-
-    //     /** Invalidate the entry */
-    //     void invalidate();
-
-    //     Addr instAddr;
-    //     Addr lastAddr;
-    //     bool isSecure;
-    //     int stride;
-    //     int confidence;
-    // };
-
-    // class PCTable
-    // {
-    //   public:
-    //     /**
-    //      * Default constructor. Create a table with given parameters.
-    //      *
-    //      * @param assoc Associativity of the table.
-    //      * @param sets Number of sets in the table.
-    //      * @param name Name of the prefetcher.
-    //      * @param replacementPolicy Replacement policy used by the table.
-    //      */
-    //     PCTable(int assoc, int sets, const std::string name,
-    //             BaseReplacementPolicy* replacementPolicy);
-
-    //     /**
-    //      * Default destructor.
-    //      */
-    //     ~PCTable();
-
-    //     /**
-    //      * Search for an entry in the pc table.
-    //      *
-    //      * @param pc The PC to look for.
-    //      * @param is_secure True if the target memory space is secure.
-    //      * @return Pointer to the entry.
-    //      */
-    //     StrideEntry* findEntry(Addr pc, bool is_secure);
-
-    //     /**
-    //      * Find a replacement victim to make room for given PC.
-    //      *
-    //      * @param pc The PC value.
-    //      * @return The victimized entry.
-    //      */
-    //     StrideEntry* findVictim(Addr pc);
-
-      private:
-    //     const std::string name() {return _name; }
-    //     const int pcTableSets;
-    //     const std::string _name;
-    //     std::vector<std::vector<StrideEntry>> entries;
-
-    //     /**
-    //      * Replacement policy used by StridePrefetcher.
-    //      */
-    //     BaseReplacementPolicy* replacementPolicy;
-
-    //     /**
-    //      * PC hashing function to index sets in the table.
-    //      *
-    //      * @param pc The PC value.
-    //      * @return The set to which this PC maps.
-    //      */
-    //     Addr pcHash(Addr pc) const;
-    // };
-    // std::unordered_map<int, PCTable> pcTables;
-
-    // /**
-    //  * Try to find a table of entries for the given context. If none is
-    //  * found, a new table is created.
-    //  *
-    //  * @param context The context to be searched for.
-    //  * @return The table corresponding to the given context.
-    //  */
-    // PCTable* findTable(int context);
-
-    // /**
-    //  * Create a PC table for the given context.
-    //  *
-    //  * @param context The context of the new PC table.
-    //  * @return The new PC table
-    //  */
-    // PCTable* allocateNewContext(int context);
-
-  public:
-    PerceptronPrefetcher(const PerceptronPrefetcherParams *p);
-
-    void calculatePrefetch(const PrefetchInfo &pfi,
-                           std::vector<AddrPriority> &addresses) override;
+  /*
+   * Resets the weight vector. Gets called by the handler global reset function
+   */
+  void reset()
+  {
+    // set the vector back to its original values of 0
+    for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
+      {
+	*it = 0;
+      }
+  }
 };
 
-#endif //__MEM_CACHE_PREFETCH_PERCEPTRON_HH__
+#endif // PERCEPTRON
+

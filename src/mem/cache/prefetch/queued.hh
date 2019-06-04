@@ -49,6 +49,9 @@
 #include "mem/cache/prefetch/base.hh"
 #include "mem/packet.hh"
 
+#include "mem/cache/prefetch/perceptron_pf.hh"
+
+
 struct QueuedPrefetcherParams;
 
 class QueuedPrefetcher : public BasePrefetcher
@@ -63,6 +66,7 @@ class QueuedPrefetcher : public BasePrefetcher
         PacketPtr pkt;
         /** The priority of this prefetch */
         int32_t priority;
+
 
         /**
          * Constructor
@@ -111,6 +115,11 @@ class QueuedPrefetcher : public BasePrefetcher
 
     /** Tag prefetch with PC of generating access? */
     const bool tagPrefetch;
+
+
+    // Add Perceptron
+    PerceptronPf perceptronPf;
+
 
     using const_iterator = std::list<DeferredPacket>::const_iterator;
     const_iterator inPrefetch(const PrefetchInfo &pfi) const;
