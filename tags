@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ASIZE	259tests/lfsr.c	4;"	d	file:
+ITERS	259tests/lfsr.c	5;"	d	file:
+arr	259tests/lfsr.c	/^silly_struct arr[ASIZE];$/;"	v
+lfsr_loop	259tests/lfsr.c	/^  int lfsr_loop(int zero) {$/;"	f
+main	259tests/lfsr.c	/^int main(int argc, char* argv[]) {$/;"	f
+p1	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p2	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p3	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p4	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p5	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p6	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p7	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+p8	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+silly_struct	259tests/lfsr.c	/^typedef struct silly_struct {$/;"	s	file:
+silly_struct	259tests/lfsr.c	/^} silly_struct;$/;"	t	typeref:struct:silly_struct	file:
