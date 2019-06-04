@@ -47,6 +47,7 @@
 #include "mem/request.hh"
 #include "params/QueuedPrefetcher.hh"
 
+#include "mem/cache/prefetch/perceptron_unit.hh"
 
 QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
     : BasePrefetcher(p), queueSize(p->queue_size), latency(p->latency),
@@ -87,7 +88,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     // Calculate prefetches given this access
     std::vector<AddrPriority> addresses;
     calculatePrefetch(pfi, addresses);
-    perceptronPf.shouldPrefetch(pfi, addresses);
+    perceptronUnit.shouldPrefetch(addresses);
 
     // Queue up generated prefetches
     for (AddrPriority& addr_prio : addresses) {

@@ -5,13 +5,13 @@
  *         Daan Leiva
  */
 
-#include "mem/cache/prefetch/perceptron_pf.hh"
+#include "mem/cache/prefetch/perceptron_unit.hh"
 
 #include "base/intmath.hh"
 #include "base/logging.hh"
 
 
-PerceptronPf::PerceptronPf(const PerceptronPfParams *params)
+PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *params)
 {
   perceptron_list_size = params->exponential_size; // num of perceptrons in our system
   perceptron_size = params->perceptron_size; // size of individual perceptrons
@@ -39,7 +39,7 @@ PerceptronPf::PerceptronPf(const PerceptronPfParams *params)
   }
 }
 
-void PerceptronPf::reset()
+void PerceptronUnit::reset()
 {
   // call the individual reset method for each perceptron
   for(int i = 0; i < perceptron_list_size; i++)
@@ -48,7 +48,7 @@ void PerceptronPf::reset()
   }
 }
 
-bool PerceptronPf::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
+bool PerceptronUnit::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
 {
   // find the index of the perceptron
   int perceptron_index = (pf_addr >> instShiftAmt) & (perceptron_list_size - 1);
@@ -69,7 +69,7 @@ bool PerceptronPf::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
   return perceptron_output >= 0;
 }
 
-void PerceptronPf::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)
+void PerceptronUnit::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)
 {
   // we can only proceed if we have a history object
   if(pf_history != NULL)
@@ -97,7 +97,7 @@ void PerceptronPf::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_histo
     }
 }
 
-void PerceptronPf::squash(ThreadID tid, void *pf_history)
+void PerceptronUnit::squash(ThreadID tid, void *pf_history)
 {
   // in order to get he deconstructors to run, we need to cast our history
   // before removing it
@@ -108,7 +108,7 @@ void PerceptronPf::squash(ThreadID tid, void *pf_history)
   delete history;
 }
 
-void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)
+void PerceptronUnit::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)
 {
   // An unconditional pf is just a taken pf
   PFHistory *history = new PFHistory;
@@ -120,9 +120,9 @@ void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)
   global_history.pop_back();
 }
 
-PerceptronPf *PerceptronPfParams::create()
+PerceptronUnit *PerceptronUnitParams::create()
 {
-  return new PerceptronPf(this);
+  return new PerceptronUnit(this);
 }
 
 

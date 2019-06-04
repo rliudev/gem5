@@ -1,5 +1,5 @@
-#ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
-#define __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
+#ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_PF_HH__
+#define __MEM_CACHE_PREFETCH_PERCEPTRON_PF_HH__
 
 #include <string>
 #include <unordered_map>
@@ -10,8 +10,8 @@
 #include "mem/cache/replacement_policies/replaceable_entry.hh"
 #include "mem/packet.hh"
 
-class BaseReplacementPolicy;
-struct PerceptronPrefetcherParams;
+//class BaseReplacementPolicy;
+//struct PerceptronPrefetcherParams;
 
 class PerceptronPrefetcher : public QueuedPrefetcher
 {

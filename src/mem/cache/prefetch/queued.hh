@@ -49,7 +49,7 @@
 #include "mem/cache/prefetch/base.hh"
 #include "mem/packet.hh"
 
-#include "mem/cache/prefetch/perceptron_pf.hh"
+#include "mem/cache/prefetch/perceptron_unit.hh"
 
 
 struct QueuedPrefetcherParams;
@@ -118,7 +118,7 @@ class QueuedPrefetcher : public BasePrefetcher
 
 
     // Add Perceptron
-    PerceptronPf perceptronPf;
+    PerceptronUnit perceptronUnit;
 
 
     using const_iterator = std::list<DeferredPacket>::const_iterator;

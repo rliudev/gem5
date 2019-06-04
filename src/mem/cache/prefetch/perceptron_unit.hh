@@ -5,8 +5,8 @@
  *         Daan Leiva
  */
 
-#ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
-#define __MEM_CACHE_PREFETCH_PERCEPTRON_HH__
+#ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__
+#define __MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__
 
 #include <string>
 #include <unordered_map>
@@ -15,10 +15,13 @@
 #include "base/types.hh"
 #include "mem/packet.hh"
 
+#include "mem/cache/prefetch/base.hh"
+#include "mem/cache/prefetch/perceptron.hh"
 
-struct PerceptronPfParams;
 
-class PerceptronPf
+struct PerceptronUnitParams;
+
+class PerceptronUnit
 {
   protected:
 
@@ -42,13 +45,19 @@ class PerceptronPf
     };
 
   public:
-    PerceptronPf(const PerceptronPfParams *p);
+    using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
-    bool shouldPrefetch(const PrefetchInfo &pfi,
-                        std::vector<AddrPriority> &addresses)
-    {
+    /**
+     * Default constructor.
+     */
+    PerceptronUnit();
 
-    }
+    /**
+     * Shoudl we prefetch?
+     */
+    bool shouldPrefetch(std::vector<AddrPriority> &addresses);
+
+
 
     /*
      * Contructor for the perceptron handler
@@ -56,7 +65,7 @@ class PerceptronPf
      * @param perceptron_size  size of perceptrons generated (number of inputs)
      * @param min_confidence minimum confidence needed to validate an output
      */
-    PerceptronPf(const PerceptronPfParams *params);
+    PerceptronUnit(const PerceptronUnitParams *params);
 
     /*
      * Function during an unconditional prefetch. Treated as a taken prefetch.

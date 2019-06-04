@@ -1,4 +1,4 @@
-#include "mem/cache/prefetch/perceptron.hh"
+#include "mem/cache/prefetch/perceptron_pf.hh"
 
 #include <cassert>
 
@@ -36,11 +36,18 @@
     //   degree(p->degree),
     //   replacementPolicy(p->replacement_policy)
 
-PerceptronPrefetcher::PerceptronPrefetcher(const PerceptronPrefetcherParams *p)
+//PerceptronPrefetcher::PerceptronPrefetcher(const PerceptronPrefetcherParams *p)
+//            : QueuedPrefetcher(p)
+//{
+//    // assert(isPowerOf2(pcTableSets));
+//}
+
+PerceptronPrefetcher::PerceptronPrefetcher()
             : QueuedPrefetcher(p)
 {
     // assert(isPowerOf2(pcTableSets));
 }
+
 
 // PerceptronPrefetcher::PCTable*
 // PerceptronPrefetcher::findTable(int context)

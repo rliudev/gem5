@@ -495,7 +495,7 @@ class PIFPrefetcher(QueuedPrefetcher):
 class PerceptronPrefetcher(QueuedPrefetcher):
     type = 'PerceptronPrefetcher'
     cxx_class = "PerceptronPrefetcher"
-    cxx_header = "mem/cache/prefetch/perceptron.hh"
+    cxx_header = "mem/cache/prefetch/perceptron_pf.hh"
 
     # Do not consult stride prefetcher on instruction accesses
     """
