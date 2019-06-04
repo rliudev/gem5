@@ -5,9 +5,9 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 ASIZE	259tests/lfsr.c	4;"	d	file:
-BPHistory	src/mem/cache/prefetch/perceptron_pf.hh	/^    struct BPHistory$/;"	s	class:PerceptronPf
 BPHistory	src/mem/cache/prefetch/perceptron_unit.hh	/^    struct BPHistory$/;"	s	class:PerceptronPf
 ITERS	259tests/lfsr.c	5;"	d	file:
+PFHistory	src/mem/cache/prefetch/perceptron_pf.hh	/^    struct PFHistory$/;"	s	class:PerceptronPf
 PerceptronPf	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPf::PerceptronPf(const PerceptronPfParams *params)$/;"	f	class:PerceptronPf
 PerceptronPf	src/mem/cache/prefetch/perceptron_pf.hh	/^class PerceptronPf$/;"	c
 PerceptronPf	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronPf::PerceptronPf(const PerceptronPfParams *params)$/;"	f	class:PerceptronPf
@@ -15,17 +15,16 @@ PerceptronPf	src/mem/cache/prefetch/perceptron_unit.hh	/^class PerceptronPf$/;"	
 __MEM_CACHE_PREFETCH_PERCEPTRON_HH__	src/mem/cache/prefetch/perceptron_pf.hh	9;"	d
 __MEM_CACHE_PREFETCH_PERCEPTRON_HH__	src/mem/cache/prefetch/perceptron_unit.hh	2;"	d
 arr	259tests/lfsr.c	/^silly_struct arr[ASIZE];$/;"	v
-btbUpdate	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::btbUpdate(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
 btbUpdate	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::btbUpdate(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
 compare	verif.sh	/^compare () {$/;"	f
 create	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPf *PerceptronPfParams::create()$/;"	f	class:PerceptronPfParams
 create	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronPf *PerceptronPfParams::create()$/;"	f	class:PerceptronPfParams
-global_history	src/mem/cache/prefetch/perceptron_pf.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronPf::BPHistory
+global_history	src/mem/cache/prefetch/perceptron_pf.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronPf::PFHistory
 global_history	src/mem/cache/prefetch/perceptron_pf.hh	/^    std::vector<int> global_history;$/;"	m	class:PerceptronPf
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronPf::BPHistory
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<int> global_history;$/;"	m	class:PerceptronPf
 lfsr_loop	259tests/lfsr.c	/^  int lfsr_loop(int zero) {$/;"	f
-lookup	src/mem/cache/prefetch/perceptron_pf.cc	/^bool PerceptronPf::lookup(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
+lookup	src/mem/cache/prefetch/perceptron_pf.cc	/^bool PerceptronPf::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)$/;"	f	class:PerceptronPf
 lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronPf::lookup(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
 main	259tests/lfsr.c	/^int main(int argc, char* argv[]) {$/;"	f
 min_confidence	src/mem/cache/prefetch/perceptron_pf.hh	/^    int min_confidence;$/;"	m	class:PerceptronPf
@@ -42,7 +41,7 @@ perceptron_list	src/mem/cache/prefetch/perceptron_pf.hh	/^    std::vector<Percep
 perceptron_list	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<Perceptron*> perceptron_list;$/;"	m	class:PerceptronPf
 perceptron_list_size	src/mem/cache/prefetch/perceptron_pf.hh	/^    int perceptron_list_size;$/;"	m	class:PerceptronPf
 perceptron_list_size	src/mem/cache/prefetch/perceptron_unit.hh	/^    int perceptron_list_size;$/;"	m	class:PerceptronPf
-perceptron_output	src/mem/cache/prefetch/perceptron_pf.hh	/^      int perceptron_output;$/;"	m	struct:PerceptronPf::BPHistory
+perceptron_output	src/mem/cache/prefetch/perceptron_pf.hh	/^      int perceptron_output;$/;"	m	struct:PerceptronPf::PFHistory
 perceptron_output	src/mem/cache/prefetch/perceptron_unit.hh	/^      int perceptron_output;$/;"	m	struct:PerceptronPf::BPHistory
 perceptron_size	src/mem/cache/prefetch/perceptron_pf.hh	/^    int perceptron_size;$/;"	m	class:PerceptronPf
 perceptron_size	src/mem/cache/prefetch/perceptron_unit.hh	/^    int perceptron_size;$/;"	m	class:PerceptronPf
@@ -52,9 +51,9 @@ shouldPrefetch	src/mem/cache/prefetch/perceptron_pf.hh	/^    bool shouldPrefetch
 shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.hh	/^    bool shouldPrefetch(const PrefetchInfo &pfi,$/;"	f	class:PerceptronPf
 silly_struct	259tests/lfsr.c	/^typedef struct silly_struct {$/;"	s	file:
 silly_struct	259tests/lfsr.c	/^} silly_struct;$/;"	t	typeref:struct:silly_struct	file:
-squash	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::squash(ThreadID tid, void *bp_history)$/;"	f	class:PerceptronPf
+squash	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::squash(ThreadID tid, void *pf_history)$/;"	f	class:PerceptronPf
 squash	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::squash(ThreadID tid, void *bp_history)$/;"	f	class:PerceptronPf
-uncondBranch	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&bp_history)$/;"	f	class:PerceptronPf
+uncondBranch	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)$/;"	f	class:PerceptronPf
 uncondBranch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&bp_history)$/;"	f	class:PerceptronPf
-update	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history, bool squashed)$/;"	f	class:PerceptronPf
+update	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)$/;"	f	class:PerceptronPf
 update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history, bool squashed)$/;"	f	class:PerceptronPf

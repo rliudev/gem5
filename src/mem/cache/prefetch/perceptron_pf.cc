@@ -48,25 +48,20 @@ void PerceptronPf::reset()
     }
 }
 
-void PerceptronPf::btbUpdate(ThreadID tid, Addr branch_addr, void *&bp_history)
-{
-  // we don't need this function
-}
-
-bool PerceptronPf::lookup(ThreadID tid, Addr branch_addr, void *&bp_history)
+bool PerceptronPf::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
 {
   // find the index of the perceptron
-  int perceptron_index = (branch_addr >> instShiftAmt) & (perceptron_list_size - 1);
+  int perceptron_index = (pf_addr >> instShiftAmt) & (perceptron_list_size - 1);
   // grap the perceptron we need to calculate prediction
   Perceptron* new_perceptron = perceptron_list[perceptron_index];
   // generate elements needed for history struct
   int perceptron_output = new_perceptron->predict(global_history);
   // insert into history object
-  BPHistory *history = new BPHistory;
+  PFHistory *history = new PFHistory;
   history->perceptron_output = perceptron_output;
   history->global_history = global_history;
-  // update the referenced bp_history with the history we created
-  bp_history = static_cast<void*>(history);
+  // update the referenced pf_history with the history we created
+  pf_history = static_cast<void*>(history);
   // update our global history instance variable
   global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
   global_history.pop_back();
@@ -74,52 +69,52 @@ bool PerceptronPf::lookup(ThreadID tid, Addr branch_addr, void *&bp_history)
   return perceptron_output >= 0;
 }
 
-void PerceptronPf::update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history, bool squashed)
+void PerceptronPf::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)
 {
   // we can only proceed if we have a history object
-  if(bp_history != NULL)
+  if(pf_history != NULL)
     {
       //cout << "entered bp_hitory NO NULL\n";
       // cast the void pointer to our struct type
-      BPHistory *history = static_cast<BPHistory*>(bp_history);
-      int prev_branch_act = taken? 1 : -1;
+      PFHistory *history = static_cast<PFHistory*>(pf_history);
+      int prev_pf_act = taken? 1 : -1;
       if(squashed)
         {
 	  // if this path is being squashed we rever our global history
 	  global_history = history->global_history;
-	  global_history.insert(global_history.begin() + 1, prev_branch_act);
+	  global_history.insert(global_history.begin() + 1, prev_pf_act);
 	  global_history.pop_back();
 	  return;
         }
       // find the index of the perceptron
-      int perceptron_index = (branch_addr >> instShiftAmt) & (perceptron_list_size - 1);
+      int perceptron_index = (pf_addr >> instShiftAmt) & (perceptron_list_size - 1);
       // grab the perceptron we need to train
       Perceptron* new_perceptron = perceptron_list[perceptron_index];
       // train perceptron
-      new_perceptron->train(min_confidence, history->global_history, history->perceptron_output, prev_branch_act);
+      new_perceptron->train(min_confidence, history->global_history, history->perceptron_output, prev_pf_act);
       // delete unnecesary pointer
       delete history;
     }
 }
 
-void PerceptronPf::squash(ThreadID tid, void *bp_history)
+void PerceptronPf::squash(ThreadID tid, void *pf_history)
 {
   // in order to get he deconstructors to run, we need to cast our history
   // before removing it
-  BPHistory *history = static_cast<BPHistory*>(bp_history);
+  PFHistory *history = static_cast<PFHistory*>(pf_history);
   // recover global history
   global_history = history->global_history;
   // delete element
   delete history;
 }
 
-void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&bp_history)
+void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)
 {
-  // An unconditional branch is just a taken branch
-  BPHistory *history = new BPHistory;
+  // An unconditional pf is just a taken pf
+  PFHistory *history = new PFHistory;
   history->perceptron_output =  1; // assume taken output
   history->global_history = global_history;
-  bp_history = static_cast<void *>(history);
+  pf_history = static_cast<void *>(history);
   // update gobal history
   global_history.insert(global_history.begin() + 1, 1);
   global_history.pop_back();
