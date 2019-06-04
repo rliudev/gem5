@@ -1,5 +1,3 @@
-#include "mem/cache/prefetch/perceptron_pf.hh"
-
 #include <cassert>
 
 #include "base/intmath.hh"
@@ -9,6 +7,8 @@
 #include "debug/HWPrefetch.hh"
 #include "mem/cache/replacement_policies/base.hh"
 #include "params/PerceptronPrefetcher.hh"
+
+#include "mem/cache/prefetch/perceptron_pf.hh"
 
 // PerceptronPrefetcher::StrideEntry::StrideEntry()
 // {
@@ -36,13 +36,7 @@
     //   degree(p->degree),
     //   replacementPolicy(p->replacement_policy)
 
-//PerceptronPrefetcher::PerceptronPrefetcher(const PerceptronPrefetcherParams *p)
-//            : QueuedPrefetcher(p)
-//{
-//    // assert(isPowerOf2(pcTableSets));
-//}
-
-PerceptronPrefetcher::PerceptronPrefetcher()
+PerceptronPrefetcher::PerceptronPrefetcher(const PerceptronPrefetcherParams *p)
             : QueuedPrefetcher(p)
 {
     // assert(isPowerOf2(pcTableSets));

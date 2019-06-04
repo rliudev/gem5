@@ -10,8 +10,8 @@
 #include "mem/cache/replacement_policies/replaceable_entry.hh"
 #include "mem/packet.hh"
 
-//class BaseReplacementPolicy;
-//struct PerceptronPrefetcherParams;
+class BaseReplacementPolicy;
+struct PerceptronPrefetcherParams;
 
 class PerceptronPrefetcher : public QueuedPrefetcher
 {
