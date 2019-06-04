@@ -6,29 +6,47 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ASIZE	259tests/lfsr.c	4;"	d	file:
 BPHistory	src/mem/cache/prefetch/perceptron_unit.hh	/^    struct BPHistory$/;"	s	class:PerceptronPf
+DeferredPacket	src/mem/cache/prefetch/queued.hh	/^        DeferredPacket(PrefetchInfo const &pfi, Tick t, PacketPtr p,$/;"	f	struct:QueuedPrefetcher::DeferredPacket
+DeferredPacket	src/mem/cache/prefetch/queued.hh	/^    struct DeferredPacket {$/;"	s	class:QueuedPrefetcher
 ITERS	259tests/lfsr.c	5;"	d	file:
 PFHistory	src/mem/cache/prefetch/perceptron_pf.hh	/^    struct PFHistory$/;"	s	class:PerceptronPf
 PerceptronPf	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPf::PerceptronPf(const PerceptronPfParams *params)$/;"	f	class:PerceptronPf
 PerceptronPf	src/mem/cache/prefetch/perceptron_pf.hh	/^class PerceptronPf$/;"	c
 PerceptronPf	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronPf::PerceptronPf(const PerceptronPfParams *params)$/;"	f	class:PerceptronPf
 PerceptronPf	src/mem/cache/prefetch/perceptron_unit.hh	/^class PerceptronPf$/;"	c
+QueuedPrefetcher	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)$/;"	f	class:QueuedPrefetcher
+QueuedPrefetcher	src/mem/cache/prefetch/queued.hh	/^class QueuedPrefetcher : public BasePrefetcher$/;"	c
 __MEM_CACHE_PREFETCH_PERCEPTRON_HH__	src/mem/cache/prefetch/perceptron_pf.hh	9;"	d
 __MEM_CACHE_PREFETCH_PERCEPTRON_HH__	src/mem/cache/prefetch/perceptron_unit.hh	2;"	d
+__MEM_CACHE_PREFETCH_QUEUED_HH__	src/mem/cache/prefetch/queued.hh	41;"	d
 arr	259tests/lfsr.c	/^silly_struct arr[ASIZE];$/;"	v
 btbUpdate	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::btbUpdate(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
+cacheSnoop	src/mem/cache/prefetch/queued.hh	/^    const bool cacheSnoop;$/;"	m	class:QueuedPrefetcher
 compare	verif.sh	/^compare () {$/;"	f
 create	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPf *PerceptronPfParams::create()$/;"	f	class:PerceptronPfParams
 create	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronPf *PerceptronPfParams::create()$/;"	f	class:PerceptronPfParams
+getPacket	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::getPacket()$/;"	f	class:QueuedPrefetcher
 global_history	src/mem/cache/prefetch/perceptron_pf.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronPf::PFHistory
 global_history	src/mem/cache/prefetch/perceptron_pf.hh	/^    std::vector<int> global_history;$/;"	m	class:PerceptronPf
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronPf::BPHistory
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<int> global_history;$/;"	m	class:PerceptronPf
+inPrefetch	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::inPrefetch(const PrefetchInfo &pfi) const$/;"	f	class:QueuedPrefetcher
+inPrefetch	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::inPrefetch(const PrefetchInfo &pfi)$/;"	f	class:QueuedPrefetcher
+insert	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::insert(const PacketPtr &pkt, PrefetchInfo &new_pfi,$/;"	f	class:QueuedPrefetcher
+latency	src/mem/cache/prefetch/queued.hh	/^    const Cycles latency;$/;"	m	class:QueuedPrefetcher
 lfsr_loop	259tests/lfsr.c	/^  int lfsr_loop(int zero) {$/;"	f
 lookup	src/mem/cache/prefetch/perceptron_pf.cc	/^bool PerceptronPf::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)$/;"	f	class:PerceptronPf
 lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronPf::lookup(ThreadID tid, Addr branch_addr, void *&bp_history)$/;"	f	class:PerceptronPf
 main	259tests/lfsr.c	/^int main(int argc, char* argv[]) {$/;"	f
 min_confidence	src/mem/cache/prefetch/perceptron_pf.hh	/^    int min_confidence;$/;"	m	class:PerceptronPf
 min_confidence	src/mem/cache/prefetch/perceptron_unit.hh	/^    int min_confidence;$/;"	m	class:PerceptronPf
+notify	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)$/;"	f	class:QueuedPrefetcher
+operator <	src/mem/cache/prefetch/queued.hh	/^        bool operator<(const DeferredPacket& that) const$/;"	f	struct:QueuedPrefetcher::DeferredPacket
+operator <=	src/mem/cache/prefetch/queued.hh	/^        bool operator<=(const DeferredPacket& that) const$/;"	f	struct:QueuedPrefetcher::DeferredPacket
+operator >	src/mem/cache/prefetch/queued.hh	/^        bool operator>(const DeferredPacket& that) const$/;"	f	struct:QueuedPrefetcher::DeferredPacket
+override	src/mem/cache/prefetch/queued.hh	/^    PacketPtr getPacket() override;$/;"	m	class:QueuedPrefetcher
+override	src/mem/cache/prefetch/queued.hh	/^    void notify(const PacketPtr &pkt, const PrefetchInfo &pfi) override;$/;"	m	class:QueuedPrefetcher
+override	src/mem/cache/prefetch/queued.hh	/^    void regStats() override;$/;"	m	class:QueuedPrefetcher
 p1	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p2	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p3	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
@@ -37,6 +55,7 @@ p5	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	fi
 p6	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p7	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p8	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+perceptronPf	src/mem/cache/prefetch/queued.hh	/^    PerceptronPf perceptronPf;$/;"	m	class:QueuedPrefetcher
 perceptron_list	src/mem/cache/prefetch/perceptron_pf.hh	/^    std::vector<Perceptron*> perceptron_list;$/;"	m	class:PerceptronPf
 perceptron_list	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<Perceptron*> perceptron_list;$/;"	m	class:PerceptronPf
 perceptron_list_size	src/mem/cache/prefetch/perceptron_pf.hh	/^    int perceptron_list_size;$/;"	m	class:PerceptronPf
@@ -45,6 +64,19 @@ perceptron_output	src/mem/cache/prefetch/perceptron_pf.hh	/^      int perceptron
 perceptron_output	src/mem/cache/prefetch/perceptron_unit.hh	/^      int perceptron_output;$/;"	m	struct:PerceptronPf::BPHistory
 perceptron_size	src/mem/cache/prefetch/perceptron_pf.hh	/^    int perceptron_size;$/;"	m	class:PerceptronPf
 perceptron_size	src/mem/cache/prefetch/perceptron_unit.hh	/^    int perceptron_size;$/;"	m	class:PerceptronPf
+pfBufferHit	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfBufferHit;$/;"	m	class:QueuedPrefetcher
+pfIdentified	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfIdentified;$/;"	m	class:QueuedPrefetcher
+pfInCache	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfInCache;$/;"	m	class:QueuedPrefetcher
+pfInfo	src/mem/cache/prefetch/queued.hh	/^        PrefetchInfo pfInfo;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
+pfRemovedFull	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfRemovedFull;$/;"	m	class:QueuedPrefetcher
+pfSpanPage	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfSpanPage;$/;"	m	class:QueuedPrefetcher
+pfq	src/mem/cache/prefetch/queued.hh	/^    std::list<DeferredPacket> pfq;$/;"	m	class:QueuedPrefetcher
+pkt	src/mem/cache/prefetch/queued.hh	/^        PacketPtr pkt;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
+priority	src/mem/cache/prefetch/queued.hh	/^        int32_t priority;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
+queueFilter	src/mem/cache/prefetch/queued.hh	/^    const bool queueFilter;$/;"	m	class:QueuedPrefetcher
+queueSize	src/mem/cache/prefetch/queued.hh	/^    const unsigned queueSize;$/;"	m	class:QueuedPrefetcher
+queueSquash	src/mem/cache/prefetch/queued.hh	/^    const bool queueSquash;$/;"	m	class:QueuedPrefetcher
+regStats	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::regStats()$/;"	f	class:QueuedPrefetcher
 reset	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::reset()$/;"	f	class:PerceptronPf
 reset	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::reset()$/;"	f	class:PerceptronPf
 shouldPrefetch	src/mem/cache/prefetch/perceptron_pf.hh	/^    bool shouldPrefetch(const PrefetchInfo &pfi,$/;"	f	class:PerceptronPf
@@ -53,7 +85,10 @@ silly_struct	259tests/lfsr.c	/^typedef struct silly_struct {$/;"	s	file:
 silly_struct	259tests/lfsr.c	/^} silly_struct;$/;"	t	typeref:struct:silly_struct	file:
 squash	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::squash(ThreadID tid, void *pf_history)$/;"	f	class:PerceptronPf
 squash	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::squash(ThreadID tid, void *bp_history)$/;"	f	class:PerceptronPf
+tagPrefetch	src/mem/cache/prefetch/queued.hh	/^    const bool tagPrefetch;$/;"	m	class:QueuedPrefetcher
+tick	src/mem/cache/prefetch/queued.hh	/^        Tick tick;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
 uncondBranch	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)$/;"	f	class:PerceptronPf
 uncondBranch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::uncondBranch(ThreadID tid, Addr pc, void *&bp_history)$/;"	f	class:PerceptronPf
 update	src/mem/cache/prefetch/perceptron_pf.cc	/^void PerceptronPf::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)$/;"	f	class:PerceptronPf
 update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronPf::update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history, bool squashed)$/;"	f	class:PerceptronPf
+~QueuedPrefetcher	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::~QueuedPrefetcher()$/;"	f	class:QueuedPrefetcher
