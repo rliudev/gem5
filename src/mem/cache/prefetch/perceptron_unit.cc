@@ -48,7 +48,11 @@ PerceptronUnit::PerceptronUnit()
 
 bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
 {
-//  for (
+  // Reject all
+  int rejectAll = 1;
+  if (rejectAll) {
+    addresses.clear();
+  }
 
   return 0;
 }

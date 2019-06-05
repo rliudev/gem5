@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
+# format:  m5out-$src-$pf-$cpu
 src=lfsr
+pf=null
 cpu=derivO3
 #cpu=atomic
 
@@ -109,7 +111,7 @@ get-lines () {
 }
 
 get-truth () {
-  get-lines "259tests/m5out-$src-$cpu/stats.txt" $@
+  get-lines "259tests/m5out-$src-$pf-$cpu/stats.txt" $@
 }
 
 get-test () {

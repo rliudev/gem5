@@ -82,17 +82,7 @@ class PerceptronUnit
      * @param pf_history pointer to the bp history
      * @return Whether or not the prefetch is takend
      */
-    bool lookup(ThreadID tid, Addr prefetch_addr, void *&pf_history);
-
-    /**
-     * Updates the prefetch predictor to Not Taken if a BTB entry is
-     * invalid or not found.
-     * @param tid the id of the thread being executed
-     * @param prefetch_addr The address of the prefetch to look up
-     * @param pf_history pointer to the bp history
-     * @return Whether or not the prefetch is taken
-     */
-    void btbUpdate(ThreadID tid, Addr prefetch_addr, void *&pf_history);
+    bool lookup(Addr prefetch_addr, void *&pf_history);
 
     /**
      * Updates the prefetch predictor with the actual result of a prefetch
@@ -102,7 +92,7 @@ class PerceptronUnit
      * @param pf_history pointer to the bp history
      * @param squashed tells us if the history has been deleted
      */
-    void update(ThreadID tid, Addr prefetch_addr, bool taken, void *pf_history, bool squashed);
+    void update(Addr prefetch_addr, bool taken, void *pf_history, bool squashed);
 
     /*
      * Squashes a path that was mispredicted
