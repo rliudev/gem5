@@ -41,7 +41,7 @@ PerceptronUnit::PerceptronUnit()
 //  }
 }
 
-bool PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses) {
+bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses) {
   return 0;
 }
 

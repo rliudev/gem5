@@ -37,7 +37,6 @@
  * Authors: Mitch Hayenga
  */
 
-#include "mem/cache/prefetch/queued.hh"
 
 #include <cassert>
 
@@ -46,6 +45,8 @@
 #include "debug/HWPrefetch.hh"
 #include "mem/request.hh"
 #include "params/QueuedPrefetcher.hh"
+
+#include "mem/cache/prefetch/queued.hh"
 
 
 QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
@@ -87,7 +88,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     // Calculate prefetches given this access
     std::vector<AddrPriority> addresses;
     calculatePrefetch(pfi, addresses);
-    perceptronUnit.shouldPrefetch(addresses);
+    perceptronUnit.shouldPrefetch(pfi, addresses);
 
     // Queue up generated prefetches
     for (AddrPriority& addr_prio : addresses) {

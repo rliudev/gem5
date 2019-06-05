@@ -55,7 +55,7 @@ class PerceptronUnit
     /**
      * Shoudl we prefetch?
      */
-    bool shouldPrefetch(std::vector<AddrPriority> &addresses);
+    bool shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses);
 
 
 

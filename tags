@@ -260,7 +260,7 @@ score_max	src/mem/cache/prefetch/Prefetcher.py	/^    score_max = Param.Unsigned(
 score_threshold_pct	src/mem/cache/prefetch/Prefetcher.py	/^        prefetch. The value is the percentage of sandbox entries to use")$/;"	v	class:SBOOEPrefetcher
 sequential_prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    sequential_prefetchers = Param.Int(9, "Number of sequential prefetchers")$/;"	v	class:SBOOEPrefetcher
 shift_values	src/mem/cache/prefetch/Prefetcher.py	/^    shift_values = VectorParam.Int([2, 3, 4, -3], "Shift values to evaluate")$/;"	v	class:IndirectMemoryPrefetcher
-shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses) {$/;"	f	class:PerceptronUnit
+shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses) {$/;"	f	class:PerceptronUnit
 signature_bits	src/mem/cache/prefetch/Prefetcher.py	/^    signature_bits = Param.UInt16(12,$/;"	v	class:SignaturePathPrefetcher
 signature_shift	src/mem/cache/prefetch/Prefetcher.py	/^    signature_shift = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 signature_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    signature_table_assoc = 1$/;"	v	class:SignaturePathPrefetcherV2
