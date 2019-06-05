@@ -16,6 +16,7 @@ DeferredPacket	src/mem/cache/prefetch/queued.hh	/^    struct DeferredPacket {$/;
 DeltaCorrelatingPredictionTables	src/mem/cache/prefetch/Prefetcher.py	/^class DeltaCorrelatingPredictionTables(SimObject):$/;"	c
 HWPProbeEvent	src/mem/cache/prefetch/Prefetcher.py	/^class HWPProbeEvent(object):$/;"	c
 HWPProbeEventRetiredInsts	src/mem/cache/prefetch/Prefetcher.py	/^class HWPProbeEventRetiredInsts(HWPProbeEvent):$/;"	c
+INST_SHIFT_AMT	src/mem/cache/prefetch/perceptron_unit.cc	/^const int INST_SHIFT_AMT = 2; \/\/ Previously: param to BranchPredictor.py$/;"	v
 ITERS	259tests/lfsr.c	5;"	d	file:
 IndirectMemoryPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class IndirectMemoryPrefetcher(QueuedPrefetcher):$/;"	c
 IrregularStreamBufferPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class IrregularStreamBufferPrefetcher(QueuedPrefetcher):$/;"	c
