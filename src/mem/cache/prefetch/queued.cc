@@ -47,7 +47,6 @@
 #include "mem/request.hh"
 #include "params/QueuedPrefetcher.hh"
 
-#include "mem/cache/prefetch/perceptron_unit.hh"
 
 QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
     : BasePrefetcher(p), queueSize(p->queue_size), latency(p->latency),

@@ -26,9 +26,9 @@ PIFPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class PIFPrefetcher(QueuedP
 Perceptron	src/mem/cache/prefetch/perceptron.hh	/^  Perceptron(int size)$/;"	f	class:Perceptron
 Perceptron	src/mem/cache/prefetch/perceptron.hh	/^class Perceptron$/;"	c
 PerceptronPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class PerceptronPrefetcher(QueuedPrefetcher):$/;"	c
-PerceptronPrefetcher	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcher::PerceptronPrefetcher()$/;"	f	class:PerceptronPrefetcher
+PerceptronPrefetcher	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcher::PerceptronPrefetcher(const PerceptronPrefetcherParams *p)$/;"	f	class:PerceptronPrefetcher
 PerceptronPrefetcher	src/mem/cache/prefetch/perceptron_pf.hh	/^class PerceptronPrefetcher : public QueuedPrefetcher$/;"	c
-PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *params)$/;"	f	class:PerceptronUnit
+PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit::PerceptronUnit()$/;"	f	class:PerceptronUnit
 PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.hh	/^class PerceptronUnit$/;"	c
 QueuedPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class QueuedPrefetcher(BasePrefetcher):$/;"	c
 QueuedPrefetcher	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)$/;"	f	class:QueuedPrefetcher
@@ -78,7 +78,6 @@ chunk_size	src/mem/cache/prefetch/Prefetcher.py	/^    chunk_size = Param.Unsigne
 compactor_entries	src/mem/cache/prefetch/Prefetcher.py	/^    compactor_entries = Param.Unsigned(2, "Entries in the temp. compactor")$/;"	v	class:PIFPrefetcher
 compare	verif.sh	/^compare () {$/;"	f
 create	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcherParams::create()$/;"	f	class:PerceptronPrefetcherParams
-create	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit *PerceptronUnitParams::create()$/;"	f	class:PerceptronUnitParams
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "BOPPrefetcher"$/;"	v	class:BOPPrefetcher
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "IrregularStreamBufferPrefetcher"$/;"	v	class:IrregularStreamBufferPrefetcher
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "PerceptronPrefetcher"$/;"	v	class:PerceptronPrefetcher
@@ -261,6 +260,7 @@ score_max	src/mem/cache/prefetch/Prefetcher.py	/^    score_max = Param.Unsigned(
 score_threshold_pct	src/mem/cache/prefetch/Prefetcher.py	/^        prefetch. The value is the percentage of sandbox entries to use")$/;"	v	class:SBOOEPrefetcher
 sequential_prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    sequential_prefetchers = Param.Int(9, "Number of sequential prefetchers")$/;"	v	class:SBOOEPrefetcher
 shift_values	src/mem/cache/prefetch/Prefetcher.py	/^    shift_values = VectorParam.Int([2, 3, 4, -3], "Shift values to evaluate")$/;"	v	class:IndirectMemoryPrefetcher
+shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses) {$/;"	f	class:PerceptronUnit
 signature_bits	src/mem/cache/prefetch/Prefetcher.py	/^    signature_bits = Param.UInt16(12,$/;"	v	class:SignaturePathPrefetcher
 signature_shift	src/mem/cache/prefetch/Prefetcher.py	/^    signature_shift = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 signature_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    signature_table_assoc = 1$/;"	v	class:SignaturePathPrefetcherV2
