@@ -131,8 +131,23 @@ compare () {
   get-test "${memvars[@]}"
 }
 
+diff-stats () {
+  echo -e "\n\n\n"
+  echo -e "--------------------"
+  echo -e "Computing diff:\n"
+  get-truth "${sysvars[@]}" >> _truth_.out
+  get-truth "${memvars[@]}" >> _truth_.out
+  get-test "${sysvars[@]}" >> _test_.out
+  get-test "${memvars[@]}" >> _test_.out
+
+  diff _truth_.out _test_.out
+
+  rm -f _truth_.out
+  rm -f _test_.out
+}
 
 
 compare
+diff-stats
 
 
