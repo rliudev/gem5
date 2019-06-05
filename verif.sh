@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 src=lfsr
-cpu=atomic
+cpu=derivO3
+#cpu=atomic
 
 itb=system.cpu.itb
 dtb=system.cpu.dtb
