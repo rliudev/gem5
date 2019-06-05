@@ -46,7 +46,10 @@ PerceptronUnit::PerceptronUnit()
   }
 }
 
-bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses) {
+bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
+{
+//  for (
+
   return 0;
 }
 
@@ -60,7 +63,7 @@ void PerceptronUnit::reset()
   }
 }
 
-bool PerceptronUnit::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
+bool PerceptronUnit::lookup(Addr pf_addr, void *&pf_history)
 {
   // find the index of the perceptron
   //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
@@ -82,7 +85,7 @@ bool PerceptronUnit::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)
   return perceptron_output >= 0;
 }
 
-void PerceptronUnit::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)
+void PerceptronUnit::update(Addr pf_addr, bool used, void *pf_history, bool squashed)
 {
   // we can only proceed if we have a history object
   if(pf_history != NULL)
@@ -90,7 +93,7 @@ void PerceptronUnit::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_his
     //cout << "entered bp_hitory NO NULL\n";
     // cast the void pointer to our struct type
     PFHistory *history = static_cast<PFHistory*>(pf_history);
-    int prev_pf_act = taken? 1 : -1;
+    int prev_pf_act = used? 1 : -1;
     if(squashed)
     {
       // if this path is being squashed we rever our global history

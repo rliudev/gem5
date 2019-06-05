@@ -163,7 +163,7 @@ listenFromProbe	src/mem/cache/prefetch/Prefetcher.py	/^    def listenFromProbe(s
 listenFromProbeRetiredInstructions	src/mem/cache/prefetch/Prefetcher.py	/^    def listenFromProbeRetiredInstructions(self, simObj):$/;"	m	class:PIFPrefetcher
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = 0.25$/;"	v	class:SignaturePathPrefetcherV2
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = Param.Float(0.75,$/;"	v	class:SignaturePathPrefetcher
-lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::lookup(ThreadID tid, Addr pf_addr, void *&pf_history)$/;"	f	class:PerceptronUnit
+lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::lookup(Addr pf_addr, void *&pf_history)$/;"	f	class:PerceptronUnit
 low_accuracy_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_accuracy_threshold = Param.Float(0.25,$/;"	v	class:AccessMapPatternMatching
 low_cache_hit_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_cache_hit_threshold = Param.Float(0.75,$/;"	v	class:AccessMapPatternMatching
 low_coverage_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_coverage_threshold = Param.Float(0.125,$/;"	v	class:AccessMapPatternMatching
@@ -261,7 +261,7 @@ score_max	src/mem/cache/prefetch/Prefetcher.py	/^    score_max = Param.Unsigned(
 score_threshold_pct	src/mem/cache/prefetch/Prefetcher.py	/^        prefetch. The value is the percentage of sandbox entries to use")$/;"	v	class:SBOOEPrefetcher
 sequential_prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    sequential_prefetchers = Param.Int(9, "Number of sequential prefetchers")$/;"	v	class:SBOOEPrefetcher
 shift_values	src/mem/cache/prefetch/Prefetcher.py	/^    shift_values = VectorParam.Int([2, 3, 4, -3], "Shift values to evaluate")$/;"	v	class:IndirectMemoryPrefetcher
-shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses) {$/;"	f	class:PerceptronUnit
+shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)$/;"	f	class:PerceptronUnit
 signature_bits	src/mem/cache/prefetch/Prefetcher.py	/^    signature_bits = Param.UInt16(12,$/;"	v	class:SignaturePathPrefetcher
 signature_shift	src/mem/cache/prefetch/Prefetcher.py	/^    signature_shift = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 signature_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    signature_table_assoc = 1$/;"	v	class:SignaturePathPrefetcherV2
@@ -336,7 +336,7 @@ type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'SlimAMPMPrefetcher'$/;"	
 type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'StridePrefetcher'$/;"	v	class:StridePrefetcher
 type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'TaggedPrefetcher'$/;"	v	class:TaggedPrefetcher
 uncondBranch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)$/;"	f	class:PerceptronUnit
-update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::update(ThreadID tid, Addr pf_addr, bool taken, void *pf_history, bool squashed)$/;"	f	class:PerceptronUnit
+update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::update(Addr pf_addr, bool used, void *pf_history, bool squashed)$/;"	f	class:PerceptronUnit
 use_master_id	src/mem/cache/prefetch/Prefetcher.py	/^    use_master_id = Param.Bool(True, "Use master id based history")$/;"	v	class:StridePrefetcher
 use_virtual_addresses	src/mem/cache/prefetch/Prefetcher.py	/^    use_virtual_addresses = Param.Bool(False,$/;"	v	class:BasePrefetcher
 weights	src/mem/cache/prefetch/perceptron.hh	/^  std::vector<int> weights; \/\/ the weights of the perceptron$/;"	m	class:Perceptron
