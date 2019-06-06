@@ -44,6 +44,13 @@ PerceptronUnit::PerceptronUnit()
   {
     global_history.push_back(1);
   }
+
+  // initialize prediction history list
+  for(int i = 0; i < perceptron_list_size; i++)
+  {
+    prediction_history.push_back(0);
+  }
+
 }
 
 bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
@@ -108,6 +115,8 @@ bool PerceptronUnit::lookup(Addr pf_addr)
   Perceptron* new_perceptron = perceptron_list[perceptron_index];
   // generate elements needed for history struct
   int perceptron_output = new_perceptron->predict(global_history);
+  // store into prediction_history
+  prediction_history[perceptron_index] = perceptron_output;
   // update our global history instance variable
   global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
   global_history.pop_back();
@@ -150,7 +159,7 @@ void PerceptronUnit::update(Addr pf_addr, bool used)
   // grab the perceptron we need to train
   Perceptron* new_perceptron = perceptron_list[perceptron_index];
   // train perceptron
-  new_perceptron->train(min_confidence, history->global_history, history->perceptron_output, actual_pf_act);
+  new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
 }
 
 void PerceptronUnit::squash(ThreadID tid, void *pf_history)

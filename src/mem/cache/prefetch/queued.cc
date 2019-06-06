@@ -54,7 +54,7 @@ QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
       queueSquash(p->queue_squash), queueFilter(p->queue_filter),
       cacheSnoop(p->cache_snoop), tagPrefetch(p->tag_prefetch)
 {
-  printf("onMiss var: %d\n\n", onMiss);
+
 }
 
 QueuedPrefetcher::~QueuedPrefetcher()
@@ -68,51 +68,87 @@ QueuedPrefetcher::~QueuedPrefetcher()
 void
 QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
-    printf("__miss:__ %d", pfi.isCacheMiss());
+  std::vector<AddrPriority> addresses;
 
+  if (pfi.isCacheMiss()) {
     Addr blk_addr = blockAddress(pfi.getAddr());
     bool is_secure = pfi.isSecure();
 
     // Squash queued prefetches if demand miss to same line
     if (queueSquash) {
-        auto itr = pfq.begin();
-        while (itr != pfq.end()) {
-            if (itr->pfInfo.getAddr() == blk_addr &&
-                itr->pfInfo.isSecure() == is_secure) {
-                delete itr->pkt;
-                itr = pfq.erase(itr);
-            } else {
-                ++itr;
-            }
+      auto itr = pfq.begin();
+      while (itr != pfq.end()) {
+        if (itr->pfInfo.getAddr() == blk_addr &&
+            itr->pfInfo.isSecure() == is_secure) {
+          delete itr->pkt;
+          itr = pfq.erase(itr);
+        } else {
+          ++itr;
         }
+      }
     }
 
     // Calculate prefetches given this access
-    std::vector<AddrPriority> addresses;
     calculatePrefetch(pfi, addresses);
     perceptronUnit.shouldPrefetch(pfi, addresses);
+
+    if (pf_timer_queue.size() == 255) {
+      std::vector<Addr> timed_out_list = *pf_timer_queue.end();
+      pf_timer_queue.pop_back();
+      for (auto expired_pf_addr : timed_out_list) {
+        perceptronUnit.update(expired_pf_addr, false); // TODO: tap cache for actual usage
+      }
+    }
 
     // Queue up generated prefetches
     for (AddrPriority& addr_prio : addresses) {
 
-        // Block align prefetch address
-        addr_prio.first = blockAddress(addr_prio.first);
+      // Block align prefetch address
+      addr_prio.first = blockAddress(addr_prio.first);
 
-        if (samePage(pfi.getAddr(), addr_prio.first)) {
-            PrefetchInfo new_pfi(pfi,addr_prio.first);
+      if (samePage(pfi.getAddr(), addr_prio.first)) {
+        PrefetchInfo new_pfi(pfi,addr_prio.first);
 
-            pfIdentified++;
-            DPRINTF(HWPrefetch, "Found a pf candidate addr: %#x, "
-                    "inserting into prefetch queue.\n", new_pfi.getAddr());
+        pfIdentified++;
+        DPRINTF(HWPrefetch, "Found a pf candidate addr: %#x, "
+            "inserting into prefetch queue.\n", new_pfi.getAddr());
 
-            // Create and insert the request
-            insert(pkt, new_pfi, addr_prio.second);
-        } else {
-            // Record the number of page crossing prefetches generate
-            pfSpanPage += 1;
-            DPRINTF(HWPrefetch, "Ignoring page crossing prefetch.\n");
-        }
+        // Create and insert the request
+        insert(pkt, new_pfi, addr_prio.second);
+      } else {
+        // Record the number of page crossing prefetches generate
+        pfSpanPage += 1;
+        DPRINTF(HWPrefetch, "Ignoring page crossing prefetch.\n");
+      }
     }
+  }
+
+
+  // On a cache hit, we need to remove the hit-address from our pf_timer_queue,
+  //   if it is in the pf_timer_queue, because we were correct about this prefetch.
+  //   (Correct preditions don't require perceptron updating).
+  if (! pfi.isCacheMiss()) {
+    for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
+      for (auto it2 = it->begin(); it2 != it->end(); ) {
+        if ( *it2 ==  ) {
+          it2 = it->erase(it2);
+        } else {
+          it2++;
+        }
+      }
+    }
+  }
+
+
+  // On every call to prefetcher.notify (no matter if the cache was a
+  //    hit or a miss), insert one into the timer queue so the timer
+  //    queue keeps 'time' properly.
+  std::vector<Addr> addrs ;  // convert AddrPrio std::pair to Addr
+  for (auto addrprio : addresses) {
+    addrs.push_back(addrprio.first);
+  }
+  pf_timer_queue.insert(pf_timer_queue.begin(), addrs);
+
 }
 
 PacketPtr

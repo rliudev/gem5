@@ -236,10 +236,12 @@ pfInCache	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfInCache;$/;"	m	
 pfInfo	src/mem/cache/prefetch/queued.hh	/^        PrefetchInfo pfInfo;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
 pfRemovedFull	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfRemovedFull;$/;"	m	class:QueuedPrefetcher
 pfSpanPage	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfSpanPage;$/;"	m	class:QueuedPrefetcher
+pf_timer_queue	src/mem/cache/prefetch/queued.hh	/^    std::vector<std::vector<Addr>> pf_timer_queue;$/;"	m	class:QueuedPrefetcher
 pfq	src/mem/cache/prefetch/queued.hh	/^    std::list<DeferredPacket> pfq;$/;"	m	class:QueuedPrefetcher
 pkt	src/mem/cache/prefetch/queued.hh	/^        PacketPtr pkt;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
 prec_spatial_region_bits	src/mem/cache/prefetch/Prefetcher.py	/^    prec_spatial_region_bits = Param.Unsigned(2,$/;"	v	class:PIFPrefetcher
 predict	src/mem/cache/prefetch/perceptron.hh	/^  int predict(std::vector<int> global_history)$/;"	f	class:Perceptron
+prediction_history	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<int> prediction_history;$/;"	m	class:PerceptronUnit
 prefetch_candidates_per_entry	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_candidates_per_entry = Param.Unsigned(16,$/;"	v	class:IrregularStreamBufferPrefetcher
 prefetch_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_confidence_threshold = 0.25$/;"	v	class:SignaturePathPrefetcherV2
 prefetch_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_confidence_threshold = Param.Float(0.5,$/;"	v	class:SignaturePathPrefetcher

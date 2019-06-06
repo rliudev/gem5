@@ -30,7 +30,7 @@ public:
     weights.resize(size, 0);
     for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
       {
-	*it = 0;
+        *it = 0;
       }
   }
 
@@ -46,9 +46,9 @@ public:
     // we assume the first element in global_history is 1
     // so instead we can write it as y = SUM[x_i*w_i]
     for(int i = 0; i < global_history.size(); i++)
-      {
-	prediction += global_history[i] * weights[i];
-      }
+    {
+      prediction += global_history[i] * weights[i];
+    }
     return prediction;
   }
 

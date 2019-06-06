@@ -30,6 +30,8 @@ class PerceptronUnit
     std::vector<Perceptron*> perceptron_list;
     // contains the global history results
     std::vector<int> global_history;
+    // contains the per-perceptron last prediction
+    std::vector<int> prediction_history;
     // raw size of our our perceptron list
     int perceptron_list_size;
     // size of the perceptrons that will be generated (number of inputs) (also size of X)
