@@ -96,7 +96,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     int size2 = addresses.size();
     printf("size change: %d\n", size2 - size1);
 
-    while (pf_timer_queue.size() >= 127) {
+    while (pf_timer_queue.size() >= 255) {
       std::vector<Addr> timed_out_list = pf_timer_queue.back();
       pf_timer_queue.pop_back();
       for (auto expired_pf_addr : timed_out_list) {
