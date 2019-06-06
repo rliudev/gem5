@@ -48,7 +48,7 @@ PerceptronUnit::PerceptronUnit()
   // initialize prediction history list
   for(int i = 0; i < perceptron_list_size; i++)
   {
-    prediction_history.push_back(0);
+    prediction_history.push_back(-1);
   }
 
 }

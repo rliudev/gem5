@@ -70,6 +70,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
   std::vector<AddrPriority> addresses;
 
+
   if (pfi.isCacheMiss()) {
     Addr blk_addr = blockAddress(pfi.getAddr());
     bool is_secure = pfi.isSecure();
@@ -92,7 +93,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     calculatePrefetch(pfi, addresses);
     perceptronUnit.shouldPrefetch(pfi, addresses);
 
-    if (pf_timer_queue.size() == 255) {
+    while (pf_timer_queue.size() >= 255) {
       std::vector<Addr> timed_out_list = *pf_timer_queue.end();
       pf_timer_queue.pop_back();
       for (auto expired_pf_addr : timed_out_list) {
@@ -130,7 +131,8 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   if (! pfi.isCacheMiss()) {
     for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
       for (auto it2 = it->begin(); it2 != it->end(); ) {
-        if ( *it2 ==  ) {
+        if ( *it2 == pfi.getAddr()) {
+          printf("cache hit and is in prefetch:<%d>\n", (int) *it2);
           it2 = it->erase(it2);
         } else {
           it2++;
