@@ -66,8 +66,10 @@ bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std
   while (it != addresses.end()) {
     AddrPriority addr_prio = *it;
     bool shouldUse = lookup(addr_prio.first);
+    printf("shouldUse: %d\n", shouldUse);
     if (!shouldUse) {
       it = addresses.erase(it);
+      printf("after deletion, size: %d\n", (int) addresses.size());
     }
     else {
       ++it;
@@ -111,6 +113,7 @@ bool PerceptronUnit::lookup(Addr pf_addr)
   // find the index of the perceptron
   //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
   int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+  printf("perceptron_index on lookup: %d\n", perceptron_index);
   // grap the perceptron we need to calculate prediction
   Perceptron* new_perceptron = perceptron_list[perceptron_index];
   // generate elements needed for history struct

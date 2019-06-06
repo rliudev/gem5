@@ -91,12 +91,16 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
+    int size1 = addresses.size();
     perceptronUnit.shouldPrefetch(pfi, addresses);
+    int size2 = addresses.size();
+    printf("size change: %d\n", size2 - size1);
 
-    while (pf_timer_queue.size() >= 255) {
-      std::vector<Addr> timed_out_list = *pf_timer_queue.end();
+    while (pf_timer_queue.size() >= 127) {
+      std::vector<Addr> timed_out_list = pf_timer_queue.back();
       pf_timer_queue.pop_back();
       for (auto expired_pf_addr : timed_out_list) {
+        printf("MISS\n");
         perceptronUnit.update(expired_pf_addr, false); // TODO: tap cache for actual usage
       }
     }
@@ -132,7 +136,8 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
       for (auto it2 = it->begin(); it2 != it->end(); ) {
         if ( *it2 == pfi.getAddr()) {
-          printf("cache hit and is in prefetch:<%d>\n", (int) *it2);
+          printf("HIT\n");
+//          printf("cache hit and is in prefetch:<%d>\n", (int) *it2);
           it2 = it->erase(it2);
         } else {
           it2++;
