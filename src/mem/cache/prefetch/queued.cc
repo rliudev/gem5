@@ -54,7 +54,7 @@ QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
       queueSquash(p->queue_squash), queueFilter(p->queue_filter),
       cacheSnoop(p->cache_snoop), tagPrefetch(p->tag_prefetch)
 {
-
+  printf("onMiss var: %d\n\n", onMiss);
 }
 
 QueuedPrefetcher::~QueuedPrefetcher()
@@ -68,6 +68,8 @@ QueuedPrefetcher::~QueuedPrefetcher()
 void
 QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
+    printf("__miss:__ %d", pfi.isCacheMiss());
+
     Addr blk_addr = blockAddress(pfi.getAddr());
     bool is_secure = pfi.isSecure();
 

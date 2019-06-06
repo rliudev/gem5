@@ -82,17 +82,14 @@ class PerceptronUnit
      * @param pf_history pointer to the bp history
      * @return Whether or not the prefetch is takend
      */
-    bool lookup(Addr prefetch_addr, void *&pf_history);
+    bool lookup(Addr prefetch_addr);
 
     /**
      * Updates the prefetch predictor with the actual result of a prefetch
-     * @param tid the id of the thread being executed
      * @param prefetch_addr The address of the prefetch to update
-     * @param taken Whether or not the prefetch was taken
-     * @param pf_history pointer to the bp history
-     * @param squashed tells us if the history has been deleted
+     * @param used Whether or not the prefetch was used
      */
-    void update(Addr prefetch_addr, bool taken, void *pf_history, bool squashed);
+    void update(Addr prefetch_addr, bool used);
 
     /*
      * Squashes a path that was mispredicted

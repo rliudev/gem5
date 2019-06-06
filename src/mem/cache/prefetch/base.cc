@@ -126,6 +126,8 @@ BasePrefetcher::regStats()
 bool
 BasePrefetcher::observeAccess(const PacketPtr &pkt, bool miss) const
 {
+//  printf("__miss:__ %d\n", miss);
+
     bool fetch = pkt->req->isInstFetch();
     bool read = pkt->isRead();
     bool inv = pkt->isInvalidate();

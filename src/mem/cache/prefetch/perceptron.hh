@@ -67,27 +67,27 @@ public:
 
     // we train the perceptron if it got the prediction wrong
     // or if it the output isn't above a certain threshold
-    if(!correct_prediction || (abs(prev_branch_pred) <= min_confidence))
+    if (!correct_prediction || (abs(prev_branch_pred) <= min_confidence))
+    {
+      for (int i = 0; i < weights.size(); i++)
       {
-	for(int i = 0; i < weights.size(); i++)
-	  {
-	    // update each weight
-	    weights[i] = weights[i] + prev_branch_act * global_history[i];
-	    // prevent single weight sizes from becoming larger than the confidence
-	    if(abs(weights[i]) > min_confidence)
-	      {
-		if(weights[i] < 0)
-		  {
-		    weights[i] = min_confidence * -1;
-		  }
-		else
-		  {
-		    weights[i] = min_confidence;
-		  }
-	      }
+        // update each weight
+        weights[i] = weights[i] + prev_branch_act * global_history[i];
+        // prevent single weight sizes from becoming larger than the confidence
+        if (abs(weights[i]) > min_confidence)
+        {
+          if (weights[i] < 0)
+          {
+            weights[i] = min_confidence * -1;
+          }
+          else
+          {
+            weights[i] = min_confidence;
+          }
+        }
 
-	  }
       }
+    }
   }
 
   /*
@@ -97,10 +97,11 @@ public:
   {
     // set the vector back to its original values of 0
     for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
-      {
-	*it = 0;
-      }
+    {
+      *it = 0;
+    }
   }
+
 };
 
 #endif // PERCEPTRON

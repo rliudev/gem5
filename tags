@@ -9,6 +9,7 @@ ASIZE	259tests/lfsr.c	4;"	d	file:
 AccessMapPatternMatching	src/mem/cache/prefetch/Prefetcher.py	/^class AccessMapPatternMatching(ClockedObject):$/;"	c
 BOPPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class BOPPrefetcher(QueuedPrefetcher):$/;"	c
 BasePrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class BasePrefetcher(ClockedObject):$/;"	c
+BasePrefetcher	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::BasePrefetcher(const BasePrefetcherParams *p)$/;"	f	class:BasePrefetcher
 ClockedObject	src/mem/cache/prefetch/Prefetcher.py	/^from m5.objects.ClockedObject import ClockedObject$/;"	i
 DCPTPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class DCPTPrefetcher(QueuedPrefetcher):$/;"	c
 DeferredPacket	src/mem/cache/prefetch/queued.hh	/^        DeferredPacket(PrefetchInfo const &pfi, Tick t, PacketPtr p,$/;"	f	struct:QueuedPrefetcher::DeferredPacket
@@ -31,6 +32,8 @@ PerceptronPrefetcher	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetc
 PerceptronPrefetcher	src/mem/cache/prefetch/perceptron_pf.hh	/^class PerceptronPrefetcher : public QueuedPrefetcher$/;"	c
 PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit::PerceptronUnit()$/;"	f	class:PerceptronUnit
 PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.hh	/^class PerceptronUnit$/;"	c
+PrefetchInfo	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss)$/;"	f	class:BasePrefetcher::PrefetchInfo
+PrefetchInfo	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchInfo::PrefetchInfo(PrefetchInfo const &pfi, Addr addr)$/;"	f	class:BasePrefetcher::PrefetchInfo
 QueuedPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class QueuedPrefetcher(BasePrefetcher):$/;"	c
 QueuedPrefetcher	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)$/;"	f	class:QueuedPrefetcher
 QueuedPrefetcher	src/mem/cache/prefetch/queued.hh	/^class QueuedPrefetcher : public BasePrefetcher$/;"	c
@@ -59,6 +62,7 @@ active_generation_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    activ
 active_generation_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    active_generation_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:STeMSPrefetcher
 active_generation_table_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    active_generation_table_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:STeMSPrefetcher
 addEvent	src/mem/cache/prefetch/Prefetcher.py	/^    def addEvent(self, newObject):$/;"	m	class:BasePrefetcher
+addEventProbe	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::addEventProbe(SimObject *obj, const char *name)$/;"	f	class:BasePrefetcher
 addr_array_len	src/mem/cache/prefetch/Prefetcher.py	/^    addr_array_len = Param.Unsigned(4, "Number of misses tracked")$/;"	v	class:IndirectMemoryPrefetcher
 address_map_cache_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    address_map_cache_assoc = Param.Unsigned(128,$/;"	v	class:IrregularStreamBufferPrefetcher
 address_map_cache_entries	src/mem/cache/prefetch/Prefetcher.py	/^    address_map_cache_entries = Param.MemorySize("128",$/;"	v	class:IrregularStreamBufferPrefetcher
@@ -70,6 +74,8 @@ assoc	src/mem/cache/prefetch/Prefetcher.py	/^            assoc = Parent.pattern_
 assoc	src/mem/cache/prefetch/Prefetcher.py	/^        assoc = Parent.address_map_cache_assoc,$/;"	v	class:IrregularStreamBufferPrefetcher
 assoc	src/mem/cache/prefetch/Prefetcher.py	/^        assoc = Parent.global_history_register_entries,$/;"	v	class:SignaturePathPrefetcherV2
 bad_score	src/mem/cache/prefetch/Prefetcher.py	/^    bad_score = Param.Unsigned(10, "Score at which the HWP is disabled")$/;"	v	class:BOPPrefetcher
+blockAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::blockAddress(Addr a) const$/;"	f	class:BasePrefetcher
+blockIndex	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::blockIndex(Addr a) const$/;"	f	class:BasePrefetcher
 block_size	src/mem/cache/prefetch/Prefetcher.py	/^    block_size = Param.Int(Parent.cache_line_size, "Block size in bytes")$/;"	v	class:BasePrefetcher
 block_size	src/mem/cache/prefetch/Prefetcher.py	/^    block_size = Param.Unsigned(Parent.block_size,$/;"	v	class:AccessMapPatternMatching
 cacheSnoop	src/mem/cache/prefetch/queued.hh	/^    const bool cacheSnoop;$/;"	m	class:QueuedPrefetcher
@@ -137,11 +143,14 @@ global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<int> 
 global_history_register_entries	src/mem/cache/prefetch/Prefetcher.py	/^    global_history_register_entries = Param.MemorySize("8",$/;"	v	class:SignaturePathPrefetcherV2
 global_history_register_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    global_history_register_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:SignaturePathPrefetcherV2
 global_history_register_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    global_history_register_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:SignaturePathPrefetcherV2
+hasBeenPrefetched	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::hasBeenPrefetched(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
 high_accuracy_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_accuracy_threshold = Param.Float(0.5,$/;"	v	class:AccessMapPatternMatching
 high_cache_hit_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_cache_hit_threshold = Param.Float(0.875,$/;"	v	class:AccessMapPatternMatching
 high_coverage_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_coverage_threshold = Param.Float(0.25,$/;"	v	class:AccessMapPatternMatching
 history_buffer_size	src/mem/cache/prefetch/Prefetcher.py	/^    history_buffer_size = Param.Unsigned(16, "Entries in the history buffer")$/;"	v	class:PIFPrefetcher
 hot_zone_size	src/mem/cache/prefetch/Prefetcher.py	/^    hot_zone_size = Param.MemorySize("2kB", "Memory covered by a hot zone")$/;"	v	class:AccessMapPatternMatching
+inCache	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::inCache(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
+inMissQueue	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::inMissQueue(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
 inPrefetch	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::inPrefetch(const PrefetchInfo &pfi) const$/;"	f	class:QueuedPrefetcher
 inPrefetch	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::inPrefetch(const PrefetchInfo &pfi)$/;"	f	class:QueuedPrefetcher
 index_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    index_assoc = Param.Unsigned(64,$/;"	v	class:PIFPrefetcher
@@ -163,7 +172,7 @@ listenFromProbe	src/mem/cache/prefetch/Prefetcher.py	/^    def listenFromProbe(s
 listenFromProbeRetiredInstructions	src/mem/cache/prefetch/Prefetcher.py	/^    def listenFromProbeRetiredInstructions(self, simObj):$/;"	m	class:PIFPrefetcher
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = 0.25$/;"	v	class:SignaturePathPrefetcherV2
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = Param.Float(0.75,$/;"	v	class:SignaturePathPrefetcher
-lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::lookup(Addr pf_addr, void *&pf_history)$/;"	f	class:PerceptronUnit
+lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::lookup(Addr pf_addr)$/;"	f	class:PerceptronUnit
 low_accuracy_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_accuracy_threshold = Param.Float(0.25,$/;"	v	class:AccessMapPatternMatching
 low_cache_hit_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_cache_hit_threshold = Param.Float(0.75,$/;"	v	class:AccessMapPatternMatching
 low_coverage_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_coverage_threshold = Param.Float(0.125,$/;"	v	class:AccessMapPatternMatching
@@ -173,11 +182,13 @@ max_prefetch_distance	src/mem/cache/prefetch/Prefetcher.py	/^    max_prefetch_di
 min_conf	src/mem/cache/prefetch/Prefetcher.py	/^    min_conf = Param.Int(0, "Minimum confidence level")$/;"	v	class:StridePrefetcher
 min_confidence	src/mem/cache/prefetch/perceptron_unit.hh	/^    int min_confidence;$/;"	m	class:PerceptronUnit
 negative_offsets_enable	src/mem/cache/prefetch/Prefetcher.py	/^    negative_offsets_enable = Param.Bool(True,$/;"	v	class:BOPPrefetcher
+notify	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchListener::notify(const PacketPtr &pkt)$/;"	f	class:BasePrefetcher::PrefetchListener
 notify	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)$/;"	f	class:QueuedPrefetcher
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = 4$/;"	v	class:SignaturePathPrefetcherV2
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = Param.Unsigned(2,$/;"	v	class:IrregularStreamBufferPrefetcher
 num_indirect_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_indirect_counter_bits = Param.Unsigned(3,$/;"	v	class:IndirectMemoryPrefetcher
+observeAccess	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::observeAccess(const PacketPtr &pkt, bool miss) const$/;"	f	class:BasePrefetcher
 offchip_memory_latency	src/mem/cache/prefetch/Prefetcher.py	/^    offchip_memory_latency = Param.Latency("30ns",$/;"	v	class:AccessMapPatternMatching
 offset_list_size	src/mem/cache/prefetch/Prefetcher.py	/^    offset_list_size = Param.Unsigned(46,$/;"	v	class:BOPPrefetcher
 on_data	src/mem/cache/prefetch/Prefetcher.py	/^    on_data  = Param.Bool(True, "Notify prefetcher on data accesses")$/;"	v	class:BasePrefetcher
@@ -201,6 +212,9 @@ p5	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	fi
 p6	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p7	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p8	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
+pageAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageAddress(Addr a) const$/;"	f	class:BasePrefetcher
+pageIthBlockAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageIthBlockAddress(Addr page, uint32_t blockIndex) const$/;"	f	class:BasePrefetcher
+pageOffset	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageOffset(Addr a) const$/;"	f	class:BasePrefetcher
 pattern_sequence_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_sequence_table_assoc = Param.Unsigned(16384,$/;"	v	class:STeMSPrefetcher
 pattern_sequence_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_sequence_table_entries = Param.MemorySize("16384",$/;"	v	class:STeMSPrefetcher
 pattern_sequence_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_sequence_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:STeMSPrefetcher
@@ -229,10 +243,11 @@ predict	src/mem/cache/prefetch/perceptron.hh	/^  int predict(std::vector<int> gl
 prefetch_candidates_per_entry	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_candidates_per_entry = Param.Unsigned(16,$/;"	v	class:IrregularStreamBufferPrefetcher
 prefetch_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_confidence_threshold = 0.25$/;"	v	class:SignaturePathPrefetcherV2
 prefetch_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_confidence_threshold = Param.Float(0.5,$/;"	v	class:SignaturePathPrefetcher
-prefetch_on_access	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_on_access = Param.Bool(Parent.prefetch_on_access,$/;"	v	class:BasePrefetcher
+prefetch_on_access	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_on_access = Param.Bool(True,$/;"	v	class:BasePrefetcher
 prefetch_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_threshold = Param.Unsigned(2,$/;"	v	class:IndirectMemoryPrefetcher
 prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    prefetchers = VectorParam.BasePrefetcher([], "Array of prefetchers")$/;"	v	class:MultiPrefetcher
 priority	src/mem/cache/prefetch/queued.hh	/^        int32_t priority;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
+probeNotify	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::probeNotify(const PacketPtr &pkt, bool miss)$/;"	f	class:BasePrefetcher
 ps_address_map_cache_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ps_address_map_cache_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 ps_address_map_cache_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ps_address_map_cache_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 pt_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    pt_table_assoc = Param.Unsigned(16, "Associativity of the Prefetch Table")$/;"	v	class:IndirectMemoryPrefetcher
@@ -247,6 +262,8 @@ queue_size	src/mem/cache/prefetch/Prefetcher.py	/^    queue_size = Param.Int(32,
 queue_squash	src/mem/cache/prefetch/Prefetcher.py	/^    queue_squash = Param.Bool(True, "Squash queued prefetch on demand access")$/;"	v	class:QueuedPrefetcher
 reconstruction_entries	src/mem/cache/prefetch/Prefetcher.py	/^    reconstruction_entries = Param.Unsigned(256,$/;"	v	class:STeMSPrefetcher
 regProbeListeners	src/mem/cache/prefetch/Prefetcher.py	/^    def regProbeListeners(self):$/;"	m	class:BasePrefetcher
+regProbeListeners	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::regProbeListeners()$/;"	f	class:BasePrefetcher
+regStats	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::regStats()$/;"	f	class:BasePrefetcher
 regStats	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::regStats()$/;"	f	class:QueuedPrefetcher
 region_miss_order_buffer_entries	src/mem/cache/prefetch/Prefetcher.py	/^    region_miss_order_buffer_entries = Param.Unsigned(131072,$/;"	v	class:STeMSPrefetcher
 register	src/mem/cache/prefetch/Prefetcher.py	/^    def register(self):$/;"	m	class:HWPProbeEvent
@@ -256,10 +273,12 @@ reset	src/mem/cache/prefetch/perceptron.hh	/^  void reset()$/;"	f	class:Perceptr
 reset	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::reset()$/;"	f	class:PerceptronUnit
 round_max	src/mem/cache/prefetch/Prefetcher.py	/^    round_max = Param.Unsigned(100, "Max. round to update the best offset")$/;"	v	class:BOPPrefetcher
 rr_size	src/mem/cache/prefetch/Prefetcher.py	/^    rr_size = Param.Unsigned(64, "Number of entries of each RR bank")$/;"	v	class:BOPPrefetcher
+samePage	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::samePage(Addr a, Addr b) const$/;"	f	class:BasePrefetcher
 sandbox_entries	src/mem/cache/prefetch/Prefetcher.py	/^    sandbox_entries = Param.Int(1024, "Size of the address buffer")$/;"	v	class:SBOOEPrefetcher
 score_max	src/mem/cache/prefetch/Prefetcher.py	/^    score_max = Param.Unsigned(31, "Max. score to update the best offset")$/;"	v	class:BOPPrefetcher
 score_threshold_pct	src/mem/cache/prefetch/Prefetcher.py	/^        prefetch. The value is the percentage of sandbox entries to use")$/;"	v	class:SBOOEPrefetcher
 sequential_prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    sequential_prefetchers = Param.Int(9, "Number of sequential prefetchers")$/;"	v	class:SBOOEPrefetcher
+setCache	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::setCache(BaseCache *_cache)$/;"	f	class:BasePrefetcher
 shift_values	src/mem/cache/prefetch/Prefetcher.py	/^    shift_values = VectorParam.Int([2, 3, 4, -3], "Shift values to evaluate")$/;"	v	class:IndirectMemoryPrefetcher
 shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)$/;"	f	class:PerceptronUnit
 signature_bits	src/mem/cache/prefetch/Prefetcher.py	/^    signature_bits = Param.UInt16(12,$/;"	v	class:SignaturePathPrefetcher
@@ -336,7 +355,7 @@ type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'SlimAMPMPrefetcher'$/;"	
 type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'StridePrefetcher'$/;"	v	class:StridePrefetcher
 type	src/mem/cache/prefetch/Prefetcher.py	/^    type = 'TaggedPrefetcher'$/;"	v	class:TaggedPrefetcher
 uncondBranch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)$/;"	f	class:PerceptronUnit
-update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::update(Addr pf_addr, bool used, void *pf_history, bool squashed)$/;"	f	class:PerceptronUnit
+update	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::update(Addr pf_addr, bool used)$/;"	f	class:PerceptronUnit
 use_master_id	src/mem/cache/prefetch/Prefetcher.py	/^    use_master_id = Param.Bool(True, "Use master id based history")$/;"	v	class:StridePrefetcher
 use_virtual_addresses	src/mem/cache/prefetch/Prefetcher.py	/^    use_virtual_addresses = Param.Bool(False,$/;"	v	class:BasePrefetcher
 weights	src/mem/cache/prefetch/perceptron.hh	/^  std::vector<int> weights; \/\/ the weights of the perceptron$/;"	m	class:Perceptron
