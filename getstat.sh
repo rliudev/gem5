@@ -2,9 +2,6 @@
 
 
 metric=$1
-file1=$2
-file2=$3
-
 
 get-lines () {
   local file="$1"
@@ -12,8 +9,11 @@ get-lines () {
   cat $file | grep "$var"
 }
 
+pfqlen=(1 2 4 32 64 128 256)
 
-get-lines "$file1" "$metric"
-get-lines "$file2" "$metric"
+for len in ${pfqlen[@]}; do
+  echo "len: $len"
+  get-lines "data/lfsr-tagged-pbuf$len.txt" "$metric"
+done
 
 
