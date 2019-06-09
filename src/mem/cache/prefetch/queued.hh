@@ -115,13 +115,9 @@ class QueuedPrefetcher : public BasePrefetcher
     /** Tag prefetch with PC of generating access? */
     const bool tagPrefetch;
 
-
     // Add Perceptron
+//    PerceptronUnit *perceptronUnit;
     PerceptronUnit perceptronUnit;
-    // Queue whose max length indicates the last element (ie
-    //   element that spent the longest time in queue) has
-    //   timed out (ie, was not used for prefetching).
-    std::vector<std::vector<Addr>> pf_timer_queue;
 
 
     using const_iterator = std::list<DeferredPacket>::const_iterator;

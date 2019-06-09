@@ -2,7 +2,8 @@
 
 # format:  m5out-$src-$pf-$cpu
 src=lfsr
-pf=stride
+pf=tagged
+#pf=stride
 #pf=null
 cpu=derivO3
 #cpu=atomic

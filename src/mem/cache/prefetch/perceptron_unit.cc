@@ -10,19 +10,25 @@
 #include "base/intmath.hh"
 #include "base/logging.hh"
 
+//#include "params/PerceptronUnit.hh"
+
 using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
 const int INST_SHIFT_AMT = 2; // Previously: param to BranchPredictor.py
 
-//PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *params)
+//PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
+//    : ClockedObject(p), perceptron_list_size(p->perceptron_size)
 PerceptronUnit::PerceptronUnit()
 {
-//  perceptron_list_size = params->exponential_size; // num of perceptrons in our system
-//  perceptron_size = params->perceptron_size; // size of individual perceptrons
-//  min_confidence = perceptron_size*2+14; // threshold to decide if updating a perceptron
+//  perceptron_list_size = p->exponential_size;
+//  perceptron_size = p->perceptron_size;
+//  pf_timeout = p->pf_timeout;
   perceptron_list_size = 32;
   perceptron_size = 20;
-  min_confidence = perceptron_size*2+14; // threshold to decide if updating a perceptron
+  pf_timeout = 1024;
+  reject_all = false;
+  accept_all = false;
+  min_confidence = perceptron_size*2+14;
 
   // in order to use lower bits as look up values we need to make sure the resulting
   // value is a power of 2
@@ -53,31 +59,60 @@ PerceptronUnit::PerceptronUnit()
 
 }
 
-bool PerceptronUnit::shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
+void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
 {
-  // Reject all
-//  int rejectAll = 0;
-//  if (rejectAll) {
+//  printf("reject: %d, accept: %d", reject_all, accept_all);
+//  if (reject_all) {
 //    addresses.clear();
 //    return false;
+//  }
+//  else if (accept_all) {
+//    return true;
 //  }
 
   auto it = addresses.begin();
   while (it != addresses.end()) {
-    AddrPriority addr_prio = *it;
-    bool shouldUse = lookup(addr_prio.first);
-    printf("shouldUse: %d\n", shouldUse);
+    bool shouldUse = lookup(it->first);
     if (!shouldUse) {
       it = addresses.erase(it);
-      printf("after deletion, size: %d\n", (int) addresses.size());
+//      printf("after deletion, size: %d\n", (int) addresses.size());
     }
     else {
       ++it;
     }
   }
 
-  return 0;
 }
+
+
+void PerceptronUnit::updateExpiredPfs() {
+  while (hasTimedOutEntry()) {
+    std::vector<Addr> timed_out_list = pf_timer_queue.back();
+    pf_timer_queue.pop_back();
+    for (auto exp_addr : timed_out_list) {
+      update(exp_addr, false);
+    }
+  }
+}
+
+
+void PerceptronUnit::queuePfAddrs(std::vector<Addr> addrs) {
+  pf_timer_queue.insert(pf_timer_queue.begin(), addrs);
+}
+
+
+void PerceptronUnit::invalidatePfAddrs(Addr hitAddr) {
+  for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
+    for (auto it2 = it->begin(); it2 != it->end(); ) {
+      if ( *it2 == hitAddr) {
+        it2 = it->erase(it2);
+      } else {
+        it2++;
+      }
+    }
+  }
+}
+
 
 void PerceptronUnit::reset()
 {
@@ -87,6 +122,7 @@ void PerceptronUnit::reset()
     perceptron_list[i]->reset();
   }
 }
+
 
 bool PerceptronUnit::lookup(Addr pf_addr)
 {
@@ -112,8 +148,9 @@ bool PerceptronUnit::lookup(Addr pf_addr)
 
   // find the index of the perceptron
   //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
+//  printf("perceptron_list_size: %d\n", perceptron_list_size);
   int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-  printf("perceptron_index on lookup: %d\n", perceptron_index);
+//  printf("perceptron_index on lookup: %d\n", perceptron_index);
   // grap the perceptron we need to calculate prediction
   Perceptron* new_perceptron = perceptron_list[perceptron_index];
   // generate elements needed for history struct
@@ -126,6 +163,7 @@ bool PerceptronUnit::lookup(Addr pf_addr)
 
   return perceptron_output >= 0;
 }
+
 
 void PerceptronUnit::update(Addr pf_addr, bool used)
 {
@@ -165,6 +203,7 @@ void PerceptronUnit::update(Addr pf_addr, bool used)
   new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
 }
 
+
 void PerceptronUnit::squash(ThreadID tid, void *pf_history)
 {
   // in order to get he deconstructors to run, we need to cast our history
@@ -176,16 +215,10 @@ void PerceptronUnit::squash(ThreadID tid, void *pf_history)
   delete history;
 }
 
-void PerceptronUnit::uncondBranch(ThreadID tid, Addr pc, void *&pf_history)
-{
-//  // An unconditional pf is just a taken pf
-//  PFHistory *history = new PFHistory;
-//  history->perceptron_output =  1; // assume taken output
-//  history->global_history = global_history;
-//  pf_history = static_cast<void *>(history);
-//  // update gobal history
-//  global_history.insert(global_history.begin() + 1, 1);
-//  global_history.pop_back();
-}
+
+//PerceptronUnit *PerceptronUnitParams::create()
+//{
+//  return new PerceptronUnit(this);
+//}
 
 

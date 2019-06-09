@@ -8,19 +8,18 @@
 #ifndef __MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__
 #define __MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__
 
-#include <string>
-#include <unordered_map>
 #include <vector>
 
 #include "base/types.hh"
-#include "mem/packet.hh"
+#include "sim/clocked_object.hh"
 
-#include "mem/cache/prefetch/base.hh"
 #include "mem/cache/prefetch/perceptron.hh"
+
 
 
 struct PerceptronUnitParams;
 
+//class PerceptronUnit : public ClockedObject
 class PerceptronUnit
 {
   protected:
@@ -38,6 +37,19 @@ class PerceptronUnit
     int perceptron_size;
     // required confidence to accept a perceptron output
     int min_confidence;
+    // timeout for each prefetch address, in # of cache accesses
+    int pf_timeout;
+    // reject all offered prefetch addresses?
+    bool reject_all;
+    // accept all offered prefetch addresses?
+    bool accept_all;
+
+    // Queue whose max length indicates the last element (ie
+    //   element that spent the longest time in queue) has
+    //   timed out (ie, was not used for prefetching).
+    std::vector<std::vector<Addr>> pf_timer_queue;
+
+
     // used as a history structure to match the general BPredUnit class
     // basically the inputs we need to hold to run the train method
     struct PFHistory
@@ -49,33 +61,48 @@ class PerceptronUnit
   public:
     using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
-    /**
-     * Default constructor.
-     */
     PerceptronUnit();
+
+    /*
+     * Contructor for the perceptron unit that accepts params.
+     * @param exponential_size the value will generate a ~ 2^n size perceptron table
+     * @param perceptron_size  size of perceptrons generated (number of inputs)
+     */
+//    PerceptronUnit(const PerceptronUnitParams *p);
 
     /**
      * Shoudl we prefetch?
      */
-    bool shouldPrefetch(const BasePrefetcher::PrefetchInfo &pfi, std::vector<AddrPriority> &addresses);
+    void shouldPrefetch(std::vector<AddrPriority> &addresses);
 
 
-
-    /*
-     * Contructor for the perceptron handler
-     * @param exponential_size the value will generate a ~ 2^n size perceptron table
-     * @param perceptron_size  size of perceptrons generated (number of inputs)
-     * @param min_confidence minimum confidence needed to validate an output
+    /**
+     * Self-update timed out (if any) pf entries.
      */
-    PerceptronUnit(const PerceptronUnitParams *params);
+    void updateExpiredPfs();
 
-    /*
-     * Function during an unconditional prefetch. Treated as a taken prefetch.
-     * @param tid the id of the thread being executed
-     * @param pc instruction address
-     * @param pf_history pointer to the bp history
+
+    /**
+     * Insert new pf addresses to the beginning of our timing queue.
      */
-    void uncondBranch(ThreadID tid, Addr pc, void * &pf_history);
+    void queuePfAddrs(std::vector<Addr> addrs);
+
+
+    /**
+     * On a cache hit to an address, we want to all references to
+     *   that address, by replacing with empty (invalidate).
+     *   Replacing with empty ensures timer queue maintains proper
+     *   timing.
+     */
+    void invalidatePfAddrs(Addr hitAddr);
+
+    /**
+     * Does the pf timer queue have a timed-out pf entry?
+     */
+    bool hasTimedOutEntry() {
+      return pf_timer_queue.size() >= pf_timeout;
+    }
+
 
     /**
      * Looks up the given address in the prefetch predictor and returns

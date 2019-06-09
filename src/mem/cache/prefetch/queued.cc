@@ -53,6 +53,7 @@ QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
     : BasePrefetcher(p), queueSize(p->queue_size), latency(p->latency),
       queueSquash(p->queue_squash), queueFilter(p->queue_filter),
       cacheSnoop(p->cache_snoop), tagPrefetch(p->tag_prefetch)
+//      perceptronUnit(p->perceptron_unit)
 {
 
 }
@@ -91,15 +92,9 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
-    perceptronUnit.shouldPrefetch(pfi, addresses);
-
-    while (pf_timer_queue.size() >= 3) {
-      std::vector<Addr> timed_out_list = pf_timer_queue.back();
-      pf_timer_queue.pop_back();
-      for (auto expired_pf_addr : timed_out_list) {
-        perceptronUnit.update(expired_pf_addr, false);
-      }
-    }
+//    printf("addresses size: %d\n", (int) addresses.size());
+    perceptronUnit.shouldPrefetch(addresses);
+    perceptronUnit.updateExpiredPfs();
 
     // Queue up generated prefetches
     for (AddrPriority& addr_prio : addresses) {
@@ -129,17 +124,9 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   //   if it is in the pf_timer_queue, because we were correct about this prefetch.
   //   (Correct preditions don't require perceptron updating).
   if (! pfi.isCacheMiss()) {
-    for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
-      for (auto it2 = it->begin(); it2 != it->end(); ) {
-        if ( *it2 == pfi.getAddr()) {
-          it2 = it->erase(it2);
-        } else {
-          it2++;
-        }
-      }
-    }
+    Addr cacheHitAddr = pfi.getAddr();
+    perceptronUnit.invalidatePfAddrs(cacheHitAddr);
   }
-
 
   // On every call to prefetcher.notify (no matter if the cache was a
   //    hit or a miss), insert one into the timer queue so the timer
@@ -148,7 +135,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   for (auto addrprio : addresses) {
     addrs.push_back(addrprio.first);
   }
-  pf_timer_queue.insert(pf_timer_queue.begin(), addrs);
+  perceptronUnit.queuePfAddrs(addrs);
 
 }
 

@@ -47,6 +47,7 @@ from m5.objects.ClockedObject import ClockedObject
 from m5.objects.IndexingPolicies import *
 from m5.objects.ReplacementPolicies import *
 
+
 class HWPProbeEvent(object):
     def __init__(self, prefetcher, obj, *listOfNames):
         self.obj = obj
@@ -119,6 +120,8 @@ class QueuedPrefetcher(BasePrefetcher):
     cache_snoop = Param.Bool(False, "Snoop cache to eliminate redundant request")
 
     tag_prefetch = Param.Bool(True, "Tag prefetch with PC of generating access")
+
+#    perceptron_unit = Param.PerceptronUnit(NULL,"Perceptron unit attached to cache")
 
 class StridePrefetcher(QueuedPrefetcher):
     type = 'StridePrefetcher'
@@ -493,6 +496,7 @@ class PIFPrefetcher(QueuedPrefetcher):
             raise TypeError("argument must be of SimObject type")
         self.addEvent(HWPProbeEventRetiredInsts(self, simObj,"RetiredInstsPC"))
 
+
 class PerceptronPrefetcher(QueuedPrefetcher):
     type = 'PerceptronPrefetcher'
     cxx_class = "PerceptronPrefetcher"
@@ -517,3 +521,16 @@ class PerceptronPrefetcher(QueuedPrefetcher):
     replacement_policy = Param.BaseReplacementPolicy(RandomRP(),
         "Replacement policy")
     """
+
+#class PerceptronUnit(ClockedObject):
+#    type = 'PerceptronUnit'
+#    cxx_class = "PerceptronUnit"
+#    cxx_header = "mem/cache/prefetch/perceptron_unit.hh"
+#
+#    reject_all = Param.Bool(False, "Reject all prefetch addresses.")
+#    accept_all = Param.Bool(False, "Accept all prefetch addresses.")
+#    exponential_size = Param.Int(32, "Table size for Perceptrons")
+#    perceptron_size = Param.Int(20, "Feature dimensions (size of each erceptron)")
+#    pf_timeout = Param.Int(64,
+#        "Number of cache accesses (hits or misses) before a prefetch is considered a timeout.")
+

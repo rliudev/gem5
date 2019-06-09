@@ -60,6 +60,8 @@
 #include "sim/clocked_object.hh"
 #include "sim/probe/probe.hh"
 
+#include "mem/cache/prefetch/perceptron_unit.hh"
+
 class BaseCache;
 struct BasePrefetcherParams;
 
@@ -325,6 +327,7 @@ class BasePrefetcher : public ClockedObject
     uint64_t issuedPrefetches;
     /** Total prefetches that has been useful */
     uint64_t usefulPrefetches;
+
 
   public:
 
