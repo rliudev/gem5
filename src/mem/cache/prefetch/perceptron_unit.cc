@@ -56,11 +56,9 @@ void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
 {
   if (reject_all) {
     addresses.clear();
-//    printf("Rejecting all addresses...\n");
     return;
   }
   else if (accept_all) {
-//    printf("Accepting all addresses...\n");
     return;
   }
 
@@ -69,7 +67,6 @@ void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
     bool shouldUse = lookup(it->first);
     if (!shouldUse) {
       it = addresses.erase(it);
-//      printf("after deletion, size: %d\n", (int) addresses.size());
     }
     else {
       ++it;

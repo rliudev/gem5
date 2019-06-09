@@ -20,10 +20,7 @@
 
 struct PerceptronUnitParams;
 
-//class PerceptronUnit : public QueuedPrefetcher
-//class PerceptronUnit : public SimObject
 class PerceptronUnit : public ClockedObject
-//class PerceptronUnit
 {
   protected:
 
@@ -63,8 +60,6 @@ class PerceptronUnit : public ClockedObject
 
   public:
     using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
-
-//    PerceptronUnit();
 
     /*
      * Contructor for the perceptron unit that accepts params.
