@@ -328,6 +328,8 @@ class BasePrefetcher : public ClockedObject
     /** Total prefetches that has been useful */
     uint64_t usefulPrefetches;
 
+    /* Perceptron Unit */
+    PerceptronUnit *perceptronUnit;
 
   public:
 

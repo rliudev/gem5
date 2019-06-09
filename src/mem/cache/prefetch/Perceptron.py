@@ -1,6 +1,5 @@
-# -*- mode:python -*-
-
-# Copyright (c) 2006 The Regents of The University of Michigan
+#
+# Copyright (c) 2019 Rach Liu
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,31 +25,24 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Authors: Nathan Binkert
+# Author: Rach Liu
 
-Import('*')
+from m5.SimObject import *
+from m5.params import *
+from m5.proxy import *
 
-SimObject('Prefetcher.py')
-
-Source('access_map_pattern_matching.cc')
-Source('base.cc')
-Source('multi.cc')
-Source('bop.cc')
-Source('delta_correlating_prediction_tables.cc')
-Source('irregular_stream_buffer.cc')
-Source('indirect_memory.cc')
-Source('pif.cc')
-Source('queued.cc')
-Source('sbooe.cc')
-Source('signature_path.cc')
-Source('signature_path_v2.cc')
-Source('slim_ampm.cc')
-Source('spatio_temporal_memory_streaming.cc')
-Source('stride.cc')
-Source('tagged.cc')
-Source('perceptron_pf.cc')
+from m5.objects.ClockedObject import ClockedObject
 
 
-SimObject('Perceptron.py')
-Source('perceptron_unit.cc')
+class PerceptronUnit(ClockedObject):
+    type = 'PerceptronUnit'
+    cxx_class = "PerceptronUnit"
+    cxx_header = "mem/cache/prefetch/perceptron_unit.hh"
+
+    reject_all = Param.Bool(False, "Reject all prefetch addresses.")
+    accept_all = Param.Bool(False, "Accept all prefetch addresses.")
+    exponential_size = Param.Int(32, "Table size for Perceptrons")
+    perceptron_size = Param.Int(20, "Feature dimensions (size of each erceptron)")
+    pf_timeout = Param.Int(19,
+        "Number of cache accesses (hits or misses) before a prefetch is considered a timeout.")
 

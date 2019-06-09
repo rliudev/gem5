@@ -10,24 +10,17 @@
 #include "base/intmath.hh"
 #include "base/logging.hh"
 
-//#include "params/PerceptronUnit.hh"
+#include "params/PerceptronUnit.hh"
 
 using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
 const int INST_SHIFT_AMT = 2; // Previously: param to BranchPredictor.py
 
-//PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
-//    : ClockedObject(p), perceptron_list_size(p->perceptron_size)
-PerceptronUnit::PerceptronUnit()
+PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
+    : ClockedObject(p), perceptron_list_size(p->exponential_size),
+      perceptron_size(p->perceptron_size), pf_timeout(p->pf_timeout),
+      reject_all(p->reject_all), accept_all(p->accept_all)
 {
-//  perceptron_list_size = p->exponential_size;
-//  perceptron_size = p->perceptron_size;
-//  pf_timeout = p->pf_timeout;
-  perceptron_list_size = 32;
-  perceptron_size = 20;
-  pf_timeout = 1024;
-  reject_all = false;
-  accept_all = false;
   min_confidence = perceptron_size*2+14;
 
   // in order to use lower bits as look up values we need to make sure the resulting
@@ -61,14 +54,15 @@ PerceptronUnit::PerceptronUnit()
 
 void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
 {
-//  printf("reject: %d, accept: %d", reject_all, accept_all);
-//  if (reject_all) {
-//    addresses.clear();
-//    return false;
-//  }
-//  else if (accept_all) {
-//    return true;
-//  }
+  if (reject_all) {
+    addresses.clear();
+//    printf("Rejecting all addresses...\n");
+    return;
+  }
+  else if (accept_all) {
+//    printf("Accepting all addresses...\n");
+    return;
+  }
 
   auto it = addresses.begin();
   while (it != addresses.end()) {
@@ -96,7 +90,7 @@ void PerceptronUnit::updateExpiredPfs() {
 }
 
 
-void PerceptronUnit::queuePfAddrs(std::vector<Addr> addrs) {
+void PerceptronUnit::queuePfAddrs(const std::vector<Addr> addrs) {
   pf_timer_queue.insert(pf_timer_queue.begin(), addrs);
 }
 
@@ -216,9 +210,9 @@ void PerceptronUnit::squash(ThreadID tid, void *pf_history)
 }
 
 
-//PerceptronUnit *PerceptronUnitParams::create()
-//{
-//  return new PerceptronUnit(this);
-//}
+PerceptronUnit *PerceptronUnitParams::create()
+{
+  return new PerceptronUnit(this);
+}
 
 

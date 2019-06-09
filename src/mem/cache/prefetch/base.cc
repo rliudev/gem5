@@ -96,7 +96,8 @@ BasePrefetcher::BasePrefetcher(const BasePrefetcherParams *p)
       masterId(p->sys->getMasterId(this)), pageBytes(p->sys->getPageBytes()),
       prefetchOnAccess(p->prefetch_on_access),
       useVirtualAddresses(p->use_virtual_addresses), issuedPrefetches(0),
-      usefulPrefetches(0)
+      usefulPrefetches(0),
+      perceptronUnit(p->perceptron_unit)
 {
 }
 

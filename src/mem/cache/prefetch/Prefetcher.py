@@ -47,6 +47,8 @@ from m5.objects.ClockedObject import ClockedObject
 from m5.objects.IndexingPolicies import *
 from m5.objects.ReplacementPolicies import *
 
+from m5.objects.Perceptron import PerceptronUnit
+
 
 class HWPProbeEvent(object):
     def __init__(self, prefetcher, obj, *listOfNames):
@@ -82,6 +84,8 @@ class BasePrefetcher(ClockedObject):
         "Notify the hardware prefetcher on every access (not just misses)")
     use_virtual_addresses = Param.Bool(False,
         "Use virtual addresses for prefetching")
+
+    perceptron_unit = Param.PerceptronUnit(NULL,"Perceptron unit attached to cache")
 
     _events = []
     def addEvent(self, newObject):
@@ -120,8 +124,6 @@ class QueuedPrefetcher(BasePrefetcher):
     cache_snoop = Param.Bool(False, "Snoop cache to eliminate redundant request")
 
     tag_prefetch = Param.Bool(True, "Tag prefetch with PC of generating access")
-
-#    perceptron_unit = Param.PerceptronUnit(NULL,"Perceptron unit attached to cache")
 
 class StridePrefetcher(QueuedPrefetcher):
     type = 'StridePrefetcher'
@@ -523,6 +525,8 @@ class PerceptronPrefetcher(QueuedPrefetcher):
     """
 
 #class PerceptronUnit(ClockedObject):
+#class PerceptronUnit(SimObject):
+##class PerceptronUnit(QueuedPrefetcher):
 #    type = 'PerceptronUnit'
 #    cxx_class = "PerceptronUnit"
 #    cxx_header = "mem/cache/prefetch/perceptron_unit.hh"

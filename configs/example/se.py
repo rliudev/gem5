@@ -67,6 +67,8 @@ from common import MemConfig
 from common.FileSystemConfig import config_filesystem
 from common.Caches import *
 from common.cpu2000 import *
+from common import MLUConfig
+
 
 def get_processes(options):
     """Interprets provided options and returns a list of processes"""
@@ -122,6 +124,7 @@ def get_processes(options):
 parser = optparse.OptionParser()
 Options.addCommonOptions(parser)
 Options.addSEOptions(parser)
+MLUConfig.addMLUOptions(parser)
 
 if '--ruby' in sys.argv:
     Ruby.define_options(parser)
@@ -276,6 +279,8 @@ else:
     CacheConfig.config_cache(options, system)
     MemConfig.config_mem(options, system)
     config_filesystem(system, options)
+    MLUConfig.config_mlu(options, system)
 
 root = Root(full_system = False, system = system)
 Simulation.run(options, root, system, FutureClass)
+

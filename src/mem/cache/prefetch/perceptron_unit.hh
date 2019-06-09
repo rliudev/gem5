@@ -12,6 +12,7 @@
 
 #include "base/types.hh"
 #include "sim/clocked_object.hh"
+#include "sim/sim_object.hh"
 
 #include "mem/cache/prefetch/perceptron.hh"
 
@@ -19,8 +20,10 @@
 
 struct PerceptronUnitParams;
 
-//class PerceptronUnit : public ClockedObject
-class PerceptronUnit
+//class PerceptronUnit : public QueuedPrefetcher
+//class PerceptronUnit : public SimObject
+class PerceptronUnit : public ClockedObject
+//class PerceptronUnit
 {
   protected:
 
@@ -61,14 +64,14 @@ class PerceptronUnit
   public:
     using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
-    PerceptronUnit();
+//    PerceptronUnit();
 
     /*
      * Contructor for the perceptron unit that accepts params.
      * @param exponential_size the value will generate a ~ 2^n size perceptron table
      * @param perceptron_size  size of perceptrons generated (number of inputs)
      */
-//    PerceptronUnit(const PerceptronUnitParams *p);
+    PerceptronUnit(const PerceptronUnitParams *p);
 
     /**
      * Shoudl we prefetch?

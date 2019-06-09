@@ -53,9 +53,7 @@ QueuedPrefetcher::QueuedPrefetcher(const QueuedPrefetcherParams *p)
     : BasePrefetcher(p), queueSize(p->queue_size), latency(p->latency),
       queueSquash(p->queue_squash), queueFilter(p->queue_filter),
       cacheSnoop(p->cache_snoop), tagPrefetch(p->tag_prefetch)
-//      perceptronUnit(p->perceptron_unit)
 {
-
 }
 
 QueuedPrefetcher::~QueuedPrefetcher()
@@ -92,9 +90,10 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
-//    printf("addresses size: %d\n", (int) addresses.size());
-    perceptronUnit.shouldPrefetch(addresses);
-    perceptronUnit.updateExpiredPfs();
+    if (perceptronUnit) {
+      perceptronUnit->shouldPrefetch(addresses);
+      perceptronUnit->updateExpiredPfs();
+    }
 
     // Queue up generated prefetches
     for (AddrPriority& addr_prio : addresses) {
@@ -125,7 +124,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   //   (Correct preditions don't require perceptron updating).
   if (! pfi.isCacheMiss()) {
     Addr cacheHitAddr = pfi.getAddr();
-    perceptronUnit.invalidatePfAddrs(cacheHitAddr);
+    perceptronUnit->invalidatePfAddrs(cacheHitAddr);
   }
 
   // On every call to prefetcher.notify (no matter if the cache was a
@@ -133,9 +132,13 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   //    queue keeps 'time' properly.
   std::vector<Addr> addrs ;  // convert AddrPrio std::pair to Addr
   for (auto addrprio : addresses) {
-    addrs.push_back(addrprio.first);
+    Addr adr = addrprio.first;
+    addrs.push_back(adr);
   }
-  perceptronUnit.queuePfAddrs(addrs);
+  if (perceptronUnit) {
+    perceptronUnit->queuePfAddrs(addrs);
+    perceptronUnit->hasTimedOutEntry();
+  }
 
 }
 

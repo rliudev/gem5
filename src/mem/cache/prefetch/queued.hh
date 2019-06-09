@@ -115,10 +115,6 @@ class QueuedPrefetcher : public BasePrefetcher
     /** Tag prefetch with PC of generating access? */
     const bool tagPrefetch;
 
-    // Add Perceptron
-//    PerceptronUnit *perceptronUnit;
-    PerceptronUnit perceptronUnit;
-
 
     using const_iterator = std::list<DeferredPacket>::const_iterator;
     const_iterator inPrefetch(const PrefetchInfo &pfi) const;
