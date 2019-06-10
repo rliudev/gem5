@@ -129,6 +129,7 @@ class QueuedPrefetcher : public BasePrefetcher
     Stats::Scalar pfRemovedFull;
     Stats::Scalar pfSpanPage;
 
+
   public:
     using AddrPriority = std::pair<Addr, int32_t>;
 

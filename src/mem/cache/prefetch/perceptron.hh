@@ -36,18 +36,18 @@ public:
 
   /**
    * Generates a prediction based on the branch history provided
-   * @param global_history vector of the branch history. taken = 1, not taken = -1
-   * @return branch is predicted to be taken if output >= 0. Not taken if output < 0
+   * @param xn: feature vector input.
+   * @return class 1 if >= 0, else class 2 (output < 0).
    */
-  int predict(std::vector<int> global_history)
+  int predict(std::vector<int> xn)
   {
     int prediction = 0;
     // this is the perceptron calculation y = w_0 + SUM[x_i*w_i]
-    // we assume the first element in global_history is 1
+    // we assume the first element in xn is 1
     // so instead we can write it as y = SUM[x_i*w_i]
-    for(int i = 0; i < global_history.size(); i++)
+    for(int i = 0; i < xn.size(); i++)
     {
-      prediction += global_history[i] * weights[i];
+      prediction += xn[i] * weights[i];
     }
     return prediction;
   }
@@ -55,24 +55,24 @@ public:
   /*
    * Carries out a single training iteration. updates weights vector
    * @param min_confidence limit on whether or not you update the percetron
-   * @param global_history vector of all the global history used to predict
-   * @param prev_branch_pred previous perceptron output. taken >= 0, not taken < 0
-   * @param prev_branch_act actual result from last branch. taken = 1, not take = -1
+   * @param xn  feature input
+   * @param prev_prediction     previous perceptron output. class1 >= 0, class2 < 0
+   * @param actual_result       actual result for prev prediction. class1 = 1, class0 = -1
    */
-  void train(int min_confidence, std::vector<int> global_history, int prev_branch_pred, int prev_branch_act)
+  void train(int min_confidence, std::vector<int> xn, int prev_prediction, int actual_result)
   {
     // if both elements have the same sign then the prediction was done correctly
     // equal signs being multiplied > 0, different result in a negative value
-    bool correct_prediction = ((prev_branch_pred * prev_branch_act) > 0);
+    bool correct_prediction = ((prev_prediction * actual_result) > 0);
 
     // we train the perceptron if it got the prediction wrong
     // or if it the output isn't above a certain threshold
-    if (!correct_prediction || (abs(prev_branch_pred) <= min_confidence))
+    if (!correct_prediction || (abs(prev_prediction) <= min_confidence))
     {
       for (int i = 0; i < weights.size(); i++)
       {
         // update each weight
-        weights[i] = weights[i] + prev_branch_act * global_history[i];
+        weights[i] = weights[i] + actual_result * xn[i];
         // prevent single weight sizes from becoming larger than the confidence
         if (abs(weights[i]) > min_confidence)
         {

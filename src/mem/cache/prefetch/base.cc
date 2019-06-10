@@ -198,6 +198,7 @@ BasePrefetcher::probeNotify(const PacketPtr &pkt, bool miss)
 
     // Verify this access type is observed by prefetcher
     if (observeAccess(pkt, miss)) {
+//        printf("observed accessed in prefetcher/base.cc:probeNotify\n");
         if (useVirtualAddresses && pkt->req->hasVaddr()) {
             PrefetchInfo pfi(pkt, pkt->req->getVaddr(), miss);
             notify(pkt, pfi);

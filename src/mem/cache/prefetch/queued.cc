@@ -68,8 +68,11 @@ QueuedPrefetcher::~QueuedPrefetcher()
 void
 QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
-  std::vector<AddrPriority> addresses;
+  if (hasBeenPrefetched(pkt->getAddr(), pkt->isSecure())) {
+    usefulPrefetches += 1;
+  }
 
+  std::vector<AddrPriority> addresses;
 
   if (pfi.isCacheMiss()) {
     Addr blk_addr = blockAddress(pfi.getAddr());
@@ -93,7 +96,6 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     calculatePrefetch(pfi, addresses);
     if (perceptronUnit) {
       perceptronUnit->shouldPrefetch(pfi, addresses);
-      perceptronUnit->updateExpiredPfs();
     }
 
     // Queue up generated prefetches
@@ -137,8 +139,8 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     addrs.push_back(adr);
   }
   if (perceptronUnit) {
-    perceptronUnit->queuePfAddrs(addrs);
-    perceptronUnit->hasTimedOutEntry();
+    perceptronUnit->queuePfAddrs(&pfi, addrs);
+    perceptronUnit->updateExpiredPfs();
   }
 
 }
