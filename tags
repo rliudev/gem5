@@ -5,8 +5,19 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 AMPMPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class AMPMPrefetcher(QueuedPrefetcher):$/;"	c
+AMPMPrefetcher	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AMPMPrefetcher::AMPMPrefetcher(const AMPMPrefetcherParams *p)$/;"	f	class:AMPMPrefetcher
+AMPMPrefetcher	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^class AMPMPrefetcher : public QueuedPrefetcher$/;"	c
+AM_ACCESS	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        AM_ACCESS,$/;"	e	enum:AccessMapPatternMatching::AccessMapState
+AM_INIT	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        AM_INIT,$/;"	e	enum:AccessMapPatternMatching::AccessMapState
+AM_INVALID	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        AM_INVALID$/;"	e	enum:AccessMapPatternMatching::AccessMapState
+AM_PREFETCH	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        AM_PREFETCH,$/;"	e	enum:AccessMapPatternMatching::AccessMapState
 ASIZE	259tests/lfsr.c	4;"	d	file:
+AccessMapEntry	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        AccessMapEntry(size_t num_entries) : states(num_entries, AM_INIT)$/;"	f	struct:AccessMapPatternMatching::AccessMapEntry
+AccessMapEntry	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    struct AccessMapEntry : public TaggedEntry$/;"	s	class:AccessMapPatternMatching
 AccessMapPatternMatching	src/mem/cache/prefetch/Prefetcher.py	/^class AccessMapPatternMatching(ClockedObject):$/;"	c
+AccessMapPatternMatching	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::AccessMapPatternMatching($/;"	f	class:AccessMapPatternMatching
+AccessMapPatternMatching	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^class AccessMapPatternMatching : public ClockedObject$/;"	c
+AccessMapState	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    enum AccessMapState$/;"	g	class:AccessMapPatternMatching
 BOPPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class BOPPrefetcher(QueuedPrefetcher):$/;"	c
 BPConfig	configs/common/Options.py	/^from . import BPConfig$/;"	i
 BPConfig	configs/example/se.py	/^from common import BPConfig$/;"	i
@@ -18,12 +29,19 @@ ClockedObject	src/mem/cache/prefetch/Perceptron.py	/^from m5.objects.ClockedObje
 ClockedObject	src/mem/cache/prefetch/Prefetcher.py	/^from m5.objects.ClockedObject import ClockedObject$/;"	i
 CpuConfig	configs/common/Options.py	/^from . import CpuConfig$/;"	i
 CpuConfig	configs/example/se.py	/^from common import CpuConfig$/;"	i
+DCPTEntry	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        DCPTEntry(unsigned int num_deltas) : lastAddress(0), deltaPointer(0),$/;"	f	struct:DeltaCorrelatingPredictionTables::DCPTEntry
+DCPTEntry	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    struct DCPTEntry : public TaggedEntry$/;"	s	class:DeltaCorrelatingPredictionTables
 DCPTPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class DCPTPrefetcher(QueuedPrefetcher):$/;"	c
+DCPTPrefetcher	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DCPTPrefetcher::DCPTPrefetcher(const DCPTPrefetcherParams *p)$/;"	f	class:DCPTPrefetcher
+DCPTPrefetcher	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^class DCPTPrefetcher : public QueuedPrefetcher$/;"	c
 DeferredPacket	src/mem/cache/prefetch/queued.hh	/^        DeferredPacket(PrefetchInfo const &pfi, Tick t, PacketPtr p,$/;"	f	struct:QueuedPrefetcher::DeferredPacket
 DeferredPacket	src/mem/cache/prefetch/queued.hh	/^    struct DeferredPacket {$/;"	s	class:QueuedPrefetcher
 DeltaCorrelatingPredictionTables	src/mem/cache/prefetch/Prefetcher.py	/^class DeltaCorrelatingPredictionTables(SimObject):$/;"	c
+DeltaCorrelatingPredictionTables	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::DeltaCorrelatingPredictionTables($/;"	f	class:DeltaCorrelatingPredictionTables
+DeltaCorrelatingPredictionTables	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^class DeltaCorrelatingPredictionTables : public SimObject$/;"	c
 ExternalCache	configs/common/CacheConfig.py	/^class ExternalCache(ExternalSlave):$/;"	c
 ExternalCacheFactory	configs/common/CacheConfig.py	/^def ExternalCacheFactory(port_type):$/;"	f
+FeatureSet	src/mem/cache/prefetch/perceptron_unit.hh	/^    enum FeatureSet {$/;"	g	class:PerceptronUnit
 HWPConfig	configs/common/CacheConfig.py	/^from . import HWPConfig$/;"	i
 HWPConfig	configs/common/MLConfig.py	/^from . import HWPConfig$/;"	i
 HWPConfig	configs/common/MLUConfig.py	/^from . import HWPConfig$/;"	i
@@ -41,6 +59,8 @@ MemConfig	configs/common/Options.py	/^from . import MemConfig$/;"	i
 MemConfig	configs/example/se.py	/^from common import MemConfig$/;"	i
 MultiPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class MultiPrefetcher(BasePrefetcher):$/;"	c
 Options	configs/example/se.py	/^from common import Options$/;"	i
+PAST_PREDICTIONS	src/mem/cache/prefetch/perceptron_unit.hh	/^      PAST_PREDICTIONS,$/;"	e	enum:PerceptronUnit::FeatureSet
+PC_DELTA_ADDR	src/mem/cache/prefetch/perceptron_unit.hh	/^      PC_DELTA_ADDR$/;"	e	enum:PerceptronUnit::FeatureSet
 PERCEPTRON	src/mem/cache/prefetch/perceptron.hh	2;"	d
 PFHistory	src/mem/cache/prefetch/perceptron_unit.hh	/^    struct PFHistory$/;"	s	class:PerceptronUnit
 PIFPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class PIFPrefetcher(QueuedPrefetcher):$/;"	c
@@ -54,9 +74,9 @@ PerceptronUnit	src/mem/cache/prefetch/Prefetcher.py	/^from m5.objects.Perceptron
 PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)$/;"	f	class:PerceptronUnit
 PerceptronUnit	src/mem/cache/prefetch/perceptron_unit.hh	/^class PerceptronUnit : public ClockedObject$/;"	c
 PlatformConfig	configs/common/Options.py	/^from . import PlatformConfig$/;"	i
-PrefetchInfo	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss)$/;"	f	class:BasePrefetcher::PrefetchInfo
-PrefetchInfo	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchInfo::PrefetchInfo(PrefetchInfo const &pfi, Addr addr)$/;"	f	class:BasePrefetcher::PrefetchInfo
-PrefetchInfo	src/mem/cache/prefetch/base.hh	/^    class PrefetchInfo {$/;"	c	class:BasePrefetcher
+PrefetchInfo	src/mem/cache/prefetch/prefetch_info.cc	/^PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss)$/;"	f	class:PrefetchInfo
+PrefetchInfo	src/mem/cache/prefetch/prefetch_info.cc	/^PrefetchInfo::PrefetchInfo(PrefetchInfo const &pfi, Addr addr)$/;"	f	class:PrefetchInfo
+PrefetchInfo	src/mem/cache/prefetch/prefetch_info.hh	/^class PrefetchInfo {$/;"	c
 PrefetchListener	src/mem/cache/prefetch/base.hh	/^        PrefetchListener(BasePrefetcher &_parent, ProbeManager *pm,$/;"	f	class:BasePrefetcher::PrefetchListener
 PrefetchListener	src/mem/cache/prefetch/base.hh	/^    class PrefetchListener : public ProbeListenerArgBase<PacketPtr>$/;"	c	class:BasePrefetcher
 QueuedPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class QueuedPrefetcher(BasePrefetcher):$/;"	c
@@ -73,9 +93,12 @@ SlimAccessMapPatternMatching	src/mem/cache/prefetch/Prefetcher.py	/^class SlimAc
 SlimDeltaCorrelatingPredictionTables	src/mem/cache/prefetch/Prefetcher.py	/^class SlimDeltaCorrelatingPredictionTables(DeltaCorrelatingPredictionTables):$/;"	c
 StridePrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class StridePrefetcher(QueuedPrefetcher):$/;"	c
 TaggedPrefetcher	src/mem/cache/prefetch/Prefetcher.py	/^class TaggedPrefetcher(QueuedPrefetcher):$/;"	c
+__MEM_CACHE_PREFETCH_ACCESS_MAP_PATTERN_MATCHING_HH__	src/mem/cache/prefetch/access_map_pattern_matching.hh	41;"	d
 __MEM_CACHE_PREFETCH_BASE_HH__	src/mem/cache/prefetch/base.hh	50;"	d
+__MEM_CACHE_PREFETCH_DELTA_CORRELATING_PREDICTION_TABLES_HH_	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	32;"	d
 __MEM_CACHE_PREFETCH_PERCEPTRON_PF_HH__	src/mem/cache/prefetch/perceptron_pf.hh	2;"	d
 __MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__	src/mem/cache/prefetch/perceptron_unit.hh	9;"	d
+__MEM_CACHE_PREFETCH_PREFETCHINFO_HH__	src/mem/cache/prefetch/prefetch_info.hh	47;"	d
 __MEM_CACHE_PREFETCH_QUEUED_HH__	src/mem/cache/prefetch/queued.hh	41;"	d
 __getattr__	configs/common/CacheConfig.py	/^    def __getattr__(cls, attr):$/;"	m	class:ExternalCache	file:
 __init__	src/mem/cache/prefetch/Prefetcher.py	/^    def __init__(self, prefetcher, obj, *listOfNames):$/;"	m	class:HWPProbeEvent
@@ -96,6 +119,7 @@ abstract	src/mem/cache/prefetch/Prefetcher.py	/^    abstract = True$/;"	v	class:
 abstract	src/mem/cache/prefetch/Prefetcher.py	/^    abstract = True$/;"	v	class:QueuedPrefetcher
 accept_all	src/mem/cache/prefetch/Perceptron.py	/^    accept_all = Param.Bool(False, "Accept all prefetch addresses.")$/;"	v	class:PerceptronUnit
 accept_all	src/mem/cache/prefetch/perceptron_unit.hh	/^    bool accept_all;$/;"	m	class:PerceptronUnit
+accessMapTable	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    AssociativeSet<AccessMapEntry> accessMapTable;$/;"	m	class:AccessMapPatternMatching
 access_map_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    access_map_table_assoc = Param.Unsigned(8,$/;"	v	class:AccessMapPatternMatching
 access_map_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    access_map_table_entries = Param.MemorySize("256",$/;"	v	class:AccessMapPatternMatching
 access_map_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    access_map_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:AccessMapPatternMatching
@@ -104,6 +128,7 @@ active_generation_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    active_
 active_generation_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    active_generation_table_entries = Param.MemorySize("64",$/;"	v	class:STeMSPrefetcher
 active_generation_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    active_generation_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:STeMSPrefetcher
 active_generation_table_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    active_generation_table_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:STeMSPrefetcher
+addAddress	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::DCPTEntry::addAddress(Addr address,$/;"	f	class:DeltaCorrelatingPredictionTables::DCPTEntry
 addCommonOptions	configs/common/Options.py	/^def addCommonOptions(parser):$/;"	f
 addEvent	src/mem/cache/prefetch/Prefetcher.py	/^    def addEvent(self, newObject):$/;"	m	class:BasePrefetcher
 addEventProbe	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::addEventProbe(SimObject *obj, const char *name)$/;"	f	class:BasePrefetcher
@@ -114,11 +139,12 @@ addSEOptions	configs/common/Options.py	/^def addSEOptions(parser):$/;"	f
 addToPath	configs/example/se-mlu.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 addToPath	configs/example/se.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 addr_array_len	src/mem/cache/prefetch/Prefetcher.py	/^    addr_array_len = Param.Unsigned(4, "Number of misses tracked")$/;"	v	class:IndirectMemoryPrefetcher
-address	src/mem/cache/prefetch/base.hh	/^        Addr address;$/;"	m	class:BasePrefetcher::PrefetchInfo
+address	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr address;$/;"	m	class:PrefetchInfo
 address_map_cache_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    address_map_cache_assoc = Param.Unsigned(128,$/;"	v	class:IrregularStreamBufferPrefetcher
 address_map_cache_entries	src/mem/cache/prefetch/Prefetcher.py	/^    address_map_cache_entries = Param.MemorySize("128",$/;"	v	class:IrregularStreamBufferPrefetcher
 ampm	src/mem/cache/prefetch/Prefetcher.py	/^    ampm = Param.AccessMapPatternMatching( AccessMapPatternMatching(),$/;"	v	class:AMPMPrefetcher
 ampm	src/mem/cache/prefetch/Prefetcher.py	/^    ampm = Param.AccessMapPatternMatching(SlimAccessMapPatternMatching(),$/;"	v	class:SlimAMPMPrefetcher
+ampm	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    AccessMapPatternMatching &ampm;$/;"	m	class:AMPMPrefetcher
 apps	configs/example/se.py	/^    apps = options.bench.split("-")$/;"	v
 arm	configs/common/CacheConfig.py	/^            import cores.arm.HPI as core$/;"	i
 arm	configs/common/CacheConfig.py	/^            import cores.arm.O3_ARM_v7a as core$/;"	i
@@ -128,6 +154,7 @@ assoc	src/mem/cache/prefetch/Prefetcher.py	/^            assoc = Parent.pattern_
 assoc	src/mem/cache/prefetch/Prefetcher.py	/^        assoc = Parent.address_map_cache_assoc,$/;"	v	class:IrregularStreamBufferPrefetcher
 assoc	src/mem/cache/prefetch/Prefetcher.py	/^        assoc = Parent.global_history_register_entries,$/;"	v	class:SignaturePathPrefetcherV2
 bad_score	src/mem/cache/prefetch/Prefetcher.py	/^    bad_score = Param.Unsigned(10, "Score at which the HWP is disabled")$/;"	v	class:BOPPrefetcher
+blkSize	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const unsigned blkSize;$/;"	m	class:AccessMapPatternMatching
 blkSize	src/mem/cache/prefetch/base.hh	/^    unsigned blkSize;$/;"	m	class:BasePrefetcher
 blockAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::blockAddress(Addr a) const$/;"	f	class:BasePrefetcher
 blockIndex	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::blockIndex(Addr a) const$/;"	f	class:BasePrefetcher
@@ -137,11 +164,16 @@ bpClass	configs/example/se.py	/^        bpClass = BPConfig.get(options.bp_type)$
 buildEnv	configs/common/Options.py	/^from m5.defines import buildEnv$/;"	i
 buildEnv	configs/example/se.py	/^from m5.defines import buildEnv$/;"	i
 cache	src/mem/cache/prefetch/base.hh	/^    BaseCache* cache;$/;"	m	class:BasePrefetcher
-cacheMiss	src/mem/cache/prefetch/base.hh	/^        bool cacheMiss;$/;"	m	class:BasePrefetcher::PrefetchInfo
+cacheMiss	src/mem/cache/prefetch/prefetch_info.hh	/^  bool cacheMiss;$/;"	m	class:PrefetchInfo
 cacheSnoop	src/mem/cache/prefetch/queued.hh	/^    const bool cacheSnoop;$/;"	m	class:QueuedPrefetcher
 cache_line_size	configs/example/se.py	/^                cache_line_size = options.cacheline_size)$/;"	v
 cache_snoop	src/mem/cache/prefetch/Prefetcher.py	/^    cache_snoop = Param.Bool(False, "Snoop cache to eliminate redundant request")$/;"	v	class:QueuedPrefetcher
+calculatePrefetch	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AMPMPrefetcher::calculatePrefetch(const PrefetchInfo &pfi,$/;"	f	class:AMPMPrefetcher
+calculatePrefetch	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::calculatePrefetch($/;"	f	class:AccessMapPatternMatching
+calculatePrefetch	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DCPTPrefetcher::calculatePrefetch(const PrefetchInfo &pfi,$/;"	f	class:DCPTPrefetcher
+calculatePrefetch	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::calculatePrefetch($/;"	f	class:DeltaCorrelatingPredictionTables
 calculatePrefetch	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcher::calculatePrefetch(const PrefetchInfo &pfi,$/;"	f	class:PerceptronPrefetcher
+checkCandidate	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    inline bool checkCandidate(std::vector<AccessMapState> const &states,$/;"	f	class:AccessMapPatternMatching
 chunk_size	src/mem/cache/prefetch/Prefetcher.py	/^    chunk_size = Param.Unsigned(256,$/;"	v	class:IrregularStreamBufferPrefetcher
 compactor_entries	src/mem/cache/prefetch/Prefetcher.py	/^    compactor_entries = Param.Unsigned(2, "Entries in the temp. compactor")$/;"	v	class:PIFPrefetcher
 compare	verif.sh	/^compare () {$/;"	f
@@ -153,8 +185,14 @@ core	configs/common/CacheConfig.py	/^            import cores.arm.HPI as core$/;
 core	configs/common/CacheConfig.py	/^            import cores.arm.O3_ARM_v7a as core$/;"	i
 cores	configs/common/CacheConfig.py	/^            import cores.arm.HPI as core$/;"	i
 cores	configs/common/CacheConfig.py	/^            import cores.arm.O3_ARM_v7a as core$/;"	i
+create	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AMPMPrefetcherParams::create()$/;"	f	class:AMPMPrefetcherParams
+create	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatchingParams::create()$/;"	f	class:AccessMapPatternMatchingParams
+create	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DCPTPrefetcherParams::create()$/;"	f	class:DCPTPrefetcherParams
+create	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTablesParams::create()$/;"	f	class:DeltaCorrelatingPredictionTablesParams
 create	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcherParams::create()$/;"	f	class:PerceptronPrefetcherParams
 create	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit *PerceptronUnitParams::create()$/;"	f	class:PerceptronUnitParams
+curMode	src/mem/cache/prefetch/perceptron_unit.hh	/^    FeatureSet curMode = PC_DELTA_ADDR;$/;"	m	class:PerceptronUnit
+current_path	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<std::pair<Addr, Addr>> current_path;$/;"	m	class:PerceptronUnit
 cxx_class	src/mem/cache/prefetch/Perceptron.py	/^    cxx_class = "PerceptronUnit"$/;"	v	class:PerceptronUnit
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "BOPPrefetcher"$/;"	v	class:BOPPrefetcher
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "IrregularStreamBufferPrefetcher"$/;"	v	class:IrregularStreamBufferPrefetcher
@@ -196,31 +234,41 @@ cxx_header	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_header = "mem\/cache\/
 cxx_header	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_header = "mem\/cache\/prefetch\/stride.hh"$/;"	v	class:StridePrefetcher
 cxx_header	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_header = "mem\/cache\/prefetch\/tagged.hh"$/;"	v	class:TaggedPrefetcher
 cxx_header	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_header = 'mem\/cache\/prefetch\/multi.hh'$/;"	v	class:MultiPrefetcher
-data	src/mem/cache/prefetch/base.hh	/^        uint8_t *data;$/;"	m	class:BasePrefetcher::PrefetchInfo
+data	src/mem/cache/prefetch/prefetch_info.hh	/^  uint8_t *data;$/;"	m	class:PrefetchInfo
 dcpt	src/mem/cache/prefetch/Prefetcher.py	/^    dcpt = Param.DeltaCorrelatingPredictionTables($/;"	v	class:DCPTPrefetcher
 dcpt	src/mem/cache/prefetch/Prefetcher.py	/^    dcpt = Param.DeltaCorrelatingPredictionTables($/;"	v	class:SlimAMPMPrefetcher
+dcpt	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    DeltaCorrelatingPredictionTables &dcpt;$/;"	m	class:DCPTPrefetcher
 degree	src/mem/cache/prefetch/Prefetcher.py	/^    degree = Param.Int(2, "Number of prefetches to generate")$/;"	v	class:TaggedPrefetcher
 degree	src/mem/cache/prefetch/Prefetcher.py	/^    degree = Param.Int(4, "Number of prefetches to generate")$/;"	v	class:StridePrefetcher
 degree	src/mem/cache/prefetch/Prefetcher.py	/^    degree = Param.Unsigned(4, "Number of prefetches to generate")$/;"	v	class:IrregularStreamBufferPrefetcher
+degree	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    unsigned degree;$/;"	m	class:AccessMapPatternMatching
 delay_queue_cycles	src/mem/cache/prefetch/Prefetcher.py	/^    delay_queue_cycles = Param.Cycles(60,$/;"	v	class:BOPPrefetcher
 delay_queue_enable	src/mem/cache/prefetch/Prefetcher.py	/^    delay_queue_enable = Param.Bool(True, "Enable the delay queue")$/;"	v	class:BOPPrefetcher
 delay_queue_size	src/mem/cache/prefetch/Prefetcher.py	/^    delay_queue_size = Param.Unsigned(15,$/;"	v	class:BOPPrefetcher
+deltaBits	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    const unsigned int deltaBits;$/;"	m	class:DeltaCorrelatingPredictionTables
+deltaMaskBits	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    const unsigned int deltaMaskBits;$/;"	m	class:DeltaCorrelatingPredictionTables
+deltaPointer	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        unsigned int deltaPointer;$/;"	m	struct:DeltaCorrelatingPredictionTables::DCPTEntry
 delta_bits	src/mem/cache/prefetch/Prefetcher.py	/^    delta_bits = Param.Unsigned(12, "Bits per delta")$/;"	v	class:DeltaCorrelatingPredictionTables
 delta_mask_bits	src/mem/cache/prefetch/Prefetcher.py	/^    delta_mask_bits = Param.Unsigned(8,$/;"	v	class:DeltaCorrelatingPredictionTables
+deltas	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        std::vector<Addr> deltas;$/;"	m	struct:DeltaCorrelatingPredictionTables::DCPTEntry
 deltas_per_entry	src/mem/cache/prefetch/Prefetcher.py	/^    deltas_per_entry = 9$/;"	v	class:SlimDeltaCorrelatingPredictionTables
 deltas_per_entry	src/mem/cache/prefetch/Prefetcher.py	/^    deltas_per_entry = Param.Unsigned(20,$/;"	v	class:DeltaCorrelatingPredictionTables
+epochCycles	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const Cycles epochCycles;$/;"	m	class:AccessMapPatternMatching
+epochEvent	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    EventFunctionWrapper epochEvent;$/;"	m	class:AccessMapPatternMatching
 epoch_cycles	src/mem/cache/prefetch/Prefetcher.py	/^    epoch_cycles = Param.Cycles(256000, "Cycles in an epoch period")$/;"	v	class:AccessMapPatternMatching
 exponential_size	src/mem/cache/prefetch/Perceptron.py	/^    exponential_size = Param.Int(32, "Table size for Perceptrons")$/;"	v	class:PerceptronUnit
 fatal	configs/example/se-mlu.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 fatal	configs/example/se.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 file	configs/example/se.py	/^                  file=sys.stderr)$/;"	v
-get	src/mem/cache/prefetch/base.hh	/^        get(ByteOrder endian) const$/;"	f	class:BasePrefetcher::PrefetchInfo
-getAddr	src/mem/cache/prefetch/base.hh	/^        Addr getAddr() const$/;"	f	class:BasePrefetcher::PrefetchInfo
-getMasterId	src/mem/cache/prefetch/base.hh	/^        MasterID getMasterId() const$/;"	f	class:BasePrefetcher::PrefetchInfo
-getPC	src/mem/cache/prefetch/base.hh	/^        Addr getPC() const$/;"	f	class:BasePrefetcher::PrefetchInfo
+get	src/mem/cache/prefetch/prefetch_info.hh	/^    get(ByteOrder endian) const$/;"	f	class:PrefetchInfo
+getAccessMapEntry	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::getAccessMapEntry(Addr am_addr,$/;"	f	class:AccessMapPatternMatching
+getAddr	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr getAddr() const$/;"	f	class:PrefetchInfo
+getCandidates	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::DCPTEntry::getCandidates($/;"	f	class:DeltaCorrelatingPredictionTables::DCPTEntry
+getMasterId	src/mem/cache/prefetch/prefetch_info.hh	/^  MasterID getMasterId() const$/;"	f	class:PrefetchInfo
+getPC	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr getPC() const$/;"	f	class:PrefetchInfo
 getPacket	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::getPacket()$/;"	f	class:QueuedPrefetcher
-getPaddr	src/mem/cache/prefetch/base.hh	/^        Addr getPaddr() const$/;"	f	class:BasePrefetcher::PrefetchInfo
-getSize	src/mem/cache/prefetch/base.hh	/^        unsigned int getSize() const$/;"	f	class:BasePrefetcher::PrefetchInfo
+getPaddr	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr getPaddr() const$/;"	f	class:PrefetchInfo
+getSize	src/mem/cache/prefetch/prefetch_info.hh	/^  unsigned int getSize() const$/;"	f	class:PrefetchInfo
 get_processes	configs/example/se.py	/^def get_processes(options):$/;"	f
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^      std::vector<int> global_history;$/;"	m	struct:PerceptronUnit::PFHistory
 global_history	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<int> global_history;$/;"	m	class:PerceptronUnit
@@ -228,12 +276,16 @@ global_history_register_entries	src/mem/cache/prefetch/Prefetcher.py	/^    globa
 global_history_register_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    global_history_register_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:SignaturePathPrefetcherV2
 global_history_register_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    global_history_register_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:SignaturePathPrefetcherV2
 hasBeenPrefetched	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::hasBeenPrefetched(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
-hasPC	src/mem/cache/prefetch/base.hh	/^        bool hasPC() const$/;"	f	class:BasePrefetcher::PrefetchInfo
+hasPC	src/mem/cache/prefetch/prefetch_info.hh	/^  bool hasPC() const$/;"	f	class:PrefetchInfo
 hasTimedOutEntry	src/mem/cache/prefetch/perceptron_unit.hh	/^    bool hasTimedOutEntry() {$/;"	f	class:PerceptronUnit
+highAccuracyThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double highAccuracyThreshold;$/;"	m	class:AccessMapPatternMatching
+highCacheHitThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double highCacheHitThreshold;$/;"	m	class:AccessMapPatternMatching
+highCoverageThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double highCoverageThreshold;$/;"	m	class:AccessMapPatternMatching
 high_accuracy_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_accuracy_threshold = Param.Float(0.5,$/;"	v	class:AccessMapPatternMatching
 high_cache_hit_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_cache_hit_threshold = Param.Float(0.875,$/;"	v	class:AccessMapPatternMatching
 high_coverage_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    high_coverage_threshold = Param.Float(0.25,$/;"	v	class:AccessMapPatternMatching
 history_buffer_size	src/mem/cache/prefetch/Prefetcher.py	/^    history_buffer_size = Param.Unsigned(16, "Entries in the history buffer")$/;"	v	class:PIFPrefetcher
+hotZoneSize	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const uint64_t hotZoneSize;$/;"	m	class:AccessMapPatternMatching
 hot_zone_size	src/mem/cache/prefetch/Prefetcher.py	/^    hot_zone_size = Param.MemorySize("2kB", "Memory covered by a hot zone")$/;"	v	class:AccessMapPatternMatching
 inCache	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::inCache(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
 inMissQueue	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::inMissQueue(Addr addr, bool is_secure) const$/;"	f	class:BasePrefetcher
@@ -250,16 +302,18 @@ ipd_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    ipd_table_assoc = Par
 ipd_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    ipd_table_entries = Param.MemorySize("4",$/;"	v	class:IndirectMemoryPrefetcher
 ipd_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ipd_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:IndirectMemoryPrefetcher
 ipd_table_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ipd_table_replacement_policy = Param.BaseReplacementPolicy(LRURP(),$/;"	v	class:IndirectMemoryPrefetcher
-isCacheMiss	src/mem/cache/prefetch/base.hh	/^        bool isCacheMiss() const$/;"	f	class:BasePrefetcher::PrefetchInfo
+isCacheMiss	src/mem/cache/prefetch/prefetch_info.hh	/^  bool isCacheMiss() const$/;"	f	class:PrefetchInfo
 isFill	src/mem/cache/prefetch/base.hh	/^        const bool isFill;$/;"	m	class:BasePrefetcher::PrefetchListener
-isSecure	src/mem/cache/prefetch/base.hh	/^        bool isSecure() const$/;"	f	class:BasePrefetcher::PrefetchInfo
-isWrite	src/mem/cache/prefetch/base.hh	/^        bool isWrite() const$/;"	f	class:BasePrefetcher::PrefetchInfo
+isSecure	src/mem/cache/prefetch/prefetch_info.hh	/^  bool isSecure() const$/;"	f	class:PrefetchInfo
+isWrite	src/mem/cache/prefetch/prefetch_info.hh	/^  bool isWrite() const$/;"	f	class:PrefetchInfo
 issuedPrefetches	src/mem/cache/prefetch/base.hh	/^    uint64_t issuedPrefetches;$/;"	m	class:BasePrefetcher
 lBlkSize	src/mem/cache/prefetch/base.hh	/^    unsigned lBlkSize;$/;"	m	class:BasePrefetcher
+lastAddress	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        Addr lastAddress;$/;"	m	struct:DeltaCorrelatingPredictionTables::DCPTEntry
 latency	src/mem/cache/prefetch/Prefetcher.py	/^    latency = Param.Int(1, "Latency for generated prefetches")$/;"	v	class:QueuedPrefetcher
 latency	src/mem/cache/prefetch/queued.hh	/^    const Cycles latency;$/;"	m	class:QueuedPrefetcher
 latency_buffer_size	src/mem/cache/prefetch/Prefetcher.py	/^    latency_buffer_size = Param.Int(32, "Entries in the latency buffer")$/;"	v	class:SBOOEPrefetcher
 lfsr_loop	259tests/lfsr.c	/^  int lfsr_loop(int zero) {$/;"	f
+limitStride	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const unsigned limitStride;$/;"	m	class:AccessMapPatternMatching
 limit_stride	src/mem/cache/prefetch/Prefetcher.py	/^    limit_stride = 4$/;"	v	class:SlimAccessMapPatternMatching
 limit_stride	src/mem/cache/prefetch/Prefetcher.py	/^    limit_stride = Param.Unsigned(0,$/;"	v	class:AccessMapPatternMatching
 listenFromProbe	src/mem/cache/prefetch/Prefetcher.py	/^    def listenFromProbe(self, simObj, *probeNames):$/;"	m	class:BasePrefetcher
@@ -268,6 +322,9 @@ listeners	src/mem/cache/prefetch/base.hh	/^    std::vector<PrefetchListener *> l
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = 0.25$/;"	v	class:SignaturePathPrefetcherV2
 lookahead_confidence_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    lookahead_confidence_threshold = Param.Float(0.75,$/;"	v	class:SignaturePathPrefetcher
 lookup	src/mem/cache/prefetch/perceptron_unit.cc	/^bool PerceptronUnit::lookup(Addr pf_addr)$/;"	f	class:PerceptronUnit
+lowAccuracyThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double lowAccuracyThreshold;$/;"	m	class:AccessMapPatternMatching
+lowCacheHitThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double lowCacheHitThreshold;$/;"	m	class:AccessMapPatternMatching
+lowCoverageThreshold	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const double lowCoverageThreshold;$/;"	m	class:AccessMapPatternMatching
 low_accuracy_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_accuracy_threshold = Param.Float(0.25,$/;"	v	class:AccessMapPatternMatching
 low_cache_hit_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_cache_hit_threshold = Param.Float(0.75,$/;"	v	class:AccessMapPatternMatching
 low_coverage_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    low_coverage_threshold = Param.Float(0.125,$/;"	v	class:AccessMapPatternMatching
@@ -278,8 +335,8 @@ m5	configs/common/Options.py	/^import m5$/;"	i
 m5	configs/example/se.py	/^import m5$/;"	i
 main	259tests/lfsr.c	/^int main(int argc, char* argv[]) {$/;"	f
 make	configs/common/CacheConfig.py	/^    def make(name):$/;"	f	function:ExternalCacheFactory
-masterId	src/mem/cache/prefetch/base.hh	/^        MasterID masterId;$/;"	m	class:BasePrefetcher::PrefetchInfo
 masterId	src/mem/cache/prefetch/base.hh	/^    const MasterID masterId;$/;"	m	class:BasePrefetcher
+masterId	src/mem/cache/prefetch/prefetch_info.hh	/^  MasterID masterId;$/;"	m	class:PrefetchInfo
 max_conf	src/mem/cache/prefetch/Prefetcher.py	/^    max_conf = Param.Int(7, "Maximum confidence level")$/;"	v	class:StridePrefetcher
 max_prefetch_distance	src/mem/cache/prefetch/Prefetcher.py	/^    max_prefetch_distance = Param.Unsigned(16, "Maximum prefetch distance")$/;"	v	class:IndirectMemoryPrefetcher
 mem_mode	configs/example/se.py	/^                mem_mode = test_mem_mode,$/;"	v
@@ -293,12 +350,17 @@ notify	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::PrefetchListener::notify
 notify	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)$/;"	f	class:QueuedPrefetcher
 notifyFill	src/mem/cache/prefetch/base.hh	/^    virtual void notifyFill(const PacketPtr &pkt)$/;"	f	class:BasePrefetcher
 np	configs/example/se.py	/^np = options.num_cpus$/;"	v
+numGoodPrefetches	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    uint64_t numGoodPrefetches;$/;"	m	class:AccessMapPatternMatching
+numRawCacheHits	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    uint64_t numRawCacheHits;$/;"	m	class:AccessMapPatternMatching
+numRawCacheMisses	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    uint64_t numRawCacheMisses;$/;"	m	class:AccessMapPatternMatching
 numThreads	configs/example/se.py	/^numThreads = 1$/;"	v
+numTotalPrefetches	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    uint64_t numTotalPrefetches;$/;"	m	class:AccessMapPatternMatching
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = 4$/;"	v	class:SignaturePathPrefetcherV2
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 num_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_counter_bits = Param.Unsigned(2,$/;"	v	class:IrregularStreamBufferPrefetcher
 num_indirect_counter_bits	src/mem/cache/prefetch/Prefetcher.py	/^    num_indirect_counter_bits = Param.Unsigned(3,$/;"	v	class:IndirectMemoryPrefetcher
 observeAccess	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::observeAccess(const PacketPtr &pkt, bool miss) const$/;"	f	class:BasePrefetcher
+offChipMemoryLatency	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const Tick offChipMemoryLatency;$/;"	m	class:AccessMapPatternMatching
 offchip_memory_latency	src/mem/cache/prefetch/Prefetcher.py	/^    offchip_memory_latency = Param.Latency("30ns",$/;"	v	class:AccessMapPatternMatching
 offset_list_size	src/mem/cache/prefetch/Prefetcher.py	/^    offset_list_size = Param.Unsigned(46,$/;"	v	class:BOPPrefetcher
 onData	src/mem/cache/prefetch/base.hh	/^    const bool onData;$/;"	m	class:BasePrefetcher
@@ -318,9 +380,13 @@ operator >	src/mem/cache/prefetch/queued.hh	/^        bool operator>(const Defer
 optparse	configs/example/se.py	/^import optparse$/;"	i
 os	configs/example/se.py	/^import os$/;"	i
 os_types	configs/common/Options.py	/^    from .FSConfig import os_types$/;"	i
+override	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^                           std::vector<AddrPriority> &addresses) override;$/;"	m	class:AMPMPrefetcher
+override	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    void startup() override;$/;"	m	class:AccessMapPatternMatching
 override	src/mem/cache/prefetch/base.hh	/^        void notify(const PacketPtr &pkt) override;$/;"	m	class:BasePrefetcher::PrefetchListener
 override	src/mem/cache/prefetch/base.hh	/^    void regProbeListeners() override;$/;"	m	class:BasePrefetcher
 override	src/mem/cache/prefetch/base.hh	/^    void regStats() override;$/;"	m	class:BasePrefetcher
+override	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        std::vector<AddrPriority> &addresses) override;$/;"	m	class:DCPTPrefetcher
+override	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^        void reset() override;$/;"	m	struct:DeltaCorrelatingPredictionTables::DCPTEntry
 override	src/mem/cache/prefetch/perceptron_pf.hh	/^                           std::vector<AddrPriority> &addresses) override;$/;"	m	class:PerceptronPrefetcher
 override	src/mem/cache/prefetch/queued.hh	/^    PacketPtr getPacket() override;$/;"	m	class:QueuedPrefetcher
 override	src/mem/cache/prefetch/queued.hh	/^    void notify(const PacketPtr &pkt, const PrefetchInfo &pfi) override;$/;"	m	class:QueuedPrefetcher
@@ -333,7 +399,7 @@ p5	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	fi
 p6	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p7	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
 p8	259tests/lfsr.c	/^  int p1,p2,p3,p4,p5,p6,p7,p8;$/;"	m	struct:silly_struct	file:
-paddress	src/mem/cache/prefetch/base.hh	/^        Addr paddress;$/;"	m	class:BasePrefetcher::PrefetchInfo
+paddress	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr paddress;$/;"	m	class:PrefetchInfo
 pageAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageAddress(Addr a) const$/;"	f	class:BasePrefetcher
 pageBytes	src/mem/cache/prefetch/base.hh	/^    const Addr pageBytes;$/;"	m	class:BasePrefetcher
 pageIthBlockAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageIthBlockAddress(Addr page, uint32_t blockIndex) const$/;"	f	class:BasePrefetcher
@@ -350,7 +416,7 @@ pattern_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_table_e
 pattern_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_table_entries = Param.MemorySize("4096",$/;"	v	class:SignaturePathPrefetcher
 pattern_table_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_table_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:SignaturePathPrefetcher
 pattern_table_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_table_replacement_policy = Param.BaseReplacementPolicy(LRURP(),$/;"	v	class:SignaturePathPrefetcher
-pc	src/mem/cache/prefetch/base.hh	/^        Addr pc;$/;"	m	class:BasePrefetcher::PrefetchInfo
+pc	src/mem/cache/prefetch/prefetch_info.hh	/^  Addr pc;$/;"	m	class:PrefetchInfo
 perceptronUnit	src/mem/cache/prefetch/base.hh	/^    PerceptronUnit *perceptronUnit;$/;"	m	class:BasePrefetcher
 perceptron_list	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<Perceptron*> perceptron_list;$/;"	m	class:PerceptronUnit
 perceptron_list_size	src/mem/cache/prefetch/perceptron_unit.hh	/^    int perceptron_list_size;$/;"	m	class:PerceptronUnit
@@ -387,6 +453,7 @@ print_function	configs/common/Options.py	/^from __future__ import print_function
 print_function	configs/example/se.py	/^from __future__ import print_function$/;"	i
 priority	src/mem/cache/prefetch/queued.hh	/^        int32_t priority;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
 probeNotify	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::probeNotify(const PacketPtr &pkt, bool miss)$/;"	f	class:BasePrefetcher
+processEpochEvent	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::processEpochEvent()$/;"	f	class:AccessMapPatternMatching
 ps_address_map_cache_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ps_address_map_cache_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 ps_address_map_cache_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    ps_address_map_cache_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 pt_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    pt_table_assoc = Param.Unsigned(16, "Associativity of the Prefetch Table")$/;"	v	class:IndirectMemoryPrefetcher
@@ -411,6 +478,7 @@ register	src/mem/cache/prefetch/Prefetcher.py	/^    def register(self):$/;"	m	cl
 reject_all	src/mem/cache/prefetch/Perceptron.py	/^    reject_all = Param.Bool(False, "Reject all prefetch addresses.")$/;"	v	class:PerceptronUnit
 reject_all	src/mem/cache/prefetch/perceptron_unit.hh	/^    bool reject_all;$/;"	m	class:PerceptronUnit
 replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    replacement_policy = Param.BaseReplacementPolicy(RandomRP(),$/;"	v	class:StridePrefetcher
+reset	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::DCPTEntry::reset()$/;"	f	class:DeltaCorrelatingPredictionTables::DCPTEntry
 reset	src/mem/cache/prefetch/perceptron.hh	/^  void reset()$/;"	f	class:Perceptron
 reset	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::reset()$/;"	f	class:PerceptronUnit
 root	configs/example/se.py	/^root = Root(full_system = False, system = system)$/;"	v
@@ -418,16 +486,17 @@ round_max	src/mem/cache/prefetch/Prefetcher.py	/^    round_max = Param.Unsigned(
 rr_size	src/mem/cache/prefetch/Prefetcher.py	/^    rr_size = Param.Unsigned(64, "Number of entries of each RR bank")$/;"	v	class:BOPPrefetcher
 ruby_port	configs/example/se.py	/^        ruby_port = system.ruby._cpu_ports[i]$/;"	v
 run	bench1.sh	/^run () {$/;"	f
-sameAddr	src/mem/cache/prefetch/base.hh	/^        bool sameAddr(PrefetchInfo const &pfi) const$/;"	f	class:BasePrefetcher::PrefetchInfo
+sameAddr	src/mem/cache/prefetch/prefetch_info.hh	/^  bool sameAddr(PrefetchInfo const &pfi) const$/;"	f	class:PrefetchInfo
 samePage	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::samePage(Addr a, Addr b) const$/;"	f	class:BasePrefetcher
 sandbox_entries	src/mem/cache/prefetch/Prefetcher.py	/^    sandbox_entries = Param.Int(1024, "Size of the address buffer")$/;"	v	class:SBOOEPrefetcher
 score_max	src/mem/cache/prefetch/Prefetcher.py	/^    score_max = Param.Unsigned(31, "Max. score to update the best offset")$/;"	v	class:BOPPrefetcher
 score_threshold_pct	src/mem/cache/prefetch/Prefetcher.py	/^        prefetch. The value is the percentage of sandbox entries to use")$/;"	v	class:SBOOEPrefetcher
-secure	src/mem/cache/prefetch/base.hh	/^        bool secure;$/;"	m	class:BasePrefetcher::PrefetchInfo
+secure	src/mem/cache/prefetch/prefetch_info.hh	/^  bool secure;$/;"	m	class:PrefetchInfo
 sequential_prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    sequential_prefetchers = Param.Int(9, "Number of sequential prefetchers")$/;"	v	class:SBOOEPrefetcher
 setCache	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::setCache(BaseCache *_cache)$/;"	f	class:BasePrefetcher
+setEntryState	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::setEntryState(AccessMapEntry &entry,$/;"	f	class:AccessMapPatternMatching
 shift_values	src/mem/cache/prefetch/Prefetcher.py	/^    shift_values = VectorParam.Int([2, 3, 4, -3], "Shift values to evaluate")$/;"	v	class:IndirectMemoryPrefetcher
-shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)$/;"	f	class:PerceptronUnit
+shouldPrefetch	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::shouldPrefetch(const PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)$/;"	f	class:PerceptronUnit
 signature_bits	src/mem/cache/prefetch/Prefetcher.py	/^    signature_bits = Param.UInt16(12,$/;"	v	class:SignaturePathPrefetcher
 signature_shift	src/mem/cache/prefetch/Prefetcher.py	/^    signature_shift = Param.UInt8(3,$/;"	v	class:SignaturePathPrefetcher
 signature_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    signature_table_assoc = 1$/;"	v	class:SignaturePathPrefetcherV2
@@ -450,15 +519,18 @@ size	src/mem/cache/prefetch/Prefetcher.py	/^        size = Parent.pt_table_entri
 size	src/mem/cache/prefetch/Prefetcher.py	/^        size = Parent.signature_table_entries),$/;"	v	class:SignaturePathPrefetcher
 size	src/mem/cache/prefetch/Prefetcher.py	/^        size = Parent.table_entries),$/;"	v	class:DeltaCorrelatingPredictionTables
 size	src/mem/cache/prefetch/Prefetcher.py	/^        size = Parent.training_unit_entries),$/;"	v	class:IrregularStreamBufferPrefetcher
-size	src/mem/cache/prefetch/base.hh	/^        unsigned int size;$/;"	m	class:BasePrefetcher::PrefetchInfo
 size	src/mem/cache/prefetch/perceptron.hh	/^  int size; \/\/ the size of weights vector$/;"	m	class:Perceptron
+size	src/mem/cache/prefetch/prefetch_info.hh	/^  unsigned int size;$/;"	m	class:PrefetchInfo
 sp_address_map_cache_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    sp_address_map_cache_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 sp_address_map_cache_replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    sp_address_map_cache_replacement_policy = Param.BaseReplacementPolicy($/;"	v	class:IrregularStreamBufferPrefetcher
 spatial_region_size	src/mem/cache/prefetch/Prefetcher.py	/^    spatial_region_size = Param.MemorySize("2kB",$/;"	v	class:STeMSPrefetcher
 squash	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit::squash(ThreadID tid, void *pf_history)$/;"	f	class:PerceptronUnit
+startDegree	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const unsigned startDegree;$/;"	m	class:AccessMapPatternMatching
 start_conf	src/mem/cache/prefetch/Prefetcher.py	/^    start_conf = Param.Int(4, "Starting confidence for new entries")$/;"	v	class:StridePrefetcher
 start_degree	src/mem/cache/prefetch/Prefetcher.py	/^    start_degree = 2$/;"	v	class:SlimAccessMapPatternMatching
 start_degree	src/mem/cache/prefetch/Prefetcher.py	/^    start_degree = Param.Unsigned(4,$/;"	v	class:AccessMapPatternMatching
+startup	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::startup()$/;"	f	class:AccessMapPatternMatching
+states	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        std::vector<AccessMapState> states;$/;"	m	struct:AccessMapPatternMatching::AccessMapEntry
 stream_address_buffer_entries	src/mem/cache/prefetch/Prefetcher.py	/^    stream_address_buffer_entries = Param.Unsigned(7, "Entries in the SAB")$/;"	v	class:PIFPrefetcher
 stream_counter_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    stream_counter_threshold = Param.Unsigned(4,$/;"	v	class:IndirectMemoryPrefetcher
 streaming_distance	src/mem/cache/prefetch/Prefetcher.py	/^    streaming_distance = Param.Unsigned(4,$/;"	v	class:IndirectMemoryPrefetcher
@@ -467,6 +539,7 @@ succ_spatial_region_bits	src/mem/cache/prefetch/Prefetcher.py	/^    succ_spatial
 sys	configs/example/se.py	/^import sys$/;"	i
 sys	src/mem/cache/prefetch/Prefetcher.py	/^    sys = Param.System(Parent.any, "System this prefetcher belongs to")$/;"	v	class:BasePrefetcher
 system	configs/example/se.py	/^system = System(cpu = [CPUClass(cpu_id=i) for i in range(np)],$/;"	v
+table	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    AssociativeSet<DCPTEntry> table;$/;"	m	class:DeltaCorrelatingPredictionTables
 table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    table_assoc = 256$/;"	v	class:SlimDeltaCorrelatingPredictionTables
 table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    table_assoc = Param.Int(4, "Associativity of PC lookup table")$/;"	v	class:StridePrefetcher
 table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    table_assoc = Param.Unsigned(128,$/;"	v	class:DeltaCorrelatingPredictionTables
@@ -510,15 +583,20 @@ updateExpiredPfs	src/mem/cache/prefetch/perceptron_unit.cc	/^void PerceptronUnit
 useVirtualAddresses	src/mem/cache/prefetch/base.hh	/^    const bool useVirtualAddresses;$/;"	m	class:BasePrefetcher
 use_master_id	src/mem/cache/prefetch/Prefetcher.py	/^    use_master_id = Param.Bool(True, "Use master id based history")$/;"	v	class:StridePrefetcher
 use_virtual_addresses	src/mem/cache/prefetch/Prefetcher.py	/^    use_virtual_addresses = Param.Bool(False,$/;"	v	class:BasePrefetcher
+usefulDegree	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    unsigned usefulDegree;$/;"	m	class:AccessMapPatternMatching
 usefulPrefetches	src/mem/cache/prefetch/base.hh	/^    uint64_t usefulPrefetches;$/;"	m	class:BasePrefetcher
-validPC	src/mem/cache/prefetch/base.hh	/^        bool validPC;$/;"	m	class:BasePrefetcher::PrefetchInfo
+validPC	src/mem/cache/prefetch/prefetch_info.hh	/^  bool validPC;$/;"	m	class:PrefetchInfo
 voltage_domain	configs/example/se.py	/^                                        voltage_domain = system.voltage_domain)$/;"	v
 voltage_domain	configs/example/se.py	/^                                       voltage_domain =$/;"	v
 voltage_domain	configs/example/se.py	/^                                   voltage_domain = system.voltage_domain)$/;"	v
 warn	configs/example/se-mlu.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 warn	configs/example/se.py	/^from m5.util import addToPath, fatal, warn$/;"	i
 weights	src/mem/cache/prefetch/perceptron.hh	/^  std::vector<int> weights; \/\/ the weights of the perceptron$/;"	m	class:Perceptron
-write	src/mem/cache/prefetch/base.hh	/^        bool write;$/;"	m	class:BasePrefetcher::PrefetchInfo
+write	src/mem/cache/prefetch/prefetch_info.hh	/^  bool write;$/;"	m	class:PrefetchInfo
+~AMPMPrefetcher	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    ~AMPMPrefetcher()$/;"	f	class:AMPMPrefetcher
+~AccessMapPatternMatching	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    ~AccessMapPatternMatching()$/;"	f	class:AccessMapPatternMatching
 ~BasePrefetcher	src/mem/cache/prefetch/base.hh	/^    virtual ~BasePrefetcher() {}$/;"	f	class:BasePrefetcher
-~PrefetchInfo	src/mem/cache/prefetch/base.hh	/^        ~PrefetchInfo()$/;"	f	class:BasePrefetcher::PrefetchInfo
+~DCPTPrefetcher	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    ~DCPTPrefetcher()$/;"	f	class:DCPTPrefetcher
+~DeltaCorrelatingPredictionTables	src/mem/cache/prefetch/delta_correlating_prediction_tables.hh	/^    ~DeltaCorrelatingPredictionTables()$/;"	f	class:DeltaCorrelatingPredictionTables
+~PrefetchInfo	src/mem/cache/prefetch/prefetch_info.hh	/^  ~PrefetchInfo()$/;"	f	class:PrefetchInfo
 ~QueuedPrefetcher	src/mem/cache/prefetch/queued.cc	/^QueuedPrefetcher::~QueuedPrefetcher()$/;"	f	class:QueuedPrefetcher

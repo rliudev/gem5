@@ -44,6 +44,7 @@
 #include "base/trace.hh"
 #include "debug/HWPrefetch.hh"
 #include "mem/request.hh"
+#include "mem/cache/prefetch/prefetch_info.hh"
 #include "params/QueuedPrefetcher.hh"
 
 #include "mem/cache/prefetch/queued.hh"
@@ -91,7 +92,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
     if (perceptronUnit) {
-      perceptronUnit->shouldPrefetch(addresses);
+      perceptronUnit->shouldPrefetch(pfi, addresses);
       perceptronUnit->updateExpiredPfs();
     }
 

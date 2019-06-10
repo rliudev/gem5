@@ -32,6 +32,7 @@ Import('*')
 
 SimObject('Prefetcher.py')
 
+Source('prefetch_info.cc')
 Source('access_map_pattern_matching.cc')
 Source('base.cc')
 Source('multi.cc')

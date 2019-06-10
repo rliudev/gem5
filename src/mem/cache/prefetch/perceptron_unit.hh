@@ -14,6 +14,7 @@
 #include "sim/clocked_object.hh"
 #include "sim/sim_object.hh"
 
+#include "mem/cache/prefetch/prefetch_info.hh"
 #include "mem/cache/prefetch/perceptron.hh"
 
 
@@ -27,10 +28,6 @@ class PerceptronUnit : public ClockedObject
   private:
     // contains pointers all of the perceptrons that will be use for predictions
     std::vector<Perceptron*> perceptron_list;
-    // contains the global history results
-    std::vector<int> global_history;
-    // contains the per-perceptron last prediction
-    std::vector<int> prediction_history;
     // raw size of our our perceptron list
     int perceptron_list_size;
     // size of the perceptrons that will be generated (number of inputs) (also size of X)
@@ -48,6 +45,23 @@ class PerceptronUnit : public ClockedObject
     //   element that spent the longest time in queue) has
     //   timed out (ie, was not used for prefetching).
     std::vector<std::vector<Addr>> pf_timer_queue;
+
+
+    // Enable different features:
+    enum FeatureSet {
+      PAST_PREDICTIONS,
+      PC_DELTA_ADDR
+    };
+    FeatureSet curMode = PC_DELTA_ADDR;
+
+    // Feature sets:
+    // 0. Y/N history (prediction history over time):
+    //    contains the global history results
+    std::vector<int> global_history;
+    //    contains the per-perceptron last prediction
+    std::vector<int> prediction_history;
+    // 1. PC and delta-addr
+    std::vector<std::pair<Addr, Addr>> current_path;
 
 
     // used as a history structure to match the general BPredUnit class
@@ -71,7 +85,7 @@ class PerceptronUnit : public ClockedObject
     /**
      * Shoudl we prefetch?
      */
-    void shouldPrefetch(std::vector<AddrPriority> &addresses);
+    void shouldPrefetch(const PrefetchInfo &pfi, std::vector<AddrPriority> &addresses);
 
 
     /**
@@ -132,7 +146,7 @@ class PerceptronUnit : public ClockedObject
 
 };
 
-#endif //__MEM_CACHE_PREFETCH_PERCEPTRON_HH__
+#endif //__MEM_CACHE_PREFETCH_PERCEPTRON_UNIT_HH__
 
 
 

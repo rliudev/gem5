@@ -46,6 +46,7 @@
 
 #include "base/statistics.hh"
 #include "base/types.hh"
+#include "mem/cache/prefetch/prefetch_info.hh"
 #include "mem/cache/prefetch/base.hh"
 #include "mem/packet.hh"
 

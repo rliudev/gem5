@@ -56,28 +56,6 @@
 #include "params/BasePrefetcher.hh"
 #include "sim/system.hh"
 
-BasePrefetcher::PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss)
-  : address(addr), pc(pkt->req->hasPC() ? pkt->req->getPC() : 0),
-    masterId(pkt->req->masterId()), validPC(pkt->req->hasPC()),
-    secure(pkt->isSecure()), size(pkt->req->getSize()), write(pkt->isWrite()),
-    paddress(pkt->req->getPaddr()), cacheMiss(miss)
-{
-    unsigned int req_size = pkt->req->getSize();
-    if (!write && miss) {
-        data = nullptr;
-    } else {
-        data = new uint8_t[req_size];
-        Addr offset = pkt->req->getPaddr() - pkt->getAddr();
-        std::memcpy(data, &(pkt->getConstPtr<uint8_t>()[offset]), req_size);
-    }
-}
-
-BasePrefetcher::PrefetchInfo::PrefetchInfo(PrefetchInfo const &pfi, Addr addr)
-  : address(addr), pc(pfi.pc), masterId(pfi.masterId), validPC(pfi.validPC),
-    secure(pfi.secure), size(pfi.size), write(pfi.write),
-    paddress(pfi.paddress), cacheMiss(pfi.cacheMiss), data(nullptr)
-{
-}
 
 void
 BasePrefetcher::PrefetchListener::notify(const PacketPtr &pkt)

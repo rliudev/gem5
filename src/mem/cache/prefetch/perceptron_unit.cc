@@ -36,23 +36,27 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
     perceptron_list.push_back(new Perceptron(perceptron_size));
   }
 
-  // initialize our global history list
-  // the bias node (w_0) will need a weight of 1 so we instert that first
-  global_history.push_back(1);
-  for(int i = 1; i < perceptron_size; i++)
-  {
+  if (curMode == PAST_PREDICTIONS) {
+    // initialize our global history list
+    // the bias node (w_0) will need a weight of 1 so we instert that first
     global_history.push_back(1);
+    for(int i = 1; i < perceptron_size; i++)
+    {
+      global_history.push_back(1);
+    }
+    // initialize prediction history list
+    for(int i = 0; i < perceptron_list_size; i++)
+    {
+      prediction_history.push_back(-1);
+    }
   }
+  else if (curMode == PC_DELTA_ADDR) {
 
-  // initialize prediction history list
-  for(int i = 0; i < perceptron_list_size; i++)
-  {
-    prediction_history.push_back(-1);
   }
 
 }
 
-void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
+void PerceptronUnit::shouldPrefetch(const PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
 {
   if (reject_all) {
     addresses.clear();
@@ -137,22 +141,30 @@ bool PerceptronUnit::lookup(Addr pf_addr)
 //  return perceptron_output >= 0;
 
 
-  // find the index of the perceptron
-  //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
-//  printf("perceptron_list_size: %d\n", perceptron_list_size);
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-//  printf("perceptron_index on lookup: %d\n", perceptron_index);
-  // grap the perceptron we need to calculate prediction
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
-  // generate elements needed for history struct
-  int perceptron_output = new_perceptron->predict(global_history);
-  // store into prediction_history
-  prediction_history[perceptron_index] = perceptron_output;
-  // update our global history instance variable
-  global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
-  global_history.pop_back();
+  if (curMode == PAST_PREDICTIONS) {
+    // find the index of the perceptron
+    //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
+  //  printf("perceptron_list_size: %d\n", perceptron_list_size);
+    int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+  //  printf("perceptron_index on lookup: %d\n", perceptron_index);
+    // grap the perceptron we need to calculate prediction
+    Perceptron* new_perceptron = perceptron_list[perceptron_index];
+    // generate elements needed for history struct
+    int perceptron_output = new_perceptron->predict(global_history);
+    // store into prediction_history
+    prediction_history[perceptron_index] = perceptron_output;
+    // update our global history instance variable
+    global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
+    global_history.pop_back();
+    return perceptron_output >= 0;
+  }
 
-  return perceptron_output >= 0;
+  else if (curMode == PC_DELTA_ADDR) {
+
+    return 0;
+  }
+
+  return 0;
 }
 
 
@@ -184,26 +196,39 @@ void PerceptronUnit::update(Addr pf_addr, bool used)
 //    delete history;
 //  }
 
+  if (curMode == PAST_PREDICTIONS) {
+    int actual_pf_act = used? 1 : -1;
+    // find the index of the perceptron
+    int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+    // grab the perceptron we need to train
+    Perceptron* new_perceptron = perceptron_list[perceptron_index];
+    // train perceptron
+    new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
+  }
 
-  int actual_pf_act = used? 1 : -1;
-  // find the index of the perceptron
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-  // grab the perceptron we need to train
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
-  // train perceptron
-  new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
+  else if (curMode == PC_DELTA_ADDR) {
+
+  }
+
 }
 
 
 void PerceptronUnit::squash(ThreadID tid, void *pf_history)
 {
-  // in order to get he deconstructors to run, we need to cast our history
-  // before removing it
-  PFHistory *history = static_cast<PFHistory*>(pf_history);
-  // recover global history
-  global_history = history->global_history;
-  // delete element
-  delete history;
+  if (curMode == PAST_PREDICTIONS) {
+    // in order to get he deconstructors to run, we need to cast our history
+    // before removing it
+    PFHistory *history = static_cast<PFHistory*>(pf_history);
+    // recover global history
+    global_history = history->global_history;
+    // delete element
+    delete history;
+  }
+
+  else if (curMode == PC_DELTA_ADDR) {
+
+  }
+
 }
 
 
