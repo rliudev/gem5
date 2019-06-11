@@ -124,7 +124,7 @@ DeltaCorrelatingPredictionTables::DCPTEntry::getCandidates(
 
 void
 DeltaCorrelatingPredictionTables::calculatePrefetch(
-    const BasePrefetcher::PrefetchInfo &pfi,
+    const PrefetchInfo &pfi,
     std::vector<QueuedPrefetcher::AddrPriority> &addresses)
 {
     if (!pfi.hasPC()) {

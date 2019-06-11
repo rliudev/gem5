@@ -44,6 +44,7 @@
 #include "base/trace.hh"
 #include "debug/HWPrefetch.hh"
 #include "mem/request.hh"
+#include "mem/cache/prefetch/prefetch_info.hh"
 #include "params/QueuedPrefetcher.hh"
 
 #include "mem/cache/prefetch/queued.hh"
@@ -67,8 +68,11 @@ QueuedPrefetcher::~QueuedPrefetcher()
 void
 QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
-  std::vector<AddrPriority> addresses;
+  if (hasBeenPrefetched(pkt->getAddr(), pkt->isSecure())) {
+    usefulPrefetches += 1;
+  }
 
+  std::vector<AddrPriority> addresses;
 
   if (pfi.isCacheMiss()) {
     Addr blk_addr = blockAddress(pfi.getAddr());
@@ -91,8 +95,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
     if (perceptronUnit) {
-      perceptronUnit->shouldPrefetch(addresses);
-      perceptronUnit->updateExpiredPfs();
+      perceptronUnit->shouldPrefetch(pfi, addresses);
     }
 
     // Queue up generated prefetches
@@ -136,8 +139,8 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     addrs.push_back(adr);
   }
   if (perceptronUnit) {
-    perceptronUnit->queuePfAddrs(addrs);
-    perceptronUnit->hasTimedOutEntry();
+    perceptronUnit->queuePfAddrs(&pfi, addrs);
+    perceptronUnit->updateExpiredPfs();
   }
 
 }

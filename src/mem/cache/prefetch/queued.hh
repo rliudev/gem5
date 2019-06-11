@@ -46,6 +46,7 @@
 
 #include "base/statistics.hh"
 #include "base/types.hh"
+#include "mem/cache/prefetch/prefetch_info.hh"
 #include "mem/cache/prefetch/base.hh"
 #include "mem/packet.hh"
 
@@ -127,6 +128,7 @@ class QueuedPrefetcher : public BasePrefetcher
     Stats::Scalar pfInCache;
     Stats::Scalar pfRemovedFull;
     Stats::Scalar pfSpanPage;
+
 
   public:
     using AddrPriority = std::pair<Addr, int32_t>;

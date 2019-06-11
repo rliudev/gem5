@@ -115,7 +115,7 @@ class DeltaCorrelatingPredictionTables : public SimObject
      * @param pfi The prefetch event information
      * @param addresses prefetch candidates generated
      */
-    void calculatePrefetch(const BasePrefetcher::PrefetchInfo &pfi,
+    void calculatePrefetch(const PrefetchInfo &pfi,
         std::vector<QueuedPrefetcher::AddrPriority> &addresses);
 
 };

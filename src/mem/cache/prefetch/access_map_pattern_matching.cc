@@ -152,7 +152,7 @@ AccessMapPatternMatching::setEntryState(AccessMapEntry &entry,
 
 void
 AccessMapPatternMatching::calculatePrefetch(
-    const BasePrefetcher::PrefetchInfo &pfi,
+    const PrefetchInfo &pfi,
     std::vector<QueuedPrefetcher::AddrPriority> &addresses)
 {
     assert(addresses.empty());

@@ -21,6 +21,7 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
       perceptron_size(p->perceptron_size), pf_timeout(p->pf_timeout),
       reject_all(p->reject_all), accept_all(p->accept_all)
 {
+  perceptron_size = perceptron_sizes[curMode];
   min_confidence = perceptron_size*2+14;
 
   // in order to use lower bits as look up values we need to make sure the resulting
@@ -30,29 +31,39 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
     fatal("Invalid perceptron list size!\n");
   }
 
-  // initialize our perceptron list
-  for(int i = 0; i < perceptron_list_size; i++)
-  {
-    perceptron_list.push_back(new Perceptron(perceptron_size));
-  }
+  printf("PerceptronUnit is in mode: %s\n", getModeStr().c_str());
 
-  // initialize our global history list
-  // the bias node (w_0) will need a weight of 1 so we instert that first
-  global_history.push_back(1);
-  for(int i = 1; i < perceptron_size; i++)
-  {
+
+  if (curMode == PAST_PREDICTIONS) {
+    // initialize our perceptron list
+    for(int i = 0; i < perceptron_list_size; i++)
+    {
+      perceptron_list.push_back(new Perceptron(perceptron_size));
+    }
+    // initialize our global history list
+    // the bias node (w_0) will need a weight of 1 so we instert that first
     global_history.push_back(1);
+    for(int i = 1; i < perceptron_size; i++)
+    {
+      global_history.push_back(1);
+    }
+    // initialize prediction history list
+    for(int i = 0; i < perceptron_list_size; i++)
+    {
+      prediction_history.push_back(-1);
+    }
   }
 
-  // initialize prediction history list
-  for(int i = 0; i < perceptron_list_size; i++)
-  {
-    prediction_history.push_back(-1);
+
+  else if (curMode == PC_DELTA_ADDR) {
+    perceptron = new Perceptron(perceptron_size);
+    last_pc = 0;
   }
+
 
 }
 
-void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
+void PerceptronUnit::shouldPrefetch(const PrefetchInfo &pfi, std::vector<AddrPriority> &addresses)
 {
   if (reject_all) {
     addresses.clear();
@@ -64,7 +75,7 @@ void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
 
   auto it = addresses.begin();
   while (it != addresses.end()) {
-    bool shouldUse = lookup(it->first);
+    bool shouldUse = lookup(pfi, it->first);
     if (!shouldUse) {
       it = addresses.erase(it);
     }
@@ -73,30 +84,37 @@ void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
     }
   }
 
+
 }
 
 
 void PerceptronUnit::updateExpiredPfs() {
   while (hasTimedOutEntry()) {
-    std::vector<Addr> timed_out_list = pf_timer_queue.back();
+    std::pair<const PrefetchInfo*, std::vector<Addr>> p = pf_timer_queue.back();
+    const PrefetchInfo *pfi = p.first;
+    std::vector<Addr> timed_out_list = p.second;
     pf_timer_queue.pop_back();
     for (auto exp_addr : timed_out_list) {
-      update(exp_addr, false);
+      update(pfi, exp_addr, false);
     }
   }
 }
 
 
-void PerceptronUnit::queuePfAddrs(const std::vector<Addr> addrs) {
-  pf_timer_queue.insert(pf_timer_queue.begin(), addrs);
+void PerceptronUnit::queuePfAddrs(const PrefetchInfo *pfi, const std::vector<Addr> addrs) {
+  pf_timer_queue.insert(
+    pf_timer_queue.begin(),
+    std::pair<const PrefetchInfo*, std::vector<Addr>>(pfi, addrs)
+  );
 }
 
 
 void PerceptronUnit::invalidatePfAddrs(Addr hitAddr) {
   for (auto it = pf_timer_queue.begin(); it != pf_timer_queue.end(); it++) {
-    for (auto it2 = it->begin(); it2 != it->end(); ) {
+    std::vector<Addr> pf_addrs = it->second;
+    for (auto it2 = pf_addrs.begin(); it2 != pf_addrs.end(); ) {
       if ( *it2 == hitAddr) {
-        it2 = it->erase(it2);
+        it2 = pf_addrs.erase(it2);
       } else {
         it2++;
       }
@@ -115,7 +133,7 @@ void PerceptronUnit::reset()
 }
 
 
-bool PerceptronUnit::lookup(Addr pf_addr)
+bool PerceptronUnit::lookup(const PrefetchInfo &pfi, Addr pf_addr)
 {
   // Original:
 //  // find the index of the perceptron
@@ -137,26 +155,45 @@ bool PerceptronUnit::lookup(Addr pf_addr)
 //  return perceptron_output >= 0;
 
 
-  // find the index of the perceptron
-  //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
-//  printf("perceptron_list_size: %d\n", perceptron_list_size);
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-//  printf("perceptron_index on lookup: %d\n", perceptron_index);
-  // grap the perceptron we need to calculate prediction
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
-  // generate elements needed for history struct
-  int perceptron_output = new_perceptron->predict(global_history);
-  // store into prediction_history
-  prediction_history[perceptron_index] = perceptron_output;
-  // update our global history instance variable
-  global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
-  global_history.pop_back();
+  if (curMode == PAST_PREDICTIONS) {
+    int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+    Perceptron* perceptron = perceptron_list[perceptron_index];
+    int perceptron_output = perceptron->predict(global_history);
 
-  return perceptron_output >= 0;
+    // update our global history instance variable
+    global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
+    global_history.pop_back();
+
+    // store into prediction_history
+    prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, &global_history);
+
+    return perceptron_output >= 0;
+  }
+
+
+  else if (curMode == PC_DELTA_ADDR) {
+    Addr delta = pfi.getPC() - pf_addr;
+    std::vector<int> *x = new std::vector<int>();
+    x->push_back(1);           // bias
+    x->push_back(pfi.getAddr() - last_pc); // feature 1:  pc
+    x->push_back(delta);       // feature 2:  delta-addr
+    int perceptron_output = perceptron->predict(*x);
+
+    last_pc = pfi.getPC();
+//    if (prev_pfh.find(&pfi) == prev_pfh.end()) {
+//      panic("This shouldn't happen. PFI's are supposed to be unique.\n");
+//    }
+    prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, x);
+
+    return perceptron_output >= 0;
+  }
+
+
+  return 0;
 }
 
 
-void PerceptronUnit::update(Addr pf_addr, bool used)
+void PerceptronUnit::update(const PrefetchInfo *pfi, Addr pf_addr, bool used)
 {
   // Original:
   // we can only proceed if we have a history object
@@ -184,26 +221,23 @@ void PerceptronUnit::update(Addr pf_addr, bool used)
 //    delete history;
 //  }
 
+  if (curMode == PAST_PREDICTIONS) {
+    const PFHistory *pfh = prev_pfh[pfi];
+    int actual_pf_act = used? 1 : -1;
+    // find the index of the perceptron
+    int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+    // grab the perceptron we need to train
+    Perceptron* new_perceptron = perceptron_list[perceptron_index];
+    // train perceptron
+    new_perceptron->train(min_confidence, *(pfh->xn), pfh->p_out, actual_pf_act);
+  }
 
-  int actual_pf_act = used? 1 : -1;
-  // find the index of the perceptron
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-  // grab the perceptron we need to train
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
-  // train perceptron
-  new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
-}
+  else if (curMode == PC_DELTA_ADDR) {
+    // Update them all
+    const PFHistory *pfh = prev_pfh[pfi];
+    perceptron->train(min_confidence, *(pfh->xn), pfh->p_out, used? 1 : -1);
+  }
 
-
-void PerceptronUnit::squash(ThreadID tid, void *pf_history)
-{
-  // in order to get he deconstructors to run, we need to cast our history
-  // before removing it
-  PFHistory *history = static_cast<PFHistory*>(pf_history);
-  // recover global history
-  global_history = history->global_history;
-  // delete element
-  delete history;
 }
 
 

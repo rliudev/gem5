@@ -181,7 +181,7 @@ class AccessMapPatternMatching : public ClockedObject
     ~AccessMapPatternMatching()
     {}
     void startup() override;
-    void calculatePrefetch(const BasePrefetcher::PrefetchInfo &pfi,
+    void calculatePrefetch(const PrefetchInfo &pfi,
         std::vector<QueuedPrefetcher::AddrPriority> &addresses);
 };
 
