@@ -165,7 +165,7 @@ bool PerceptronUnit::lookup(const PrefetchInfo &pfi, Addr pf_addr)
     global_history.pop_back();
 
     // store into prediction_history
-    prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, global_history);
+    prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, &global_history);
 
     return perceptron_output >= 0;
   }
