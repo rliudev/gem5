@@ -156,18 +156,16 @@ bool PerceptronUnit::lookup(const PrefetchInfo &pfi, Addr pf_addr)
 
 
   if (curMode == PAST_PREDICTIONS) {
-    // find the index of the perceptron
-    //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
     int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-    // grap the perceptron we need to calculate prediction
-    Perceptron* new_perceptron = perceptron_list[perceptron_index];
-    // generate elements needed for history struct
-    int perceptron_output = new_perceptron->predict(global_history);
-    // store into prediction_history
-    prediction_history[perceptron_index] = perceptron_output;
+    Perceptron* perceptron = perceptron_list[perceptron_index];
+    int perceptron_output = perceptron->predict(global_history);
+
     // update our global history instance variable
     global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
     global_history.pop_back();
+
+    // store into prediction_history
+    prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, global_history);
 
     return perceptron_output >= 0;
   }
@@ -224,13 +222,14 @@ void PerceptronUnit::update(const PrefetchInfo *pfi, Addr pf_addr, bool used)
 //  }
 
   if (curMode == PAST_PREDICTIONS) {
+    const PFHistory *pfh = prev_pfh[pfi];
     int actual_pf_act = used? 1 : -1;
     // find the index of the perceptron
     int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
     // grab the perceptron we need to train
     Perceptron* new_perceptron = perceptron_list[perceptron_index];
     // train perceptron
-    new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
+    new_perceptron->train(min_confidence, *(pfh->xn), pfh->p_out, actual_pf_act);
   }
 
   else if (curMode == PC_DELTA_ADDR) {
