@@ -21,6 +21,7 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
       perceptron_size(p->perceptron_size), pf_timeout(p->pf_timeout),
       reject_all(p->reject_all), accept_all(p->accept_all)
 {
+  perceptron_size = perceptron_sizes[curMode];
   min_confidence = perceptron_size*2+14;
 
   // in order to use lower bits as look up values we need to make sure the resulting
@@ -37,7 +38,7 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
     // initialize our perceptron list
     for(int i = 0; i < perceptron_list_size; i++)
     {
-      perceptron_list.push_back(new Perceptron(perceptron_sizes[PAST_PREDICTIONS]));
+      perceptron_list.push_back(new Perceptron(perceptron_size));
     }
     // initialize our global history list
     // the bias node (w_0) will need a weight of 1 so we instert that first
@@ -55,7 +56,7 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
 
 
   else if (curMode == PC_DELTA_ADDR) {
-    perceptron = new Perceptron(perceptron_sizes[PC_DELTA_ADDR]);
+    perceptron = new Perceptron(perceptron_size);
     last_pc = 0;
   }
 
