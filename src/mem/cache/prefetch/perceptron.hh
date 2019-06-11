@@ -73,6 +73,7 @@ public:
       {
         // update each weight
         weights[i] = weights[i] + actual_result * xn[i];
+        printf("new weight for %d is: %d\n", i, weights[i]);
         // prevent single weight sizes from becoming larger than the confidence
         if (abs(weights[i]) > min_confidence)
         {

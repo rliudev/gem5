@@ -192,7 +192,7 @@ create	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DCPTPrefe
 create	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTablesParams::create()$/;"	f	class:DeltaCorrelatingPredictionTablesParams
 create	src/mem/cache/prefetch/perceptron_pf.cc	/^PerceptronPrefetcherParams::create()$/;"	f	class:PerceptronPrefetcherParams
 create	src/mem/cache/prefetch/perceptron_unit.cc	/^PerceptronUnit *PerceptronUnitParams::create()$/;"	f	class:PerceptronUnitParams
-curMode	src/mem/cache/prefetch/perceptron_unit.hh	/^    FeatureSet curMode = PAST_PREDICTIONS;$/;"	m	class:PerceptronUnit
+curMode	src/mem/cache/prefetch/perceptron_unit.hh	/^    FeatureSet curMode = PC_DELTA_ADDR;$/;"	m	class:PerceptronUnit
 cxx_class	src/mem/cache/prefetch/Perceptron.py	/^    cxx_class = "PerceptronUnit"$/;"	v	class:PerceptronUnit
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "BOPPrefetcher"$/;"	v	class:BOPPrefetcher
 cxx_class	src/mem/cache/prefetch/Prefetcher.py	/^    cxx_class = "IrregularStreamBufferPrefetcher"$/;"	v	class:IrregularStreamBufferPrefetcher

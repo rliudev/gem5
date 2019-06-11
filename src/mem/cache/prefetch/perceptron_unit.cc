@@ -175,14 +175,14 @@ bool PerceptronUnit::lookup(const PrefetchInfo &pfi, Addr pf_addr)
     Addr delta = pfi.getPC() - pf_addr;
     std::vector<int> *x = new std::vector<int>();
     x->push_back(1);           // bias
-    x->push_back(pfi.getPC()); // feature 1:  pc
+    x->push_back(pfi.getAddr() - last_pc); // feature 1:  pc
     x->push_back(delta);       // feature 2:  delta-addr
     int perceptron_output = perceptron->predict(*x);
 
     last_pc = pfi.getPC();
-    if (prev_pfh.find(&pfi) == prev_pfh.end()) {
-      panic("This shouldn't happen. PFI's are supposed to be unique.\n");
-    }
+//    if (prev_pfh.find(&pfi) == prev_pfh.end()) {
+//      panic("This shouldn't happen. PFI's are supposed to be unique.\n");
+//    }
     prev_pfh[&pfi] = new PFHistory(pf_addr, perceptron_output, x);
 
     return perceptron_output >= 0;
