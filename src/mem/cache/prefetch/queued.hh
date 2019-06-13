@@ -148,6 +148,11 @@ class QueuedPrefetcher : public BasePrefetcher
     }
 
     void regStats() override;
+
+    void shouldPrefetch(const PrefetchInfo &pfi,
+                                   std::vector<AddrPriority> &addresses,
+                                   bool &added_to_accept_table,
+                                   bool &added_to_deny_table);
 };
 
 #endif //__MEM_CACHE_PREFETCH_QUEUED_HH__

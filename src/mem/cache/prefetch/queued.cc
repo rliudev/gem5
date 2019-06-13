@@ -67,8 +67,10 @@ QueuedPrefetcher::~QueuedPrefetcher()
 void
 QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
-  std::vector<AddrPriority> addresses;
 
+  bool added_to_accept_table = false;
+  bool added_to_deny_table = false;
+  std::vector<AddrPriority> addresses;
 
   if (pfi.isCacheMiss()) {
     Addr blk_addr = blockAddress(pfi.getAddr());
@@ -90,8 +92,9 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 
     // Calculate prefetches given this access
     calculatePrefetch(pfi, addresses);
+
     if (perceptronUnit) {
-      perceptronUnit->shouldPrefetch(addresses);
+      shouldPrefetch(pfi, addresses, added_to_accept_table, added_to_deny_table);
       perceptronUnit->updateExpiredPfs();
     }
 
@@ -122,23 +125,88 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   // On a cache hit, we need to remove the hit-address from our pf_timer_queue,
   //   if it is in the pf_timer_queue, because we were correct about this prefetch.
   //   (Correct preditions don't require perceptron updating).
-  if (! pfi.isCacheMiss()) {
-    Addr cacheHitAddr = pfi.getAddr();
-    perceptronUnit->invalidatePfAddrs(cacheHitAddr);
-  }
+
+    // if (pfi.isCacheMiss()) {
+
+    // }
+
+    if (pfi.isCacheMiss()) {
+        // TODO check in deny table, possibly update weights
+        for (auto it = perceptronUnit->deny_table.begin(); it != perceptronUnit->deny_table.end(); it++) {
+            // if (std::get<0>(*it) == blockAddress(pfi.getAddr())) {
+            //     // TODO update
+            //     // Just update with one sample
+            //     perceptronUnit->update(std::get<1>(*it)[0], true);
+            //     std::get<0>(*it) = -1;
+            // }
+            auto itr = it->begin();
+            while (itr != it->end()) {
+                if (blockAddress(std::get<0>(*itr)) == blockAddress(pfi.getAddr())) {
+                    perceptronUnit->update(std::get<1>(*itr), true);
+                    itr = it->erase(itr);
+                } else {
+                    ++itr;
+                }
+            }
+        }
+        perceptronUnit->deny_table.erase(perceptronUnit->deny_table.begin());
+        if(!added_to_deny_table) {
+            perceptronUnit->deny_table.push_back(std::vector<std::tuple<Addr, std::vector<double>>>());
+        }
+    }
+
+    if (!pfi.isCacheMiss()) {
+        for (auto it = perceptronUnit->accept_table.begin(); it != perceptronUnit->accept_table.end(); it++) {
+            auto itr = it->begin();
+            while (itr != it->end()) {
+                if (std::get<0>(*itr) == blockAddress(pfi.getAddr())) {
+                    itr = it->erase(itr);
+                } else {
+                    ++itr;
+                }
+            }
+        }
+    }
+
+    /////
+    std::vector<std::tuple<Addr, std::vector<double>>> accept_time_out = perceptronUnit->accept_table[0];
+    perceptronUnit->accept_table.erase(perceptronUnit->accept_table.begin());
+    // printf("pop\n");
+
+    if (!accept_time_out.empty()) {
+        // not a bubble
+        // TODO: iterate through and find address
+        perceptronUnit->update(std::get<1>(accept_time_out[0]), false);
+    }
+    // TODO possibly update weights
+    if(!added_to_accept_table) {
+        // add a bubble
+        perceptronUnit->accept_table.push_back(std::vector<std::tuple<Addr, std::vector<double>>>());
+        // printf("push\n");
+    }
+
+    // printf("ACCEPT SIZE: %lu\n", perceptronUnit->accept_table.size());
+    // printf("DENY SIZE: %lu\n", perceptronUnit->deny_table.size());
+  
+//   if (! pfi.isCacheMiss()) {
+//     Addr cacheHitAddr = pfi.getAddr();
+//     perceptronUnit->invalidatePfAddrs(cacheHitAddr);
+//   }
 
   // On every call to prefetcher.notify (no matter if the cache was a
   //    hit or a miss), insert one into the timer queue so the timer
   //    queue keeps 'time' properly.
-  std::vector<Addr> addrs ;  // convert AddrPrio std::pair to Addr
-  for (auto addrprio : addresses) {
-    Addr adr = addrprio.first;
-    addrs.push_back(adr);
-  }
-  if (perceptronUnit) {
-    perceptronUnit->queuePfAddrs(addrs);
-    perceptronUnit->hasTimedOutEntry();
-  }
+
+
+//   std::vector<Addr> addrs ;  // convert AddrPrio std::pair to Addr
+//   for (auto addrprio : addresses) {
+//     Addr adr = addrprio.first;
+//     addrs.push_back(adr);
+//   }
+//   if (perceptronUnit) {
+//     perceptronUnit->queuePfAddrs(addrs);
+//     perceptronUnit->hasTimedOutEntry();
+//   }
 
 }
 
@@ -206,6 +274,70 @@ QueuedPrefetcher::regStats()
     pfSpanPage
         .name(name() + ".pfSpanPage")
         .desc("number of prefetches not generated due to page crossing");
+}
+
+void QueuedPrefetcher::shouldPrefetch(const PrefetchInfo &pfi,
+                                   std::vector<AddrPriority> &addresses,
+                                   bool &added_to_accept_table,
+                                   bool &added_to_deny_table) {
+    if (perceptronUnit->reject_all) {
+        addresses.clear();
+        return;
+    }
+    else if (perceptronUnit->accept_all) {
+        return;
+    }
+
+    std::vector<std::tuple<Addr, std::vector<double>>> accept_features;
+    std::vector<std::tuple<Addr, std::vector<double>>> deny_features;
+
+
+    auto it = addresses.begin();
+    while (it != addresses.end()) {
+        std::vector<double> features;
+        features.push_back(abs(pfi.getPC() - it->first)/277284307.1);
+        // if (perceptronUnit->last_pc == 0) {
+        //     features.push_back(0);
+        // } else {
+        //     features.push_back(abs(pfi.getAddr() - perceptronUnit->last_pc)/3406560.1);
+        // }
+        
+        // bias
+        features.push_back(1);
+        bool shouldUse = perceptronUnit->lookup(features);
+        if (!shouldUse) {
+            printf("deny\n");
+            added_to_deny_table = true;
+            it = addresses.erase(it);
+            deny_features.push_back(std::tuple<Addr, std::vector<double>>(it->first, features));
+        }
+        else {
+            added_to_accept_table = true;
+            accept_features.push_back(std::tuple<Addr, std::vector<double>>(it->first, features));
+            printf("accept\n");
+            ++it;
+        }
+    }
+    perceptronUnit->last_pc = pfi.getAddr();
+    if (added_to_accept_table) {
+        perceptronUnit->accept_table.push_back(accept_features);
+        // printf("push\n");
+    }
+    if (added_to_deny_table) {
+        perceptronUnit->deny_table.push_back(deny_features);
+    }
+    
+
+    // auto it = addresses.begin();
+    // while (it != addresses.end()) {
+    //     bool shouldUse = perceptronUnit->lookup(it->first);
+    //     if (!shouldUse) {
+    //         it = addresses.erase(it);
+    //     }
+    //     else {
+    //         ++it;
+    //     }
+    // }
 }
 
 void

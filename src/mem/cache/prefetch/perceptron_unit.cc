@@ -19,9 +19,13 @@ const int INST_SHIFT_AMT = 2; // Previously: param to BranchPredictor.py
 PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
     : ClockedObject(p), perceptron_list_size(p->exponential_size),
       perceptron_size(p->perceptron_size), pf_timeout(p->pf_timeout),
-      reject_all(p->reject_all), accept_all(p->accept_all)
+      reject_all(p->reject_all), accept_all(p->accept_all),
+      accept_table(accept_table_size, std::vector<std::tuple<Addr, std::vector<double>>>()),
+      deny_table(deny_table_size, std::vector<std::tuple<Addr, std::vector<double>>>())
 {
-  min_confidence = perceptron_size*2+14;
+  // deny_table(deny_table_size, std::tuple<Addr, std::vector<std::vector<int>>>(-1,std::vector<std::vector<int>>(1, std::vector<int>(1))))
+  // min_confidence = perceptron_size*2+14;
+  min_confidence = 0;
 
   // in order to use lower bits as look up values we need to make sure the resulting
   // value is a power of 2
@@ -31,18 +35,21 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
   }
 
   // initialize our perceptron list
-  for(int i = 0; i < perceptron_list_size; i++)
-  {
-    perceptron_list.push_back(new Perceptron(perceptron_size));
-  }
+  // TODO: just one perceptron 
+  perceptron_list.push_back(new Perceptron(perceptron_size));
+  // for(int i = 0; i < perceptron_list_size; i++)
+  // {
+  //   perceptron_list.push_back(new Perceptron(perceptron_size));
+  // }
 
   // initialize our global history list
   // the bias node (w_0) will need a weight of 1 so we instert that first
-  global_history.push_back(1);
-  for(int i = 1; i < perceptron_size; i++)
-  {
-    global_history.push_back(1);
-  }
+  // TODO
+  // global_history.push_back(1);
+  // for(int i = 1; i < perceptron_size; i++)
+  // {
+  //   global_history.push_back(1);
+  // }
 
   // initialize prediction history list
   for(int i = 0; i < perceptron_list_size; i++)
@@ -54,36 +61,37 @@ PerceptronUnit::PerceptronUnit(const PerceptronUnitParams *p)
 
 void PerceptronUnit::shouldPrefetch(std::vector<AddrPriority> &addresses)
 {
-  if (reject_all) {
-    addresses.clear();
-    return;
-  }
-  else if (accept_all) {
-    return;
-  }
+  // if (reject_all) {
+  //   addresses.clear();
+  //   return;
+  // }
+  // else if (accept_all) {
+  //   return;
+  // }
 
-  auto it = addresses.begin();
-  while (it != addresses.end()) {
-    bool shouldUse = lookup(it->first);
-    if (!shouldUse) {
-      it = addresses.erase(it);
-    }
-    else {
-      ++it;
-    }
-  }
+  // auto it = addresses.begin();
+  // while (it != addresses.end()) {
+  //   bool shouldUse = lookup(it->first);
+  //   if (!shouldUse) {
+  //     it = addresses.erase(it);
+  //   }
+  //   else {
+  //     ++it;
+  //   }
+  // }
 
 }
 
 
 void PerceptronUnit::updateExpiredPfs() {
-  while (hasTimedOutEntry()) {
-    std::vector<Addr> timed_out_list = pf_timer_queue.back();
-    pf_timer_queue.pop_back();
-    for (auto exp_addr : timed_out_list) {
-      update(exp_addr, false);
-    }
-  }
+  // while (hasTimedOutEntry()) {
+  //   std::vector<Addr> timed_out_list = pf_timer_queue.back();
+  //   // TODO: remove all timed out shit  
+  //   pf_timer_queue.pop_back();
+  //   for (auto exp_addr : timed_out_list) {
+  //     update(exp_addr, false);
+  //   }
+  // }
 }
 
 
@@ -115,7 +123,7 @@ void PerceptronUnit::reset()
 }
 
 
-bool PerceptronUnit::lookup(Addr pf_addr)
+bool PerceptronUnit::lookup(std::vector<double> features)
 {
   // Original:
 //  // find the index of the perceptron
@@ -140,23 +148,26 @@ bool PerceptronUnit::lookup(Addr pf_addr)
   // find the index of the perceptron
   //    orig: 2 was the instShiftAmount as required by BranchPredictor.py
 //  printf("perceptron_list_size: %d\n", perceptron_list_size);
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
-//  printf("perceptron_index on lookup: %d\n", perceptron_index);
-  // grap the perceptron we need to calculate prediction
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
-  // generate elements needed for history struct
-  int perceptron_output = new_perceptron->predict(global_history);
-  // store into prediction_history
-  prediction_history[perceptron_index] = perceptron_output;
-  // update our global history instance variable
-  global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
-  global_history.pop_back();
+//   int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+// //  printf("perceptron_index on lookup: %d\n", perceptron_index);
+//   // grap the perceptron we need to calculate prediction
+//   Perceptron* new_perceptron = perceptron_list[perceptron_index];
+//   // generate elements needed for history struct
+//   int perceptron_output = new_perceptron->predict(global_history);
+//   // store into prediction_history
+//   prediction_history[perceptron_index] = perceptron_output;
+//   // update our global history instance variable
+//   global_history.insert(global_history.begin() + 1, ((perceptron_output >= 0)? 1 : -1));
+//   global_history.pop_back();
+
+  Perceptron* new_perceptron = perceptron_list[0];
+  int perceptron_output = new_perceptron->predict(features);
 
   return perceptron_output >= 0;
 }
 
 
-void PerceptronUnit::update(Addr pf_addr, bool used)
+void PerceptronUnit::update(std::vector<double> features, bool used)
 {
   // Original:
   // we can only proceed if we have a history object
@@ -185,13 +196,20 @@ void PerceptronUnit::update(Addr pf_addr, bool used)
 //  }
 
 
-  int actual_pf_act = used? 1 : -1;
+  // int actual_pf_act = used? 1 : -1;
   // find the index of the perceptron
-  int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
+  // int perceptron_index = (pf_addr >> INST_SHIFT_AMT) & (perceptron_list_size - 1);
   // grab the perceptron we need to train
-  Perceptron* new_perceptron = perceptron_list[perceptron_index];
+  Perceptron* new_perceptron = perceptron_list[0];
   // train perceptron
-  new_perceptron->train(min_confidence, global_history, prediction_history[perceptron_index], actual_pf_act);
+  //TODO: is this a bug
+  if (used) {
+    new_perceptron->train(min_confidence, features, -1, 1);
+    printf("used!\n");
+  } else {
+    new_perceptron->train(min_confidence, features, 1, -1);
+    printf("not used!\n");
+  }
 }
 
 

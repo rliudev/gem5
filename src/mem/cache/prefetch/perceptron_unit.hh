@@ -25,6 +25,7 @@ class PerceptronUnit : public ClockedObject
   protected:
 
   private:
+  public:
     // contains pointers all of the perceptrons that will be use for predictions
     std::vector<Perceptron*> perceptron_list;
     // contains the global history results
@@ -43,6 +44,14 @@ class PerceptronUnit : public ClockedObject
     bool reject_all;
     // accept all offered prefetch addresses?
     bool accept_all;
+    const int accept_table_size = 256;
+    const int deny_table_size = 32;
+    Addr last_pc = 0;  
+
+    std::vector<std::vector<std::tuple<Addr, std::vector<double>>>> accept_table;
+    std::vector<std::vector<std::tuple<Addr, std::vector<double>>>> deny_table;
+    // std::vector<std::tuple<Addr, std::vector<std::vector<int>>>> deny_table;
+    std::vector<std::tuple<Addr, std::vector<std::vector<int>>>> test_vec;
 
     // Queue whose max length indicates the last element (ie
     //   element that spent the longest time in queue) has
@@ -58,7 +67,8 @@ class PerceptronUnit : public ClockedObject
       std::vector<int> global_history;
     };
 
-  public:
+  
+  
     using AddrPriority = std::pair<Addr, int32_t>;  // Copied over from queued.hh
 
     /*
@@ -109,14 +119,14 @@ class PerceptronUnit : public ClockedObject
      * @param pf_history pointer to the bp history
      * @return Whether or not the prefetch is takend
      */
-    bool lookup(Addr prefetch_addr);
+    bool lookup(std::vector<double> features);
 
     /**
      * Updates the prefetch predictor with the actual result of a prefetch
      * @param prefetch_addr The address of the prefetch to update
      * @param used Whether or not the prefetch was used
      */
-    void update(Addr prefetch_addr, bool used);
+    void update(std::vector<double> features, bool used);
 
     /*
      * Squashes a path that was mispredicted

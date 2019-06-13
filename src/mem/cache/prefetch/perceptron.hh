@@ -18,7 +18,7 @@ class Perceptron
 {
 private:
   int size; // the size of weights vector
-  std::vector<int> weights; // the weights of the perceptron
+  std::vector<double> weights; // the weights of the perceptron
 public:
   /**
    * Perceptron constructor
@@ -26,9 +26,9 @@ public:
    */
   Perceptron(int size)
   {
-    // initialize weights vector to 0s
+    // initialize weights vector to 0.1s (we want the filter to accept at first)
     weights.resize(size, 0);
-    for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
+    for (std::vector<double>::iterator it = weights.begin(); it != weights.end() ;++it)
       {
         *it = 0;
       }
@@ -39,7 +39,7 @@ public:
    * @param global_history vector of the branch history. taken = 1, not taken = -1
    * @return branch is predicted to be taken if output >= 0. Not taken if output < 0
    */
-  int predict(std::vector<int> global_history)
+  int predict(std::vector<double> global_history)
   {
     int prediction = 0;
     // this is the perceptron calculation y = w_0 + SUM[x_i*w_i]
@@ -59,7 +59,7 @@ public:
    * @param prev_branch_pred previous perceptron output. taken >= 0, not taken < 0
    * @param prev_branch_act actual result from last branch. taken = 1, not take = -1
    */
-  void train(int min_confidence, std::vector<int> global_history, int prev_branch_pred, int prev_branch_act)
+  void train(int min_confidence, std::vector<double> global_history, int prev_branch_pred, int prev_branch_act)
   {
     // if both elements have the same sign then the prediction was done correctly
     // equal signs being multiplied > 0, different result in a negative value
@@ -73,18 +73,19 @@ public:
       {
         // update each weight
         weights[i] = weights[i] + prev_branch_act * global_history[i];
+        printf("weight of %d is %f\n", i, weights[i]);
         // prevent single weight sizes from becoming larger than the confidence
-        if (abs(weights[i]) > min_confidence)
-        {
-          if (weights[i] < 0)
-          {
-            weights[i] = min_confidence * -1;
-          }
-          else
-          {
-            weights[i] = min_confidence;
-          }
-        }
+        // if (abs(weights[i]) > min_confidence)
+        // {
+        //   if (weights[i] < 0)
+        //   {
+        //     weights[i] = min_confidence * -1;
+        //   }
+        //   else
+        //   {
+        //     weights[i] = min_confidence;
+        //   }
+        // }
 
       }
     }
@@ -96,7 +97,7 @@ public:
   void reset()
   {
     // set the vector back to its original values of 0
-    for (std::vector<int>::iterator it = weights.begin(); it != weights.end() ;++it)
+    for (std::vector<double>::iterator it = weights.begin(); it != weights.end() ;++it)
     {
       *it = 0;
     }
