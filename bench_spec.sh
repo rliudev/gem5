@@ -34,7 +34,7 @@ run_bench() {
 
 
 run_gcc() {
-  run_bench "gcc" "cpugcc_r_base.$build" '--options="ref32.c -O3 -fselective-scheduling -fselective-scheduling2 -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s"'
+  run_bench "gcc" "cpugcc_r_base.$build" --options=\"ref32.c -O3 -fselective-scheduling -fselective-scheduling2 -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s\"
 }
 
 
