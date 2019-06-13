@@ -59,7 +59,7 @@ public:
    * @param prev_prediction     previous perceptron output. class1 >= 0, class2 < 0
    * @param actual_result       actual result for prev prediction. class1 = 1, class0 = -1
    */
-  void train(int min_confidence, std::vector<int> xn, int prev_prediction, int actual_result)
+  void train(int min_confidence, std::vector<int> *xn, int prev_prediction, int actual_result)
   {
     // if both elements have the same sign then the prediction was done correctly
     // equal signs being multiplied > 0, different result in a negative value
@@ -72,20 +72,21 @@ public:
       for (int i = 0; i < weights.size(); i++)
       {
         // update each weight
-        weights[i] = weights[i] + actual_result * xn[i];
-        printf("new weight for %d is: %d\n", i, weights[i]);
+        weights[i] = weights[i] + actual_result * (*xn)[i];
+        printf("xn[%d] = %d,  new weight for w[%d] = %d\n", i, (*xn)[i], i, weights[i]);
         // prevent single weight sizes from becoming larger than the confidence
-        if (abs(weights[i]) > min_confidence)
-        {
-          if (weights[i] < 0)
-          {
-            weights[i] = min_confidence * -1;
-          }
-          else
-          {
-            weights[i] = min_confidence;
-          }
-        }
+//        if (abs(weights[i]) > min_confidence)
+//        {
+//          if (weights[i] < 0)
+//          {
+//            weights[i] = min_confidence * -1;
+//          }
+//          else
+//          {
+//            weights[i] = min_confidence;
+//          }
+//          printf("in max: xn[%d] = %d,  new weight for w[%d] = %d\n", i, (*xn)[i], i, weights[i]);
+//        }
 
       }
     }

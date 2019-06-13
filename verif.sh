@@ -2,8 +2,8 @@
 
 # format:  m5out-$src-$pf-$cpu
 src=lfsr
-pf=stride
-#pf=tagged
+#pf=stride
+pf=tagged
 #pf=null
 cpu=derivO3
 #cpu=atomic
@@ -21,6 +21,13 @@ system.l2.prefetcher.pfInCache
 system.l2.prefetcher.pfRemovedFull
 system.l2.prefetcher.pfSpanPage
 system.l2.unused_prefetches
+##demand accesses
+system.l2.demand_misses::.cpu.inst
+system.l2.demand_misses::.cpu.data
+system.l2.demand_misses::total
+system.l2.demand_hits::.cpu.inst
+system.l2.demand_hits::.cpu.data
+system.l2.demand_hits::total
 ##number of overall (read+write) accesses
 system.l2.overall_accesses::.cpu.inst
 system.l2.overall_accesses::.cpu.data

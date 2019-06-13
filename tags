@@ -436,7 +436,7 @@ pfIssued	src/mem/cache/prefetch/base.hh	/^    Stats::Scalar pfIssued;$/;"	m	clas
 pfRemovedFull	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfRemovedFull;$/;"	m	class:QueuedPrefetcher
 pfSpanPage	src/mem/cache/prefetch/queued.hh	/^    Stats::Scalar pfSpanPage;$/;"	m	class:QueuedPrefetcher
 pf_addr	src/mem/cache/prefetch/perceptron_unit.hh	/^        Addr pf_addr;              \/\/ the pf_addr that generated this pfh$/;"	m	class:PerceptronUnit::PFHistory
-pf_timeout	src/mem/cache/prefetch/Perceptron.py	/^    pf_timeout = Param.Int(19,$/;"	v	class:PerceptronUnit
+pf_timeout	src/mem/cache/prefetch/Perceptron.py	/^    pf_timeout = Param.Int(512,$/;"	v	class:PerceptronUnit
 pf_timeout	src/mem/cache/prefetch/perceptron_unit.hh	/^    int pf_timeout;              \/\/ timeout for each prefetch address, in # of cache accesses$/;"	m	class:PerceptronUnit
 pf_timer_queue	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::vector<std::pair<const PrefetchInfo*, std::vector<Addr>>> pf_timer_queue;$/;"	m	class:PerceptronUnit
 pfq	src/mem/cache/prefetch/queued.hh	/^    std::list<DeferredPacket> pfq;$/;"	m	class:QueuedPrefetcher
@@ -492,6 +492,9 @@ round_max	src/mem/cache/prefetch/Prefetcher.py	/^    round_max = Param.Unsigned(
 rr_size	src/mem/cache/prefetch/Prefetcher.py	/^    rr_size = Param.Unsigned(64, "Number of entries of each RR bank")$/;"	v	class:BOPPrefetcher
 ruby_port	configs/example/se.py	/^        ruby_port = system.ruby._cpu_ports[i]$/;"	v
 run	bench1.sh	/^run () {$/;"	f
+run	bench_spec.sh	/^run() {$/;"	f
+run_bench	bench_spec.sh	/^run_bench() {$/;"	f
+run_gcc	bench_spec.sh	/^run_gcc() {$/;"	f
 sameAddr	src/mem/cache/prefetch/prefetch_info.hh	/^  bool sameAddr(PrefetchInfo const &pfi) const$/;"	f	class:PrefetchInfo
 samePage	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::samePage(Addr a, Addr b) const$/;"	f	class:BasePrefetcher
 sandbox_entries	src/mem/cache/prefetch/Prefetcher.py	/^    sandbox_entries = Param.Int(1024, "Size of the address buffer")$/;"	v	class:SBOOEPrefetcher
@@ -558,7 +561,7 @@ tag_bits	src/mem/cache/prefetch/Prefetcher.py	/^    tag_bits = Param.Unsigned(12
 tag_prefetch	src/mem/cache/prefetch/Prefetcher.py	/^    tag_prefetch = Param.Bool(True, "Tag prefetch with PC of generating access")$/;"	v	class:QueuedPrefetcher
 thresh_conf	src/mem/cache/prefetch/Prefetcher.py	/^    thresh_conf = Param.Int(4, "Threshold confidence level")$/;"	v	class:StridePrefetcher
 tick	src/mem/cache/prefetch/queued.hh	/^        Tick tick;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
-train	src/mem/cache/prefetch/perceptron.hh	/^  void train(int min_confidence, std::vector<int> xn, int prev_prediction, int actual_result)$/;"	f	class:Perceptron
+train	src/mem/cache/prefetch/perceptron.hh	/^  void train(int min_confidence, std::vector<int> *xn, int prev_prediction, int actual_result)$/;"	f	class:Perceptron
 training_unit_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    training_unit_assoc = Param.Unsigned(128,$/;"	v	class:IrregularStreamBufferPrefetcher
 training_unit_entries	src/mem/cache/prefetch/Prefetcher.py	/^    training_unit_entries = Param.MemorySize("128",$/;"	v	class:IrregularStreamBufferPrefetcher
 training_unit_indexing_policy	src/mem/cache/prefetch/Prefetcher.py	/^    training_unit_indexing_policy = Param.BaseIndexingPolicy($/;"	v	class:IrregularStreamBufferPrefetcher

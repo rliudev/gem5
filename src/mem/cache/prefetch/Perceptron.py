@@ -43,6 +43,6 @@ class PerceptronUnit(ClockedObject):
     accept_all = Param.Bool(False, "Accept all prefetch addresses.")
     exponential_size = Param.Int(32, "Table size for Perceptrons")
     perceptron_size = Param.Int(20, "Feature dimensions (size of each erceptron)")
-    pf_timeout = Param.Int(19,
+    pf_timeout = Param.Int(512,
         "Number of cache accesses (hits or misses) before a prefetch is considered a timeout.")
 

@@ -16,7 +16,12 @@ run-l2-stride () {
 run-l2-tagged () {
   pf=TaggedPrefetcher
   $cmd $arg --l2-hwp-type=$pf --mlu_pf_type=perceptron
+}
 
+# use TaggeddPrefetcher for l2
+run-l2-tagged () {
+  pf=TaggedPrefetcher
+  $cmd $arg --l2-hwp-type=$pf --mlu_pf_type=perceptron
 }
 
 # use no prefetcher (nullpf which is the defaulted pf)
@@ -26,7 +31,7 @@ run-no-pf () {
 
 
 #run-no-pf
-#run-l2-tagged
-run-l2-stride
+run-l2-tagged
+#run-l2-stride
 
 

@@ -174,9 +174,9 @@ bool PerceptronUnit::lookup(const PrefetchInfo &pfi, Addr pf_addr)
   else if (curMode == PC_DELTA_ADDR) {
     Addr delta = pfi.getPC() - pf_addr;
     std::vector<int> *x = new std::vector<int>();
-    x->push_back(1);           // bias
-    x->push_back(pfi.getAddr() - last_pc); // feature 1:  pc
-    x->push_back(delta);       // feature 2:  delta-addr
+    x->push_back(1);                                  // bias
+    x->push_back( (pfi.getAddr() - last_pc) & 1023 ); // feature 1:  pc
+    x->push_back( delta >> 54 );                      // feature 2:  delta-addr
     int perceptron_output = perceptron->predict(*x);
 
     last_pc = pfi.getPC();
@@ -229,13 +229,13 @@ void PerceptronUnit::update(const PrefetchInfo *pfi, Addr pf_addr, bool used)
     // grab the perceptron we need to train
     Perceptron* new_perceptron = perceptron_list[perceptron_index];
     // train perceptron
-    new_perceptron->train(min_confidence, *(pfh->xn), pfh->p_out, actual_pf_act);
+    new_perceptron->train(min_confidence, pfh->xn, pfh->p_out, actual_pf_act);
   }
 
   else if (curMode == PC_DELTA_ADDR) {
     // Update them all
     const PFHistory *pfh = prev_pfh[pfi];
-    perceptron->train(min_confidence, *(pfh->xn), pfh->p_out, used? 1 : -1);
+    perceptron->train(min_confidence, pfh->xn, pfh->p_out, used? 1 : -1);
   }
 
 }
