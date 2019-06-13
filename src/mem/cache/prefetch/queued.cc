@@ -127,7 +127,9 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
   //   (Correct preditions don't require perceptron updating).
   if (! pfi.isCacheMiss()) {
     Addr cacheHitAddr = pfi.getAddr();
-    perceptronUnit->invalidatePfAddrs(cacheHitAddr);
+    if (perceptronUnit) {
+      perceptronUnit->invalidatePfAddrs(cacheHitAddr);
+    }
   }
 
   // On every call to prefetcher.notify (no matter if the cache was a
