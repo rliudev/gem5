@@ -31,8 +31,8 @@ class PerceptronUnit : public ClockedObject
       PAST_PREDICTIONS = 0,
       PC_DELTA_ADDR
     };
-    //FeatureSet curMode = PAST_PREDICTIONS;
-    FeatureSet curMode = PC_DELTA_ADDR;
+    FeatureSet curMode = PAST_PREDICTIONS;
+    //FeatureSet curMode = PC_DELTA_ADDR;
 
     // used as a history structure; needed to hold the previous inputs
     //   so that we can run the train method (if needed).
