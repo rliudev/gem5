@@ -123,6 +123,7 @@ run_series() {
   local arr=($@)
   for t in ${arr[@]}; do
     run $t
+    mkdir -p "$odir/$t"
     cp_m5out "$odir/$t"
   done
 }
