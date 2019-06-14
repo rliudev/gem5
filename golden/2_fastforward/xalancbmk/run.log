@@ -1,15 +1,15 @@
 Running SPEC test: xalancbmk
 
 /home/victorfu/cpu2017/benchspec/CPU/523.xalancbmk_r
-/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward/xalancbmk" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpuxalan_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=183000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000 --options="-v t5.xml xalanc.xsl" --l2-hwp-type=TaggedPrefetcher 
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward/xalancbmk" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpuxalan_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=183000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="-v t5.xml xalanc.xsl" --l2-hwp-type=TaggedPrefetcher 
 
 gem5 Simulator System.  http://gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
-gem5 compiled Jun 12 2019 22:55:31
-gem5 started Jun 14 2019 14:39:30
-gem5 executing on tetracosa.cs.ucla.edu, pid 122802
-command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward/xalancbmk /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpuxalan_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=183000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 '--options=-v t5.xml xalanc.xsl' --l2-hwp-type=TaggedPrefetcher
+gem5 compiled Jun 14 2019 14:52:43
+gem5 started Jun 14 2019 15:21:20
+gem5 executing on tetracosa.cs.ucla.edu, pid 203030
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward/xalancbmk /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpuxalan_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=183000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 '--options=-v t5.xml xalanc.xsl' --l2-hwp-type=TaggedPrefetcher
 
 info: Standard input is not a terminal, disabling listeners.
 Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
@@ -45,8 +45,9 @@ info: Increasing stack size by one page.
 info: Increasing stack size by one page.
 info: Increasing stack size by one page.
 info: Increasing stack size by one page.
-info: Increasing stack size by oExiting @ tick 848108802000 because a thread reached the max instruction count
-y one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
 info: Increasing stack size by one page.
 info: Increasing stack size by one page.
 info: Increasing stack size by one page.
@@ -63,4 +64,4 @@ info: Increasing stack size by one page.
 warn: ignoring syscall mprotect(...)
 warn: ignoring syscall mprotect(...)
 warn: ignoring syscall mprotect(...)
-Exiting @ tick 18501002000 because a thread reached the max instruction count
+Exiting @ tick 180234075000 because a thread reached the max instruction count
