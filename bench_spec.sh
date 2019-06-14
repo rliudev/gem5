@@ -3,6 +3,8 @@
 # Author:  Rach Liu
 #
 
+source bash_utils.sh
+
 
 GEM5HOME="$HOME/finalproject/gem5"
 SPECHOME="$HOME/cpu2017"
@@ -126,7 +128,8 @@ run_series() {
   local odir="$1" && shift
   local arr=($@)
   for t in ${arr[@]}; do
-    run $t --outdir="$odir/$t"
+    max_bg_procs 15
+    run $t --outdir="$odir/$t" &
   done
 }
 
