@@ -135,6 +135,7 @@ run_series() {
   local arr=($@)
   for t in ${arr[@]}; do
     max_bg_procs 15
+    mkdir -p "$odir/$t"
     m5_opts="--outdir=\"$odir/$t\""
     run $t > "$odir/$t/run.log" 2>&1 &
   done
@@ -146,6 +147,7 @@ run_one() {
   local odir="$1" && shift
   local t="$1" && shift
   max_bg_procs 15
+  mkdir -p "$odir/$t"
   m5_opts="--outdir=\"$odir/$t\""
   run $t > "$odir/$t/run.log" 2>&1 &
 }
