@@ -43,6 +43,7 @@ run_bench() {
   local name="$1" && shift
   local exe="$1"  && shift
   local cmd="$cmd $m5_opts $conf --cmd=$exe $conf_opts $sim_opts $pf_opts $ml_opts"
+  echo -e "$cmd\n"
   bash -c "$cmd"
 }
 
