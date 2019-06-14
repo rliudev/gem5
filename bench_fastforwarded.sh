@@ -18,7 +18,7 @@ runtests="${tests[@]}"
 #runtests=(perlbench gcc mcf omnetpp xalancbmk x264)
 
 # Fast forwarding options
-ff_opts="--standard-switch=2 --warmup-insts="
+ff_opts="--standard-switch=0 --warmup-insts="
 
 
 start_runs() {
