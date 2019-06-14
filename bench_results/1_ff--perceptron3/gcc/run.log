@@ -1,15 +1,15 @@
 Running SPEC test: gcc
 
 /home/victorfu/cpu2017/benchspec/CPU/502.gcc_r
-/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward/gcc" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000  --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward-p3/gcc" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000  --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 gem5 Simulator System.  http://gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 compiled Jun 14 2019 14:23:51
-gem5 started Jun 14 2019 15:13:52
-gem5 executing on tetracosa.cs.ucla.edu, pid 138668
-command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward/gcc /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+gem5 started Jun 14 2019 15:51:56
+gem5 executing on tetracosa.cs.ucla.edu, pid 346930
+command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward-p3/gcc /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 info: Standard input is not a terminal, disabling listeners.
 Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
@@ -191002,4 +191002,14789 @@ deny
 deny
 deny
 deny
-Exiting @ tick 13888118000 because a thread reached the max instruction count
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.156849
+weight of 1 is -129.598522
+weight of 2 is -23.600000
+weight of 3 is -103.000000
+used!
+weight of 0 is -29.141722
+weight of 1 is -127.523880
+weight of 2 is -23.600000
+weight of 3 is -102.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.126596
+weight of 1 is -124.498471
+weight of 2 is -23.600000
+weight of 3 is -101.000000
+used!
+weight of 0 is -29.111470
+weight of 1 is -121.473061
+weight of 2 is -23.600000
+weight of 3 is -100.000000
+used!
+deny
+deny
+weight of 0 is -29.096344
+weight of 1 is -121.473042
+weight of 2 is -23.600000
+weight of 3 is -99.000000
+used!
+weight of 0 is -29.081218
+weight of 1 is -121.473023
+weight of 2 is -23.600000
+weight of 3 is -98.000000
+used!
+deny
+deny
+weight of 0 is -29.066092
+weight of 1 is -121.473005
+weight of 2 is -23.600000
+weight of 3 is -97.000000
+used!
+weight of 0 is -29.050966
+weight of 1 is -121.472986
+weight of 2 is -23.600000
+weight of 3 is -96.000000
+used!
+deny
+deny
+weight of 0 is -29.035840
+weight of 1 is -121.472967
+weight of 2 is -23.600000
+weight of 3 is -95.000000
+used!
+weight of 0 is -29.020714
+weight of 1 is -121.472948
+weight of 2 is -23.600000
+weight of 3 is -94.000000
+used!
+deny
+deny
+weight of 0 is -28.999779
+weight of 1 is -121.149495
+weight of 2 is -23.600000
+weight of 3 is -93.000000
+used!
+weight of 0 is -28.978844
+weight of 1 is -120.826041
+weight of 2 is -23.600000
+weight of 3 is -92.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.963718
+weight of 1 is -119.961507
+weight of 2 is -23.600000
+weight of 3 is -91.000000
+used!
+weight of 0 is -28.948592
+weight of 1 is -119.096973
+weight of 2 is -23.600000
+weight of 3 is -90.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.933466
+weight of 1 is -119.096954
+weight of 2 is -23.600000
+weight of 3 is -89.000000
+used!
+weight of 0 is -28.918340
+weight of 1 is -119.096935
+weight of 2 is -23.600000
+weight of 3 is -88.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.903214
+weight of 1 is -119.095620
+weight of 2 is -23.600000
+weight of 3 is -87.000000
+used!
+weight of 0 is -28.888088
+weight of 1 is -119.094305
+weight of 2 is -23.600000
+weight of 3 is -86.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.872962
+weight of 1 is -119.094286
+weight of 2 is -23.600000
+weight of 3 is -85.000000
+used!
+weight of 0 is -28.857836
+weight of 1 is -119.094267
+weight of 2 is -23.600000
+weight of 3 is -84.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -28.842709
+weight of 1 is -119.094230
+weight of 2 is -23.600000
+weight of 3 is -83.000000
+used!
+weight of 0 is -28.827583
+weight of 1 is -119.094192
+weight of 2 is -23.600000
+weight of 3 is -82.000000
+used!
+deny
+deny
+weight of 0 is -28.812457
+weight of 1 is -119.094173
+weight of 2 is -23.600000
+weight of 3 is -81.000000
+used!
+weight of 0 is -28.797331
+weight of 1 is -119.094155
+weight of 2 is -23.600000
+weight of 3 is -80.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.782205
+weight of 1 is -119.094079
+weight of 2 is -23.600000
+weight of 3 is -79.000000
+used!
+weight of 0 is -28.767079
+weight of 1 is -119.094004
+weight of 2 is -23.600000
+weight of 3 is -78.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.751953
+weight of 1 is -118.629169
+weight of 2 is -23.600000
+weight of 3 is -77.000000
+used!
+weight of 0 is -28.736827
+weight of 1 is -118.164334
+weight of 2 is -23.600000
+weight of 3 is -76.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.721701
+weight of 1 is -112.317810
+weight of 2 is -23.600000
+weight of 3 is -75.000000
+used!
+weight of 0 is -28.706575
+weight of 1 is -106.471286
+weight of 2 is -23.600000
+weight of 3 is -74.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -28.691449
+weight of 1 is -106.471267
+weight of 2 is -23.600000
+weight of 3 is -73.000000
+used!
+weight of 0 is -28.676323
+weight of 1 is -106.471249
+weight of 2 is -23.600000
+weight of 3 is -72.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.661197
+weight of 1 is -105.962714
+weight of 2 is -23.600000
+weight of 3 is -71.000000
+used!
+weight of 0 is -28.646071
+weight of 1 is -105.454180
+weight of 2 is -23.600000
+weight of 3 is -70.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.621318
+weight of 1 is -105.344810
+weight of 2 is -22.888889
+weight of 3 is -69.000000
+used!
+weight of 0 is -28.596565
+weight of 1 is -105.235440
+weight of 2 is -22.177778
+weight of 3 is -68.000000
+used!
+deny
+deny
+weight of 0 is -28.022974
+weight of 1 is -103.720755
+weight of 2 is -22.177778
+weight of 3 is -67.000000
+used!
+weight of 0 is -27.449383
+weight of 1 is -102.206071
+weight of 2 is -22.177778
+weight of 3 is -66.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -26.863202
+weight of 1 is -102.196475
+weight of 2 is -21.111111
+weight of 3 is -65.000000
+used!
+weight of 0 is -26.277020
+weight of 1 is -102.186880
+weight of 2 is -20.044444
+weight of 3 is -64.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -25.703429
+weight of 1 is -101.161351
+weight of 2 is -20.044444
+weight of 3 is -63.000000
+used!
+weight of 0 is -25.129838
+weight of 1 is -100.135823
+weight of 2 is -20.044444
+weight of 3 is -62.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -24.556247
+weight of 1 is -99.029017
+weight of 2 is -20.044444
+weight of 3 is -61.000000
+used!
+weight of 0 is -23.982656
+weight of 1 is -97.922212
+weight of 2 is -20.044444
+weight of 3 is -60.000000
+used!
+deny
+deny
+weight of 0 is -23.422663
+weight of 1 is -96.815462
+weight of 2 is -19.333333
+weight of 3 is -59.000000
+used!
+weight of 0 is -22.862669
+weight of 1 is -95.708713
+weight of 2 is -18.622222
+weight of 3 is -58.000000
+used!
+deny
+deny
+weight of 0 is -22.276605
+weight of 1 is -94.689822
+weight of 2 is -18.622222
+weight of 3 is -57.000000
+used!
+weight of 0 is -21.690541
+weight of 1 is -93.670932
+weight of 2 is -18.622222
+weight of 3 is -56.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -21.104430
+weight of 1 is -93.371768
+weight of 2 is -18.088889
+weight of 3 is -55.000000
+used!
+weight of 0 is -20.518319
+weight of 1 is -93.072604
+weight of 2 is -17.555556
+weight of 3 is -54.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.944728
+weight of 1 is -93.071740
+weight of 2 is -17.555556
+weight of 3 is -53.000000
+used!
+weight of 0 is -19.371137
+weight of 1 is -93.070876
+weight of 2 is -17.555556
+weight of 3 is -52.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.356011
+weight of 1 is -89.990738
+weight of 2 is -17.555556
+weight of 3 is -51.000000
+used!
+weight of 0 is -19.340885
+weight of 1 is -86.910601
+weight of 2 is -17.555556
+weight of 3 is -50.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.325759
+weight of 1 is -86.910583
+weight of 2 is -17.555556
+weight of 3 is -49.000000
+used!
+weight of 0 is -19.310633
+weight of 1 is -86.910564
+weight of 2 is -17.555556
+weight of 3 is -48.000000
+used!
+deny
+deny
+weight of 0 is -19.295507
+weight of 1 is -86.910545
+weight of 2 is -17.555556
+weight of 3 is -47.000000
+used!
+weight of 0 is -19.280381
+weight of 1 is -86.910526
+weight of 2 is -17.555556
+weight of 3 is -46.000000
+used!
+deny
+deny
+weight of 0 is -19.265254
+weight of 1 is -86.164295
+weight of 2 is -17.555556
+weight of 3 is -45.000000
+used!
+weight of 0 is -19.250128
+weight of 1 is -85.418065
+weight of 2 is -17.555556
+weight of 3 is -44.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.235002
+weight of 1 is -83.517647
+weight of 2 is -17.555556
+weight of 3 is -43.000000
+used!
+weight of 0 is -19.219876
+weight of 1 is -81.617229
+weight of 2 is -17.555556
+weight of 3 is -42.000000
+used!
+deny
+deny
+weight of 0 is -19.204750
+weight of 1 is -81.617210
+weight of 2 is -17.555556
+weight of 3 is -41.000000
+used!
+weight of 0 is -19.189624
+weight of 1 is -81.617191
+weight of 2 is -17.555556
+weight of 3 is -40.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.174498
+weight of 1 is -81.617172
+weight of 2 is -17.555556
+weight of 3 is -39.000000
+used!
+weight of 0 is -19.159372
+weight of 1 is -81.617154
+weight of 2 is -17.555556
+weight of 3 is -38.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.144246
+weight of 1 is -80.036467
+weight of 2 is -17.555556
+weight of 3 is -37.000000
+used!
+weight of 0 is -19.129120
+weight of 1 is -78.455780
+weight of 2 is -17.555556
+weight of 3 is -36.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.113993
+weight of 1 is -78.455649
+weight of 2 is -17.555556
+weight of 3 is -35.000000
+used!
+weight of 0 is -19.098867
+weight of 1 is -78.455517
+weight of 2 is -17.555556
+weight of 3 is -34.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.083741
+weight of 1 is -78.455499
+weight of 2 is -17.555556
+weight of 3 is -33.000000
+used!
+weight of 0 is -19.068615
+weight of 1 is -78.455480
+weight of 2 is -17.555556
+weight of 3 is -32.000000
+used!
+deny
+deny
+weight of 0 is -19.064333
+weight of 1 is -76.875676
+weight of 2 is -17.555556
+weight of 3 is -31.000000
+used!
+weight of 0 is -19.060050
+weight of 1 is -75.295873
+weight of 2 is -17.555556
+weight of 3 is -30.000000
+used!
+deny
+deny
+weight of 0 is -19.044924
+weight of 1 is -75.295854
+weight of 2 is -17.555556
+weight of 3 is -29.000000
+used!
+weight of 0 is -19.029798
+weight of 1 is -75.295835
+weight of 2 is -17.555556
+weight of 3 is -28.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -19.014672
+weight of 1 is -75.295816
+weight of 2 is -17.555556
+weight of 3 is -27.000000
+used!
+weight of 0 is -18.999546
+weight of 1 is -75.295797
+weight of 2 is -17.555556
+weight of 3 is -26.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.984419
+weight of 1 is -75.295384
+weight of 2 is -17.555556
+weight of 3 is -25.000000
+used!
+weight of 0 is -18.969293
+weight of 1 is -75.294971
+weight of 2 is -17.555556
+weight of 3 is -24.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.954167
+weight of 1 is -74.987911
+weight of 2 is -17.555556
+weight of 3 is -23.000000
+used!
+weight of 0 is -18.939041
+weight of 1 is -74.680852
+weight of 2 is -17.555556
+weight of 3 is -22.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.923915
+weight of 1 is -74.680307
+weight of 2 is -17.555556
+weight of 3 is -21.000000
+used!
+weight of 0 is -18.908789
+weight of 1 is -74.679762
+weight of 2 is -17.555556
+weight of 3 is -20.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.893663
+weight of 1 is -72.985253
+weight of 2 is -17.555556
+weight of 3 is -19.000000
+used!
+weight of 0 is -18.878537
+weight of 1 is -71.290744
+weight of 2 is -17.555556
+weight of 3 is -18.000000
+used!
+deny
+deny
+weight of 0 is -18.863411
+weight of 1 is -71.286385
+weight of 2 is -17.555556
+weight of 3 is -17.000000
+used!
+weight of 0 is -18.848285
+weight of 1 is -71.282026
+weight of 2 is -17.555556
+weight of 3 is -16.000000
+used!
+deny
+deny
+weight of 0 is -18.833159
+weight of 1 is -71.281782
+weight of 2 is -17.555556
+weight of 3 is -15.000000
+used!
+weight of 0 is -18.818033
+weight of 1 is -71.281538
+weight of 2 is -17.555556
+weight of 3 is -14.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.802907
+weight of 1 is -71.278964
+weight of 2 is -17.555556
+weight of 3 is -13.000000
+used!
+weight of 0 is -18.787781
+weight of 1 is -71.276390
+weight of 2 is -17.555556
+weight of 3 is -12.000000
+used!
+deny
+deny
+weight of 0 is -18.772655
+weight of 1 is -71.276371
+weight of 2 is -17.555556
+weight of 3 is -11.000000
+used!
+weight of 0 is -18.757529
+weight of 1 is -71.276353
+weight of 2 is -17.555556
+weight of 3 is -10.000000
+used!
+deny
+deny
+weight of 0 is -18.742403
+weight of 1 is -71.275864
+weight of 2 is -17.555556
+weight of 3 is -9.000000
+used!
+weight of 0 is -18.727276
+weight of 1 is -71.275376
+weight of 2 is -17.555556
+weight of 3 is -8.000000
+used!
+deny
+deny
+weight of 0 is -18.712150
+weight of 1 is -69.694722
+weight of 2 is -17.555556
+weight of 3 is -7.000000
+used!
+weight of 0 is -18.697024
+weight of 1 is -68.114068
+weight of 2 is -17.555556
+weight of 3 is -6.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.681898
+weight of 1 is -67.669392
+weight of 2 is -17.555556
+weight of 3 is -5.000000
+used!
+weight of 0 is -18.666772
+weight of 1 is -67.224716
+weight of 2 is -17.555556
+weight of 3 is -4.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.651646
+weight of 1 is -67.224603
+weight of 2 is -17.555556
+weight of 3 is -3.000000
+used!
+weight of 0 is -18.636520
+weight of 1 is -67.224490
+weight of 2 is -17.555556
+weight of 3 is -2.000000
+used!
+deny
+deny
+weight of 0 is -18.621394
+weight of 1 is -67.224472
+weight of 2 is -17.555556
+weight of 3 is -1.000000
+used!
+weight of 0 is -18.606268
+weight of 1 is -67.224453
+weight of 2 is -17.555556
+weight of 3 is 0.000000
+used!
+accept
+accept
+accept
+accept
+deny
+deny
+weight of 0 is -18.591142
+weight of 1 is -65.893675
+weight of 2 is -17.555556
+weight of 3 is 1.000000
+used!
+weight of 0 is -18.576016
+weight of 1 is -64.562896
+weight of 2 is -17.555556
+weight of 3 is 2.000000
+used!
+accept
+accept
+accept
+accept
+weight of 0 is -18.560890
+weight of 1 is -64.560379
+weight of 2 is -17.555556
+weight of 3 is 3.000000
+used!
+weight of 0 is -18.545764
+weight of 1 is -64.557861
+weight of 2 is -17.555556
+weight of 3 is 4.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -18.530638
+weight of 1 is -63.611603
+weight of 2 is -17.555556
+weight of 3 is 5.000000
+used!
+weight of 0 is -18.515512
+weight of 1 is -62.665344
+weight of 2 is -17.555556
+weight of 3 is 6.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.500386
+weight of 1 is -62.359130
+weight of 2 is -17.555556
+weight of 3 is 7.000000
+used!
+weight of 0 is -18.485260
+weight of 1 is -62.052916
+weight of 2 is -17.555556
+weight of 3 is 8.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.470134
+weight of 1 is -60.384037
+weight of 2 is -17.555556
+weight of 3 is 9.000000
+used!
+weight of 0 is -18.455008
+weight of 1 is -58.715158
+weight of 2 is -17.555556
+weight of 3 is 10.000000
+used!
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.407593
+weight of 1 is -58.715143
+weight of 2 is -16.488889
+weight of 3 is 11.000000
+used!
+weight of 0 is -18.360178
+weight of 1 is -58.715129
+weight of 2 is -15.422222
+weight of 3 is 12.000000
+used!
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.345052
+weight of 1 is -58.515627
+weight of 2 is -15.422222
+weight of 3 is 13.000000
+used!
+weight of 0 is -18.329926
+weight of 1 is -58.316125
+weight of 2 is -15.422222
+weight of 3 is 14.000000
+used!
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.314800
+weight of 1 is -56.463476
+weight of 2 is -15.422222
+weight of 3 is 15.000000
+used!
+weight of 0 is -18.299674
+weight of 1 is -54.610827
+weight of 2 is -15.422222
+weight of 3 is 16.000000
+used!
+accept
+accept
+weight of 0 is -18.284548
+weight of 1 is -51.325645
+weight of 2 is -15.422222
+weight of 3 is 17.000000
+used!
+weight of 0 is -18.269422
+weight of 1 is -48.040464
+weight of 2 is -15.422222
+weight of 3 is 18.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.695831
+weight of 1 is -46.531150
+weight of 2 is -15.422222
+weight of 3 is 19.000000
+used!
+weight of 0 is -17.122240
+weight of 1 is -45.021836
+weight of 2 is -15.422222
+weight of 3 is 20.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -17.137366
+weight of 1 is -45.021893
+weight of 2 is -15.422222
+weight of 3 is 19.000000
+not used!
+deny
+deny
+weight of 0 is -17.152493
+weight of 1 is -45.022005
+weight of 2 is -15.422222
+weight of 3 is 18.000000
+not used!
+deny
+deny
+weight of 0 is -17.167618
+weight of 1 is -45.022118
+weight of 2 is -15.422222
+weight of 3 is 17.000000
+not used!
+weight of 0 is -17.182745
+weight of 1 is -45.022212
+weight of 2 is -15.422222
+weight of 3 is 16.000000
+not used!
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -17.197871
+weight of 1 is -45.022231
+weight of 2 is -15.422222
+weight of 3 is 15.000000
+not used!
+deny
+deny
+weight of 0 is -17.212997
+weight of 1 is -45.022607
+weight of 2 is -15.422222
+weight of 3 is 14.000000
+not used!
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -17.228123
+weight of 1 is -45.022625
+weight of 2 is -15.422222
+weight of 3 is 13.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -17.243249
+weight of 1 is -45.022644
+weight of 2 is -15.422222
+weight of 3 is 12.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -17.258375
+weight of 1 is -45.022663
+weight of 2 is -15.422222
+weight of 3 is 11.000000
+not used!
+deny
+deny
+accept
+accept
+weight of 0 is -17.262723
+weight of 1 is -45.028205
+weight of 2 is -15.422222
+weight of 3 is 10.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -17.277849
+weight of 1 is -45.028224
+weight of 2 is -15.422222
+weight of 3 is 9.000000
+not used!
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -17.262723
+weight of 1 is -44.036969
+weight of 2 is -15.422222
+weight of 3 is 10.000000
+used!
+weight of 0 is -17.247597
+weight of 1 is -43.045715
+weight of 2 is -15.422222
+weight of 3 is 11.000000
+used!
+weight of 0 is -17.252960
+weight of 1 is -43.131592
+weight of 2 is -15.422222
+weight of 3 is 10.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -17.268721
+weight of 1 is -43.132428
+weight of 2 is -15.955556
+weight of 3 is 9.000000
+not used!
+deny
+deny
+weight of 0 is -17.273658
+weight of 1 is -43.134184
+weight of 2 is -16.666667
+weight of 3 is 8.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.847249
+weight of 1 is -43.134203
+weight of 2 is -16.666667
+weight of 3 is 7.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -17.832123
+weight of 1 is -42.143306
+weight of 2 is -16.666667
+weight of 3 is 8.000000
+used!
+weight of 0 is -17.816997
+weight of 1 is -41.152408
+weight of 2 is -16.666667
+weight of 3 is 9.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.390588
+weight of 1 is -41.156767
+weight of 2 is -16.666667
+weight of 3 is 8.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -18.375461
+weight of 1 is -40.530267
+weight of 2 is -16.666667
+weight of 3 is 9.000000
+used!
+weight of 0 is -18.360335
+weight of 1 is -39.903768
+weight of 2 is -16.666667
+weight of 3 is 10.000000
+used!
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -18.946442
+weight of 1 is -39.904050
+weight of 2 is -16.666667
+weight of 3 is 9.000000
+not used!
+weight of 0 is -19.532550
+weight of 1 is -39.904068
+weight of 2 is -16.666667
+weight of 3 is 8.000000
+not used!
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -19.517423
+weight of 1 is -37.978595
+weight of 2 is -16.666667
+weight of 3 is 9.000000
+used!
+weight of 0 is -19.502297
+weight of 1 is -36.053122
+weight of 2 is -16.666667
+weight of 3 is 10.000000
+used!
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+weight of 0 is -18.912512
+weight of 1 is -34.735110
+weight of 2 is -15.955556
+weight of 3 is 11.000000
+used!
+weight of 0 is -18.322726
+weight of 1 is -33.417097
+weight of 2 is -15.244444
+weight of 3 is 12.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.368995
+weight of 1 is -33.418584
+weight of 2 is -15.600000
+weight of 3 is 11.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.353869
+weight of 1 is -32.316203
+weight of 2 is -15.600000
+weight of 3 is 12.000000
+used!
+weight of 0 is -18.338743
+weight of 1 is -31.213822
+weight of 2 is -15.600000
+weight of 3 is 13.000000
+used!
+accept
+accept
+weight of 0 is -18.338778
+weight of 1 is -31.213900
+weight of 2 is -15.955556
+weight of 3 is 12.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.343067
+weight of 1 is -31.533783
+weight of 2 is -15.955556
+weight of 3 is 11.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -18.358193
+weight of 1 is -31.569629
+weight of 2 is -15.955556
+weight of 3 is 10.000000
+not used!
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -18.343067
+weight of 1 is -29.771315
+weight of 2 is -15.955556
+weight of 3 is 11.000000
+used!
+weight of 0 is -18.327941
+weight of 1 is -27.973002
+weight of 2 is -15.955556
+weight of 3 is 12.000000
+used!
+weight of 0 is -18.332235
+weight of 1 is -27.973013
+weight of 2 is -16.311111
+weight of 3 is 11.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -18.336526
+weight of 1 is -27.973037
+weight of 2 is -16.666667
+weight of 3 is 10.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.351652
+weight of 1 is -27.973056
+weight of 2 is -16.666667
+weight of 3 is 9.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.366778
+weight of 1 is -27.973074
+weight of 2 is -16.666667
+weight of 3 is 8.000000
+not used!
+deny
+deny
+weight of 0 is -18.381904
+weight of 1 is -27.973093
+weight of 2 is -16.666667
+weight of 3 is 7.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+weight of 0 is -18.955495
+weight of 1 is -27.976794
+weight of 2 is -16.666667
+weight of 3 is 6.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.970621
+weight of 1 is -27.976813
+weight of 2 is -16.666667
+weight of 3 is 5.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.962662
+weight of 1 is -26.097766
+weight of 2 is -16.666667
+weight of 3 is 6.000000
+used!
+weight of 0 is -18.954703
+weight of 1 is -24.218718
+weight of 2 is -16.666667
+weight of 3 is 7.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is -18.970466
+weight of 1 is -24.219554
+weight of 2 is -16.666667
+weight of 3 is 6.000000
+not used!
+accept
+accept
+weight of 0 is -19.001404
+weight of 1 is -24.238778
+weight of 2 is -17.111111
+weight of 3 is 5.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -19.016530
+weight of 1 is -24.238796
+weight of 2 is -17.111111
+weight of 3 is 4.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -18.426747
+weight of 1 is -19.840518
+weight of 2 is -16.577778
+weight of 3 is 5.000000
+used!
+weight of 0 is -17.836965
+weight of 1 is -15.442240
+weight of 2 is -16.044444
+weight of 3 is 6.000000
+used!
+deny
+deny
+weight of 0 is -17.247365
+weight of 1 is -15.441659
+weight of 2 is -16.044444
+weight of 3 is 7.000000
+used!
+weight of 0 is -16.657765
+weight of 1 is -15.441079
+weight of 2 is -16.044444
+weight of 3 is 8.000000
+used!
+deny
+deny
+weight of 0 is -16.068165
+weight of 1 is -15.441061
+weight of 2 is -16.044444
+weight of 3 is 9.000000
+used!
+weight of 0 is -15.478566
+weight of 1 is -15.441042
+weight of 2 is -16.044444
+weight of 3 is 10.000000
+used!
+accept
+accept
+weight of 0 is -14.888966
+weight of 1 is -15.441023
+weight of 2 is -16.044444
+weight of 3 is 11.000000
+used!
+weight of 0 is -14.299365
+weight of 1 is -15.441004
+weight of 2 is -16.044444
+weight of 3 is 12.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+weight of 0 is -13.709759
+weight of 1 is -15.440990
+weight of 2 is -14.800000
+weight of 3 is 13.000000
+used!
+weight of 0 is -13.120152
+weight of 1 is -15.440976
+weight of 2 is -13.555556
+weight of 3 is 14.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -12.530362
+weight of 1 is -14.122605
+weight of 2 is -12.666667
+weight of 3 is 15.000000
+used!
+weight of 0 is -11.940572
+weight of 1 is -12.804233
+weight of 2 is -11.777778
+weight of 3 is 16.000000
+used!
+weight of 0 is -11.955697
+weight of 1 is -12.804252
+weight of 2 is -11.777778
+weight of 3 is 15.000000
+not used!
+weight of 0 is -11.970824
+weight of 1 is -12.804346
+weight of 2 is -11.777778
+weight of 3 is 14.000000
+not used!
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -11.985950
+weight of 1 is -12.804364
+weight of 2 is -11.777778
+weight of 3 is 13.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -12.001076
+weight of 1 is -12.804383
+weight of 2 is -11.777778
+weight of 3 is 12.000000
+not used!
+deny
+deny
+weight of 0 is -12.015913
+weight of 1 is -12.880034
+weight of 2 is -11.866667
+weight of 3 is 11.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -12.040258
+weight of 1 is -12.880085
+weight of 2 is -11.866667
+weight of 3 is 10.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -12.064602
+weight of 1 is -12.880114
+weight of 2 is -11.866667
+weight of 3 is 9.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -12.106075
+weight of 1 is -12.881302
+weight of 2 is -12.044444
+weight of 3 is 8.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -11.532484
+weight of 1 is -11.863419
+weight of 2 is -12.044444
+weight of 3 is 9.000000
+used!
+weight of 0 is -10.958893
+weight of 1 is -10.845536
+weight of 2 is -12.044444
+weight of 3 is 10.000000
+used!
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -11.548497
+weight of 1 is -10.845592
+weight of 2 is -12.044444
+weight of 3 is 9.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is -11.608976
+weight of 1 is -11.049718
+weight of 2 is -12.222222
+weight of 3 is 8.000000
+not used!
+weight of 0 is -11.624102
+weight of 1 is -12.163992
+weight of 2 is -12.222222
+weight of 3 is 7.000000
+not used!
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+weight of 0 is -12.197693
+weight of 1 is -12.164011
+weight of 2 is -12.222222
+weight of 3 is 6.000000
+not used!
+deny
+deny
+weight of 0 is -12.771284
+weight of 1 is -12.164537
+weight of 2 is -12.222222
+weight of 3 is 5.000000
+not used!
+weight of 0 is -13.344875
+weight of 1 is -12.164875
+weight of 2 is -12.222222
+weight of 3 is 4.000000
+not used!
+weight of 0 is -13.918466
+weight of 1 is -12.165006
+weight of 2 is -12.222222
+weight of 3 is 3.000000
+not used!
+weight of 0 is -13.933592
+weight of 1 is -12.165025
+weight of 2 is -12.222222
+weight of 3 is 2.000000
+not used!
+weight of 0 is -13.948718
+weight of 1 is -12.165363
+weight of 2 is -12.222222
+weight of 3 is 1.000000
+not used!
+deny
+deny
+weight of 0 is -13.963844
+weight of 1 is -12.165382
+weight of 2 is -12.222222
+weight of 3 is 0.000000
+not used!
+weight of 0 is -13.978971
+weight of 1 is -12.165570
+weight of 2 is -12.222222
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -13.994096
+weight of 1 is -12.165645
+weight of 2 is -12.222222
+weight of 3 is -2.000000
+not used!
+deny
+deny
+weight of 0 is -14.009223
+weight of 1 is -12.165852
+weight of 2 is -12.222222
+weight of 3 is -3.000000
+not used!
+weight of 0 is -14.013516
+weight of 1 is -12.165875
+weight of 2 is -12.577778
+weight of 3 is -4.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -13.998389
+weight of 1 is -11.931184
+weight of 2 is -12.577778
+weight of 3 is -3.000000
+used!
+weight of 0 is -13.983263
+weight of 1 is -11.696494
+weight of 2 is -12.577778
+weight of 3 is -2.000000
+used!
+deny
+deny
+weight of 0 is -13.968137
+weight of 1 is -11.696475
+weight of 2 is -12.577778
+weight of 3 is -1.000000
+used!
+weight of 0 is -13.953011
+weight of 1 is -11.696456
+weight of 2 is -12.577778
+weight of 3 is 0.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -13.937885
+weight of 1 is -11.696437
+weight of 2 is -12.577778
+weight of 3 is 1.000000
+used!
+weight of 0 is -13.922759
+weight of 1 is -11.696419
+weight of 2 is -12.577778
+weight of 3 is 2.000000
+used!
+accept
+accept
+weight of 0 is -14.508867
+weight of 1 is -11.696421
+weight of 2 is -12.577778
+weight of 3 is 1.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -15.082458
+weight of 1 is -11.696440
+weight of 2 is -12.577778
+weight of 3 is 0.000000
+not used!
+accept
+accept
+weight of 0 is -15.656049
+weight of 1 is -11.696496
+weight of 2 is -12.577778
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -15.671175
+weight of 1 is -11.696515
+weight of 2 is -12.577778
+weight of 3 is -2.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.686301
+weight of 1 is -11.700103
+weight of 2 is -12.577778
+weight of 3 is -3.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -15.690655
+weight of 1 is -11.704964
+weight of 2 is -13.288889
+weight of 3 is -4.000000
+not used!
+deny
+deny
+weight of 0 is -15.675529
+weight of 1 is -7.069520
+weight of 2 is -13.288889
+weight of 3 is -3.000000
+used!
+weight of 0 is -15.660403
+weight of 1 is -2.434076
+weight of 2 is -13.288889
+weight of 3 is -2.000000
+used!
+weight of 0 is -15.664697
+weight of 1 is -2.439012
+weight of 2 is -13.288889
+weight of 3 is -3.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -15.649571
+weight of 1 is -2.438974
+weight of 2 is -13.288889
+weight of 3 is -2.000000
+used!
+weight of 0 is -15.634445
+weight of 1 is -2.438937
+weight of 2 is -13.288889
+weight of 3 is -1.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.638745
+weight of 1 is -2.438949
+weight of 2 is -13.644444
+weight of 3 is -2.000000
+not used!
+deny
+deny
+weight of 0 is -15.623618
+weight of 1 is -2.438704
+weight of 2 is -13.644444
+weight of 3 is -1.000000
+used!
+weight of 0 is -15.608493
+weight of 1 is -2.438460
+weight of 2 is -13.644444
+weight of 3 is 0.000000
+used!
+weight of 0 is -15.612794
+weight of 1 is -2.438512
+weight of 2 is -13.644444
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -15.627920
+weight of 1 is -2.438531
+weight of 2 is -13.644444
+weight of 3 is -2.000000
+not used!
+weight of 0 is -15.632219
+weight of 1 is -2.438542
+weight of 2 is -13.822222
+weight of 3 is -3.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.617093
+weight of 1 is -2.438524
+weight of 2 is -13.822222
+weight of 3 is -2.000000
+used!
+weight of 0 is -15.601967
+weight of 1 is -2.438505
+weight of 2 is -13.822222
+weight of 3 is -1.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -15.586841
+weight of 1 is -2.433319
+weight of 2 is -13.822222
+weight of 3 is 0.000000
+used!
+weight of 0 is -15.571715
+weight of 1 is -2.428134
+weight of 2 is -13.822222
+weight of 3 is 1.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.556589
+weight of 1 is -2.428115
+weight of 2 is -13.822222
+weight of 3 is 2.000000
+used!
+weight of 0 is -15.541463
+weight of 1 is -2.428097
+weight of 2 is -13.822222
+weight of 3 is 3.000000
+used!
+accept
+accept
+weight of 0 is -15.526337
+weight of 1 is -2.428078
+weight of 2 is -13.822222
+weight of 3 is 4.000000
+used!
+weight of 0 is -15.511211
+weight of 1 is -2.428059
+weight of 2 is -13.822222
+weight of 3 is 5.000000
+used!
+accept
+accept
+accept
+accept
+weight of 0 is -15.503017
+weight of 1 is -0.529910
+weight of 2 is -12.755556
+weight of 3 is 6.000000
+used!
+weight of 0 is -15.494824
+weight of 1 is 1.368240
+weight of 2 is -11.688889
+weight of 3 is 7.000000
+used!
+weight of 0 is -15.509950
+weight of 1 is 1.367075
+weight of 2 is -11.688889
+weight of 3 is 6.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -15.525076
+weight of 1 is 1.354600
+weight of 2 is -11.688889
+weight of 3 is 5.000000
+not used!
+weight of 0 is -15.540202
+weight of 1 is 1.340979
+weight of 2 is -11.688889
+weight of 3 is 4.000000
+not used!
+accept
+accept
+weight of 0 is -15.525076
+weight of 1 is 6.513036
+weight of 2 is -11.688889
+weight of 3 is 5.000000
+used!
+weight of 0 is -15.509950
+weight of 1 is 11.685092
+weight of 2 is -11.688889
+weight of 3 is 6.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -15.525076
+weight of 1 is 11.675980
+weight of 2 is -11.688889
+weight of 3 is 5.000000
+not used!
+weight of 0 is -15.540202
+weight of 1 is 11.675679
+weight of 2 is -11.688889
+weight of 3 is 4.000000
+not used!
+weight of 0 is -15.555328
+weight of 1 is 11.675660
+weight of 2 is -11.688889
+weight of 3 is 3.000000
+not used!
+weight of 0 is -15.570454
+weight of 1 is 11.675642
+weight of 2 is -11.688889
+weight of 3 is 2.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -15.555328
+weight of 1 is 11.675660
+weight of 2 is -11.688889
+weight of 3 is 3.000000
+used!
+weight of 0 is -15.540202
+weight of 1 is 11.675679
+weight of 2 is -11.688889
+weight of 3 is 4.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -15.555328
+weight of 1 is 11.674251
+weight of 2 is -11.688889
+weight of 3 is 3.000000
+not used!
+weight of 0 is -15.563449
+weight of 1 is 9.783443
+weight of 2 is -11.688889
+weight of 3 is 2.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is -15.578576
+weight of 1 is 9.046700
+weight of 2 is -11.688889
+weight of 3 is 1.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -15.593701
+weight of 1 is 9.046644
+weight of 2 is -11.688889
+weight of 3 is 0.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -16.167292
+weight of 1 is 6.721567
+weight of 2 is -11.688889
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -16.182418
+weight of 1 is 3.406533
+weight of 2 is -11.688889
+weight of 3 is -2.000000
+not used!
+deny
+deny
+weight of 0 is -16.197545
+weight of 1 is 3.400934
+weight of 2 is -11.688889
+weight of 3 is -3.000000
+not used!
+weight of 0 is -16.212671
+weight of 1 is 3.400878
+weight of 2 is -11.688889
+weight of 3 is -4.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -16.227797
+weight of 1 is 3.400690
+weight of 2 is -11.688889
+weight of 3 is -5.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+weight of 0 is -16.234899
+weight of 1 is 1.591386
+weight of 2 is -12.755556
+weight of 3 is -6.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.699300
+weight of 1 is 1.989911
+weight of 2 is -11.688889
+weight of 3 is -5.000000
+used!
+weight of 0 is -15.163702
+weight of 1 is 2.388436
+weight of 2 is -10.622222
+weight of 3 is -4.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -14.628010
+weight of 1 is 2.388438
+weight of 2 is -10.622222
+weight of 3 is -3.000000
+used!
+weight of 0 is -14.092319
+weight of 1 is 2.388441
+weight of 2 is -10.622222
+weight of 3 is -2.000000
+used!
+deny
+deny
+weight of 0 is -13.556943
+weight of 1 is 2.415870
+weight of 2 is -10.622222
+weight of 3 is -1.000000
+used!
+weight of 0 is -13.021567
+weight of 1 is 2.443300
+weight of 2 is -10.622222
+weight of 3 is 0.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -13.036693
+weight of 1 is 2.442924
+weight of 2 is -10.622222
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -12.501317
+weight of 1 is 2.442943
+weight of 2 is -10.622222
+weight of 3 is 0.000000
+used!
+weight of 0 is -11.965940
+weight of 1 is 2.442961
+weight of 2 is -10.622222
+weight of 3 is 1.000000
+used!
+deny
+deny
+weight of 0 is -11.435127
+weight of 1 is 2.840080
+weight of 2 is -9.555556
+weight of 3 is 2.000000
+used!
+weight of 0 is -10.904313
+weight of 1 is 3.237198
+weight of 2 is -8.488889
+weight of 3 is 3.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -10.373498
+weight of 1 is 3.608571
+weight of 2 is -7.422222
+weight of 3 is 4.000000
+used!
+weight of 0 is -9.842684
+weight of 1 is 3.979944
+weight of 2 is -6.355556
+weight of 3 is 5.000000
+used!
+accept
+accept
+accept
+accept
+weight of 0 is -9.307308
+weight of 1 is 4.005610
+weight of 2 is -6.355556
+weight of 3 is 6.000000
+used!
+weight of 0 is -8.771932
+weight of 1 is 4.031276
+weight of 2 is -6.355556
+weight of 3 is 7.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -8.818209
+weight of 1 is -0.330462
+weight of 2 is -6.888889
+weight of 3 is 6.000000
+not used!
+deny
+deny
+weight of 0 is -8.282516
+weight of 1 is 0.066702
+weight of 2 is -5.822222
+weight of 3 is 7.000000
+used!
+weight of 0 is -7.746822
+weight of 1 is 0.463865
+weight of 2 is -4.755556
+weight of 3 is 8.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -7.762582
+weight of 1 is -2.406332
+weight of 2 is -5.466667
+weight of 3 is 7.000000
+not used!
+weight of 0 is -7.777708
+weight of 1 is -4.284073
+weight of 2 is -5.466667
+weight of 3 is 6.000000
+not used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is -7.792834
+weight of 1 is -5.394552
+weight of 2 is -5.466667
+weight of 3 is 5.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -7.257458
+weight of 1 is -4.409040
+weight of 2 is -5.466667
+weight of 3 is 6.000000
+used!
+weight of 0 is -6.722082
+weight of 1 is -3.423529
+weight of 2 is -5.466667
+weight of 3 is 7.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -6.737208
+weight of 1 is -3.423717
+weight of 2 is -5.466667
+weight of 3 is 6.000000
+not used!
+weight of 0 is -6.752334
+weight of 1 is -3.849042
+weight of 2 is -5.466667
+weight of 3 is 5.000000
+not used!
+weight of 0 is -6.767460
+weight of 1 is -4.274499
+weight of 2 is -5.466667
+weight of 3 is 4.000000
+not used!
+weight of 0 is -6.782586
+weight of 1 is -4.274612
+weight of 2 is -5.466667
+weight of 3 is 3.000000
+not used!
+weight of 0 is -6.797712
+weight of 1 is -4.699749
+weight of 2 is -5.466667
+weight of 3 is 2.000000
+not used!
+weight of 0 is -6.812838
+weight of 1 is -4.699805
+weight of 2 is -5.466667
+weight of 3 is 1.000000
+not used!
+weight of 0 is -6.836566
+weight of 1 is -7.862386
+weight of 2 is -5.822222
+weight of 3 is 0.000000
+not used!
+deny
+deny
+accept
+accept
+weight of 0 is -7.372259
+weight of 1 is -8.259567
+weight of 2 is -6.177778
+weight of 3 is -1.000000
+not used!
+weight of 0 is -7.907636
+weight of 1 is -8.285386
+weight of 2 is -6.177778
+weight of 3 is -2.000000
+not used!
+weight of 0 is -8.399591
+weight of 1 is -11.813803
+weight of 2 is -6.444444
+weight of 3 is -3.000000
+not used!
+weight of 0 is -8.891541
+weight of 1 is -11.814270
+weight of 2 is -6.888889
+weight of 3 is -4.000000
+not used!
+weight of 0 is -9.383562
+weight of 1 is -15.374138
+weight of 2 is -6.888889
+weight of 3 is -5.000000
+not used!
+weight of 0 is -9.945487
+weight of 1 is -21.070000
+weight of 2 is -7.600000
+weight of 3 is -6.000000
+not used!
+weight of 0 is -10.481270
+weight of 1 is -21.071454
+weight of 2 is -7.600000
+weight of 3 is -7.000000
+not used!
+weight of 0 is -11.016646
+weight of 1 is -21.104519
+weight of 2 is -7.600000
+weight of 3 is -8.000000
+not used!
+weight of 0 is -11.552429
+weight of 1 is -21.138348
+weight of 2 is -8.488889
+weight of 3 is -9.000000
+not used!
+weight of 0 is -12.088180
+weight of 1 is -21.141615
+weight of 2 is -8.488889
+weight of 3 is -10.000000
+not used!
+deny
+deny
+weight of 0 is -12.623556
+weight of 1 is -21.166707
+weight of 2 is -8.488889
+weight of 3 is -11.000000
+not used!
+deny
+deny
+weight of 0 is -13.158932
+weight of 1 is -21.180683
+weight of 2 is -8.488889
+weight of 3 is -12.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -13.143806
+weight of 1 is -21.180551
+weight of 2 is -8.488889
+weight of 3 is -11.000000
+used!
+weight of 0 is -13.128680
+weight of 1 is -21.180420
+weight of 2 is -8.488889
+weight of 3 is -10.000000
+used!
+weight of 0 is -13.664514
+weight of 1 is -21.185208
+weight of 2 is -8.488889
+weight of 3 is -11.000000
+not used!
+weight of 0 is -14.200353
+weight of 1 is -21.185577
+weight of 2 is -8.666667
+weight of 3 is -12.000000
+not used!
+weight of 0 is -14.736085
+weight of 1 is -21.204228
+weight of 2 is -8.844444
+weight of 3 is -13.000000
+not used!
+deny
+deny
+weight of 0 is -14.720959
+weight of 1 is -21.204209
+weight of 2 is -8.844444
+weight of 3 is -12.000000
+used!
+weight of 0 is -14.705833
+weight of 1 is -21.204190
+weight of 2 is -8.844444
+weight of 3 is -11.000000
+used!
+deny
+deny
+weight of 0 is -15.241570
+weight of 1 is -21.210639
+weight of 2 is -9.200000
+weight of 3 is -12.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -15.226443
+weight of 1 is -21.210432
+weight of 2 is -9.200000
+weight of 3 is -11.000000
+used!
+weight of 0 is -15.211317
+weight of 1 is -21.210226
+weight of 2 is -9.200000
+weight of 3 is -10.000000
+used!
+deny
+deny
+weight of 0 is -15.196191
+weight of 1 is -21.210207
+weight of 2 is -9.200000
+weight of 3 is -9.000000
+used!
+weight of 0 is -15.181065
+weight of 1 is -21.210188
+weight of 2 is -9.200000
+weight of 3 is -8.000000
+used!
+deny
+deny
+weight of 0 is -15.716908
+weight of 1 is -21.248143
+weight of 2 is -9.555556
+weight of 3 is -9.000000
+not used!
+deny
+deny
+weight of 0 is -16.252284
+weight of 1 is -21.248538
+weight of 2 is -9.555556
+weight of 3 is -10.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -16.267410
+weight of 1 is -22.964681
+weight of 2 is -9.555556
+weight of 3 is -11.000000
+not used!
+deny
+deny
+weight of 0 is -16.802787
+weight of 1 is -22.986601
+weight of 2 is -9.555556
+weight of 3 is -12.000000
+not used!
+weight of 0 is -17.376378
+weight of 1 is -24.120939
+weight of 2 is -9.555556
+weight of 3 is -13.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.361252
+weight of 1 is -23.011099
+weight of 2 is -9.555556
+weight of 3 is -12.000000
+used!
+weight of 0 is -17.346126
+weight of 1 is -21.901260
+weight of 2 is -9.555556
+weight of 3 is -11.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -17.331000
+weight of 1 is -19.653620
+weight of 2 is -9.555556
+weight of 3 is -10.000000
+used!
+weight of 0 is -17.315874
+weight of 1 is -17.405980
+weight of 2 is -9.555556
+weight of 3 is -9.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.300748
+weight of 1 is -17.405773
+weight of 2 is -9.555556
+weight of 3 is -8.000000
+used!
+weight of 0 is -17.285622
+weight of 1 is -17.405567
+weight of 2 is -9.555556
+weight of 3 is -7.000000
+used!
+deny
+deny
+weight of 0 is -17.270496
+weight of 1 is -17.405548
+weight of 2 is -9.555556
+weight of 3 is -6.000000
+used!
+weight of 0 is -17.255370
+weight of 1 is -17.405529
+weight of 2 is -9.555556
+weight of 3 is -5.000000
+used!
+deny
+deny
+weight of 0 is -17.240244
+weight of 1 is -17.405510
+weight of 2 is -9.555556
+weight of 3 is -4.000000
+used!
+weight of 0 is -17.225118
+weight of 1 is -17.405492
+weight of 2 is -9.555556
+weight of 3 is -3.000000
+used!
+deny
+deny
+weight of 0 is -17.209992
+weight of 1 is -17.257297
+weight of 2 is -9.555556
+weight of 3 is -2.000000
+used!
+weight of 0 is -17.194866
+weight of 1 is -17.109103
+weight of 2 is -9.555556
+weight of 3 is -1.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.179739
+weight of 1 is -14.203970
+weight of 2 is -9.555556
+weight of 3 is 0.000000
+used!
+weight of 0 is -17.164613
+weight of 1 is -11.298836
+weight of 2 is -9.555556
+weight of 3 is 1.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -17.149487
+weight of 1 is -11.298818
+weight of 2 is -9.555556
+weight of 3 is 2.000000
+used!
+weight of 0 is -17.134361
+weight of 1 is -11.298799
+weight of 2 is -9.555556
+weight of 3 is 3.000000
+used!
+accept
+accept
+weight of 0 is -17.119235
+weight of 1 is -11.298780
+weight of 2 is -9.555556
+weight of 3 is 4.000000
+used!
+weight of 0 is -17.104109
+weight of 1 is -11.298761
+weight of 2 is -9.555556
+weight of 3 is 5.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -17.119235
+weight of 1 is -11.298818
+weight of 2 is -9.555556
+weight of 3 is 4.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -17.134361
+weight of 1 is -11.298836
+weight of 2 is -9.555556
+weight of 3 is 3.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -17.149487
+weight of 1 is -11.298930
+weight of 2 is -9.555556
+weight of 3 is 2.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -17.205354
+weight of 1 is -11.310583
+weight of 2 is -9.733333
+weight of 3 is 1.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.265173
+weight of 1 is -11.310658
+weight of 2 is -9.911111
+weight of 3 is 0.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -17.324989
+weight of 1 is -11.310733
+weight of 2 is -10.088889
+weight of 3 is -1.000000
+not used!
+deny
+deny
+weight of 0 is -17.384805
+weight of 1 is -11.310809
+weight of 2 is -10.266667
+weight of 3 is -2.000000
+not used!
+deny
+deny
+weight of 0 is -17.444620
+weight of 1 is -11.310884
+weight of 2 is -10.444444
+weight of 3 is -3.000000
+not used!
+deny
+deny
+weight of 0 is -17.504434
+weight of 1 is -11.310959
+weight of 2 is -10.622222
+weight of 3 is -4.000000
+not used!
+deny
+deny
+weight of 0 is -17.564247
+weight of 1 is -11.311034
+weight of 2 is -10.800000
+weight of 3 is -5.000000
+not used!
+deny
+deny
+weight of 0 is -17.624059
+weight of 1 is -11.311109
+weight of 2 is -10.977778
+weight of 3 is -6.000000
+not used!
+deny
+deny
+weight of 0 is -17.683870
+weight of 1 is -11.311184
+weight of 2 is -11.155556
+weight of 3 is -7.000000
+not used!
+deny
+deny
+weight of 0 is -17.743680
+weight of 1 is -11.311259
+weight of 2 is -11.333333
+weight of 3 is -8.000000
+not used!
+deny
+deny
+weight of 0 is -17.803489
+weight of 1 is -11.311335
+weight of 2 is -11.511111
+weight of 3 is -9.000000
+not used!
+deny
+deny
+weight of 0 is -17.863298
+weight of 1 is -11.311410
+weight of 2 is -11.688889
+weight of 3 is -10.000000
+not used!
+deny
+deny
+weight of 0 is -17.923105
+weight of 1 is -11.311485
+weight of 2 is -11.866667
+weight of 3 is -11.000000
+not used!
+deny
+deny
+weight of 0 is -17.982911
+weight of 1 is -11.311560
+weight of 2 is -12.044444
+weight of 3 is -12.000000
+not used!
+deny
+deny
+weight of 0 is -18.042717
+weight of 1 is -11.311635
+weight of 2 is -12.222222
+weight of 3 is -13.000000
+not used!
+deny
+deny
+weight of 0 is -18.102522
+weight of 1 is -11.311710
+weight of 2 is -12.400000
+weight of 3 is -14.000000
+not used!
+deny
+deny
+weight of 0 is -18.162325
+weight of 1 is -11.311785
+weight of 2 is -12.577778
+weight of 3 is -15.000000
+not used!
+deny
+deny
+weight of 0 is -18.222128
+weight of 1 is -11.311861
+weight of 2 is -12.755556
+weight of 3 is -16.000000
+not used!
+deny
+deny
+weight of 0 is -18.281930
+weight of 1 is -11.311936
+weight of 2 is -12.933333
+weight of 3 is -17.000000
+not used!
+deny
+deny
+weight of 0 is -18.341731
+weight of 1 is -11.312011
+weight of 2 is -13.111111
+weight of 3 is -18.000000
+not used!
+deny
+deny
+weight of 0 is -18.401531
+weight of 1 is -11.312086
+weight of 2 is -13.288889
+weight of 3 is -19.000000
+not used!
+deny
+deny
+weight of 0 is -18.461330
+weight of 1 is -11.312161
+weight of 2 is -13.466667
+weight of 3 is -20.000000
+not used!
+deny
+deny
+weight of 0 is -18.521128
+weight of 1 is -11.312236
+weight of 2 is -13.644444
+weight of 3 is -21.000000
+not used!
+deny
+deny
+weight of 0 is -18.580926
+weight of 1 is -11.312312
+weight of 2 is -13.822222
+weight of 3 is -22.000000
+not used!
+deny
+deny
+weight of 0 is -18.640722
+weight of 1 is -11.312387
+weight of 2 is -14.000000
+weight of 3 is -23.000000
+not used!
+deny
+deny
+weight of 0 is -18.700503
+weight of 1 is -11.313664
+weight of 2 is -14.177778
+weight of 3 is -24.000000
+not used!
+deny
+deny
+weight of 0 is -18.760282
+weight of 1 is -11.313739
+weight of 2 is -14.355556
+weight of 3 is -25.000000
+not used!
+deny
+deny
+weight of 0 is -18.820061
+weight of 1 is -11.313814
+weight of 2 is -14.533333
+weight of 3 is -26.000000
+not used!
+deny
+deny
+weight of 0 is -18.879839
+weight of 1 is -11.313890
+weight of 2 is -14.711111
+weight of 3 is -27.000000
+not used!
+deny
+deny
+weight of 0 is -18.939616
+weight of 1 is -11.313965
+weight of 2 is -14.888889
+weight of 3 is -28.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.999392
+weight of 1 is -11.314040
+weight of 2 is -15.066667
+weight of 3 is -29.000000
+not used!
+deny
+deny
+weight of 0 is -19.059167
+weight of 1 is -11.314115
+weight of 2 is -15.244444
+weight of 3 is -30.000000
+not used!
+deny
+deny
+weight of 0 is -19.118941
+weight of 1 is -11.314190
+weight of 2 is -15.422222
+weight of 3 is -31.000000
+not used!
+deny
+deny
+weight of 0 is -19.178714
+weight of 1 is -11.314265
+weight of 2 is -15.600000
+weight of 3 is -32.000000
+not used!
+deny
+deny
+weight of 0 is -19.238487
+weight of 1 is -11.314341
+weight of 2 is -15.777778
+weight of 3 is -33.000000
+not used!
+deny
+deny
+weight of 0 is -19.298258
+weight of 1 is -11.314416
+weight of 2 is -15.955556
+weight of 3 is -34.000000
+not used!
+deny
+deny
+weight of 0 is -19.358029
+weight of 1 is -11.314491
+weight of 2 is -16.133333
+weight of 3 is -35.000000
+not used!
+deny
+deny
+weight of 0 is -19.417798
+weight of 1 is -11.314566
+weight of 2 is -16.311111
+weight of 3 is -36.000000
+not used!
+deny
+deny
+weight of 0 is -19.477567
+weight of 1 is -11.314641
+weight of 2 is -16.488889
+weight of 3 is -37.000000
+not used!
+deny
+deny
+weight of 0 is -19.537334
+weight of 1 is -11.314716
+weight of 2 is -16.666667
+weight of 3 is -38.000000
+not used!
+deny
+deny
+weight of 0 is -19.597101
+weight of 1 is -11.314791
+weight of 2 is -16.844444
+weight of 3 is -39.000000
+not used!
+deny
+deny
+weight of 0 is -19.656867
+weight of 1 is -11.314867
+weight of 2 is -17.022222
+weight of 3 is -40.000000
+not used!
+deny
+deny
+weight of 0 is -19.716632
+weight of 1 is -11.314942
+weight of 2 is -17.200000
+weight of 3 is -41.000000
+not used!
+deny
+deny
+weight of 0 is -19.776396
+weight of 1 is -11.315017
+weight of 2 is -17.377778
+weight of 3 is -42.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -19.836159
+weight of 1 is -11.315092
+weight of 2 is -17.555556
+weight of 3 is -43.000000
+not used!
+deny
+deny
+weight of 0 is -19.895921
+weight of 1 is -11.315167
+weight of 2 is -17.733333
+weight of 3 is -44.000000
+not used!
+deny
+deny
+weight of 0 is -19.955683
+weight of 1 is -11.315242
+weight of 2 is -17.911111
+weight of 3 is -45.000000
+not used!
+deny
+deny
+weight of 0 is -20.015443
+weight of 1 is -11.315317
+weight of 2 is -18.088889
+weight of 3 is -46.000000
+not used!
+deny
+deny
+weight of 0 is -20.075202
+weight of 1 is -11.315393
+weight of 2 is -18.266667
+weight of 3 is -47.000000
+not used!
+deny
+deny
+weight of 0 is -20.134961
+weight of 1 is -11.315468
+weight of 2 is -18.444444
+weight of 3 is -48.000000
+not used!
+deny
+deny
+weight of 0 is -20.194718
+weight of 1 is -11.315543
+weight of 2 is -18.622222
+weight of 3 is -49.000000
+not used!
+deny
+deny
+weight of 0 is -20.254475
+weight of 1 is -11.315618
+weight of 2 is -18.800000
+weight of 3 is -50.000000
+not used!
+deny
+deny
+weight of 0 is -20.314231
+weight of 1 is -11.315693
+weight of 2 is -18.977778
+weight of 3 is -51.000000
+not used!
+deny
+deny
+weight of 0 is -20.373985
+weight of 1 is -11.315768
+weight of 2 is -19.155556
+weight of 3 is -52.000000
+not used!
+deny
+deny
+weight of 0 is -20.433739
+weight of 1 is -11.315844
+weight of 2 is -19.333333
+weight of 3 is -53.000000
+not used!
+deny
+deny
+weight of 0 is -20.493492
+weight of 1 is -11.315919
+weight of 2 is -19.511111
+weight of 3 is -54.000000
+not used!
+deny
+deny
+weight of 0 is -20.553244
+weight of 1 is -11.315994
+weight of 2 is -19.688889
+weight of 3 is -55.000000
+not used!
+deny
+deny
+weight of 0 is -20.612995
+weight of 1 is -11.316069
+weight of 2 is -19.866667
+weight of 3 is -56.000000
+not used!
+deny
+deny
+weight of 0 is -20.672746
+weight of 1 is -11.316144
+weight of 2 is -20.044444
+weight of 3 is -57.000000
+not used!
+deny
+deny
+weight of 0 is -20.732495
+weight of 1 is -11.316219
+weight of 2 is -20.222222
+weight of 3 is -58.000000
+not used!
+deny
+deny
+weight of 0 is -20.792243
+weight of 1 is -11.316294
+weight of 2 is -20.400000
+weight of 3 is -59.000000
+not used!
+deny
+deny
+weight of 0 is -20.851991
+weight of 1 is -11.316370
+weight of 2 is -20.577778
+weight of 3 is -60.000000
+not used!
+deny
+deny
+weight of 0 is -20.911737
+weight of 1 is -11.316445
+weight of 2 is -20.755556
+weight of 3 is -61.000000
+not used!
+deny
+deny
+weight of 0 is -20.971483
+weight of 1 is -11.316520
+weight of 2 is -20.933333
+weight of 3 is -62.000000
+not used!
+deny
+deny
+weight of 0 is -21.031227
+weight of 1 is -11.316595
+weight of 2 is -21.111111
+weight of 3 is -63.000000
+not used!
+deny
+deny
+weight of 0 is -21.090971
+weight of 1 is -11.316670
+weight of 2 is -21.288889
+weight of 3 is -64.000000
+not used!
+deny
+deny
+weight of 0 is -21.150714
+weight of 1 is -11.316745
+weight of 2 is -21.466667
+weight of 3 is -65.000000
+not used!
+deny
+deny
+weight of 0 is -21.210456
+weight of 1 is -11.316820
+weight of 2 is -21.644444
+weight of 3 is -66.000000
+not used!
+deny
+deny
+weight of 0 is -21.270196
+weight of 1 is -11.316896
+weight of 2 is -21.822222
+weight of 3 is -67.000000
+not used!
+deny
+deny
+weight of 0 is -21.329936
+weight of 1 is -11.316971
+weight of 2 is -22.000000
+weight of 3 is -68.000000
+not used!
+deny
+deny
+weight of 0 is -21.389676
+weight of 1 is -11.317046
+weight of 2 is -22.177778
+weight of 3 is -69.000000
+not used!
+deny
+deny
+weight of 0 is -21.449414
+weight of 1 is -11.317121
+weight of 2 is -22.355556
+weight of 3 is -70.000000
+not used!
+deny
+deny
+weight of 0 is -21.509151
+weight of 1 is -11.317196
+weight of 2 is -22.533333
+weight of 3 is -71.000000
+not used!
+deny
+deny
+weight of 0 is -21.568887
+weight of 1 is -11.317271
+weight of 2 is -22.711111
+weight of 3 is -72.000000
+not used!
+deny
+deny
+weight of 0 is -21.628623
+weight of 1 is -11.317346
+weight of 2 is -22.888889
+weight of 3 is -73.000000
+not used!
+deny
+deny
+weight of 0 is -21.688357
+weight of 1 is -11.317422
+weight of 2 is -23.066667
+weight of 3 is -74.000000
+not used!
+deny
+deny
+weight of 0 is -21.748091
+weight of 1 is -11.317497
+weight of 2 is -23.244444
+weight of 3 is -75.000000
+not used!
+deny
+deny
+weight of 0 is -21.807823
+weight of 1 is -11.317572
+weight of 2 is -23.422222
+weight of 3 is -76.000000
+not used!
+deny
+deny
+weight of 0 is -21.867555
+weight of 1 is -11.317647
+weight of 2 is -23.600000
+weight of 3 is -77.000000
+not used!
+deny
+deny
+weight of 0 is -21.927286
+weight of 1 is -11.317722
+weight of 2 is -23.777778
+weight of 3 is -78.000000
+not used!
+deny
+deny
+weight of 0 is -21.987016
+weight of 1 is -11.317797
+weight of 2 is -23.955556
+weight of 3 is -79.000000
+not used!
+deny
+deny
+weight of 0 is -22.046745
+weight of 1 is -11.317873
+weight of 2 is -24.133333
+weight of 3 is -80.000000
+not used!
+deny
+deny
+weight of 0 is -22.106473
+weight of 1 is -11.317948
+weight of 2 is -24.311111
+weight of 3 is -81.000000
+not used!
+deny
+deny
+weight of 0 is -22.166200
+weight of 1 is -11.318023
+weight of 2 is -24.488889
+weight of 3 is -82.000000
+not used!
+deny
+deny
+weight of 0 is -22.225926
+weight of 1 is -11.318098
+weight of 2 is -24.666667
+weight of 3 is -83.000000
+not used!
+deny
+deny
+weight of 0 is -22.285651
+weight of 1 is -11.318173
+weight of 2 is -24.844444
+weight of 3 is -84.000000
+not used!
+deny
+deny
+weight of 0 is -22.345375
+weight of 1 is -11.318248
+weight of 2 is -25.022222
+weight of 3 is -85.000000
+not used!
+deny
+deny
+weight of 0 is -22.405099
+weight of 1 is -11.318323
+weight of 2 is -25.200000
+weight of 3 is -86.000000
+not used!
+deny
+deny
+weight of 0 is -22.464821
+weight of 1 is -11.318399
+weight of 2 is -25.377778
+weight of 3 is -87.000000
+not used!
+deny
+deny
+weight of 0 is -22.524543
+weight of 1 is -11.318474
+weight of 2 is -25.555556
+weight of 3 is -88.000000
+not used!
+deny
+deny
+weight of 0 is -22.584263
+weight of 1 is -11.318549
+weight of 2 is -25.733333
+weight of 3 is -89.000000
+not used!
+deny
+deny
+weight of 0 is -22.643983
+weight of 1 is -11.318624
+weight of 2 is -25.911111
+weight of 3 is -90.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -22.703702
+weight of 1 is -11.318699
+weight of 2 is -26.088889
+weight of 3 is -91.000000
+not used!
+deny
+deny
+weight of 0 is -22.763420
+weight of 1 is -11.318774
+weight of 2 is -26.266667
+weight of 3 is -92.000000
+not used!
+deny
+deny
+weight of 0 is -22.823137
+weight of 1 is -11.318849
+weight of 2 is -26.444444
+weight of 3 is -93.000000
+not used!
+deny
+deny
+weight of 0 is -22.882853
+weight of 1 is -11.318925
+weight of 2 is -26.622222
+weight of 3 is -94.000000
+not used!
+deny
+deny
+weight of 0 is -22.942568
+weight of 1 is -11.319000
+weight of 2 is -26.800000
+weight of 3 is -95.000000
+not used!
+deny
+deny
+weight of 0 is -23.002282
+weight of 1 is -11.319075
+weight of 2 is -26.977778
+weight of 3 is -96.000000
+not used!
+deny
+deny
+weight of 0 is -23.061995
+weight of 1 is -11.319150
+weight of 2 is -27.155556
+weight of 3 is -97.000000
+not used!
+deny
+deny
+weight of 0 is -23.121708
+weight of 1 is -11.319225
+weight of 2 is -27.333333
+weight of 3 is -98.000000
+not used!
+deny
+deny
+weight of 0 is -23.181419
+weight of 1 is -11.319300
+weight of 2 is -27.511111
+weight of 3 is -99.000000
+not used!
+deny
+deny
+weight of 0 is -23.241129
+weight of 1 is -11.319376
+weight of 2 is -27.688889
+weight of 3 is -100.000000
+not used!
+deny
+deny
+weight of 0 is -23.300839
+weight of 1 is -11.319451
+weight of 2 is -27.866667
+weight of 3 is -101.000000
+not used!
+deny
+deny
+weight of 0 is -23.360548
+weight of 1 is -11.319526
+weight of 2 is -28.044444
+weight of 3 is -102.000000
+not used!
+deny
+deny
+weight of 0 is -23.420255
+weight of 1 is -11.319601
+weight of 2 is -28.222222
+weight of 3 is -103.000000
+not used!
+deny
+deny
+weight of 0 is -23.479962
+weight of 1 is -11.319676
+weight of 2 is -28.400000
+weight of 3 is -104.000000
+not used!
+deny
+deny
+weight of 0 is -23.539668
+weight of 1 is -11.319751
+weight of 2 is -28.577778
+weight of 3 is -105.000000
+not used!
+deny
+deny
+weight of 0 is -23.599373
+weight of 1 is -11.319826
+weight of 2 is -28.755556
+weight of 3 is -106.000000
+not used!
+deny
+deny
+weight of 0 is -23.659077
+weight of 1 is -11.319902
+weight of 2 is -28.933333
+weight of 3 is -107.000000
+not used!
+deny
+deny
+weight of 0 is -23.718780
+weight of 1 is -11.319977
+weight of 2 is -29.111111
+weight of 3 is -108.000000
+not used!
+weight of 0 is -23.778482
+weight of 1 is -11.320052
+weight of 2 is -29.288889
+weight of 3 is -109.000000
+not used!
+deny
+deny
+weight of 0 is -23.838183
+weight of 1 is -11.320127
+weight of 2 is -29.466667
+weight of 3 is -110.000000
+not used!
+deny
+deny
+weight of 0 is -23.897884
+weight of 1 is -11.320202
+weight of 2 is -29.644444
+weight of 3 is -111.000000
+not used!
+deny
+deny
+weight of 0 is -23.957583
+weight of 1 is -11.320277
+weight of 2 is -29.822222
+weight of 3 is -112.000000
+not used!
+deny
+deny
+weight of 0 is -24.017281
+weight of 1 is -11.320352
+weight of 2 is -30.000000
+weight of 3 is -113.000000
+not used!
+deny
+deny
+weight of 0 is -24.076979
+weight of 1 is -11.320428
+weight of 2 is -30.177778
+weight of 3 is -114.000000
+not used!
+deny
+deny
+weight of 0 is -24.136676
+weight of 1 is -11.320503
+weight of 2 is -30.355556
+weight of 3 is -115.000000
+not used!
+deny
+deny
+weight of 0 is -24.196371
+weight of 1 is -11.320578
+weight of 2 is -30.533333
+weight of 3 is -116.000000
+not used!
+deny
+deny
+weight of 0 is -24.256066
+weight of 1 is -11.320653
+weight of 2 is -30.711111
+weight of 3 is -117.000000
+not used!
+weight of 0 is -24.315760
+weight of 1 is -11.320728
+weight of 2 is -30.888889
+weight of 3 is -118.000000
+not used!
+deny
+deny
+weight of 0 is -24.375453
+weight of 1 is -11.320803
+weight of 2 is -31.066667
+weight of 3 is -119.000000
+not used!
+deny
+deny
+weight of 0 is -24.435145
+weight of 1 is -11.320879
+weight of 2 is -31.244444
+weight of 3 is -120.000000
+not used!
+deny
+deny
+weight of 0 is -24.494836
+weight of 1 is -11.320954
+weight of 2 is -31.422222
+weight of 3 is -121.000000
+not used!
+weight of 0 is -24.554526
+weight of 1 is -11.321029
+weight of 2 is -31.600000
+weight of 3 is -122.000000
+not used!
+deny
+deny
+weight of 0 is -24.614215
+weight of 1 is -11.321104
+weight of 2 is -31.777778
+weight of 3 is -123.000000
+not used!
+weight of 0 is -24.673904
+weight of 1 is -11.321179
+weight of 2 is -31.955556
+weight of 3 is -124.000000
+not used!
+deny
+deny
+weight of 0 is -24.733591
+weight of 1 is -11.321254
+weight of 2 is -32.133333
+weight of 3 is -125.000000
+not used!
+weight of 0 is -24.793278
+weight of 1 is -11.321329
+weight of 2 is -32.311111
+weight of 3 is -126.000000
+not used!
+deny
+deny
+weight of 0 is -24.852963
+weight of 1 is -11.321405
+weight of 2 is -32.488889
+weight of 3 is -127.000000
+not used!
+weight of 0 is -24.912648
+weight of 1 is -11.321480
+weight of 2 is -32.666667
+weight of 3 is -128.000000
+not used!
+deny
+deny
+weight of 0 is -24.972331
+weight of 1 is -11.321555
+weight of 2 is -32.844444
+weight of 3 is -129.000000
+not used!
+deny
+deny
+weight of 0 is -25.032014
+weight of 1 is -11.321630
+weight of 2 is -33.022222
+weight of 3 is -130.000000
+not used!
+deny
+deny
+weight of 0 is -25.091696
+weight of 1 is -11.321705
+weight of 2 is -33.200000
+weight of 3 is -131.000000
+not used!
+deny
+deny
+weight of 0 is -25.151377
+weight of 1 is -11.321780
+weight of 2 is -33.377778
+weight of 3 is -132.000000
+not used!
+deny
+deny
+weight of 0 is -25.211057
+weight of 1 is -11.321855
+weight of 2 is -33.555556
+weight of 3 is -133.000000
+not used!
+deny
+deny
+weight of 0 is -25.270736
+weight of 1 is -11.321931
+weight of 2 is -33.733333
+weight of 3 is -134.000000
+not used!
+deny
+deny
+weight of 0 is -25.330414
+weight of 1 is -11.322006
+weight of 2 is -33.911111
+weight of 3 is -135.000000
+not used!
+deny
+deny
+weight of 0 is -25.390091
+weight of 1 is -11.322081
+weight of 2 is -34.088889
+weight of 3 is -136.000000
+not used!
+deny
+deny
+weight of 0 is -25.449768
+weight of 1 is -11.322156
+weight of 2 is -34.266667
+weight of 3 is -137.000000
+not used!
+deny
+deny
+weight of 0 is -25.509443
+weight of 1 is -11.322231
+weight of 2 is -34.444444
+weight of 3 is -138.000000
+not used!
+deny
+deny
+weight of 0 is -25.569118
+weight of 1 is -11.322306
+weight of 2 is -34.622222
+weight of 3 is -139.000000
+not used!
+deny
+deny
+weight of 0 is -25.628791
+weight of 1 is -11.322381
+weight of 2 is -34.800000
+weight of 3 is -140.000000
+not used!
+deny
+deny
+weight of 0 is -25.688464
+weight of 1 is -11.322457
+weight of 2 is -34.977778
+weight of 3 is -141.000000
+not used!
+deny
+deny
+weight of 0 is -25.748135
+weight of 1 is -11.322532
+weight of 2 is -35.155556
+weight of 3 is -142.000000
+not used!
+deny
+deny
+weight of 0 is -25.807806
+weight of 1 is -11.322607
+weight of 2 is -35.333333
+weight of 3 is -143.000000
+not used!
+deny
+deny
+weight of 0 is -25.867476
+weight of 1 is -11.322682
+weight of 2 is -35.511111
+weight of 3 is -144.000000
+not used!
+deny
+deny
+weight of 0 is -25.927145
+weight of 1 is -11.322757
+weight of 2 is -35.688889
+weight of 3 is -145.000000
+not used!
+deny
+deny
+weight of 0 is -25.986813
+weight of 1 is -11.322832
+weight of 2 is -35.866667
+weight of 3 is -146.000000
+not used!
+deny
+deny
+weight of 0 is -26.046480
+weight of 1 is -11.322908
+weight of 2 is -36.044444
+weight of 3 is -147.000000
+not used!
+deny
+deny
+weight of 0 is -26.106146
+weight of 1 is -11.322983
+weight of 2 is -36.222222
+weight of 3 is -148.000000
+not used!
+deny
+deny
+weight of 0 is -26.165811
+weight of 1 is -11.323058
+weight of 2 is -36.400000
+weight of 3 is -149.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.225476
+weight of 1 is -11.323133
+weight of 2 is -36.577778
+weight of 3 is -150.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.285139
+weight of 1 is -11.323208
+weight of 2 is -36.755556
+weight of 3 is -151.000000
+not used!
+deny
+deny
+weight of 0 is -26.344802
+weight of 1 is -11.323283
+weight of 2 is -36.933333
+weight of 3 is -152.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.404463
+weight of 1 is -11.323358
+weight of 2 is -37.111111
+weight of 3 is -153.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.464124
+weight of 1 is -11.323434
+weight of 2 is -37.288889
+weight of 3 is -154.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.523783
+weight of 1 is -11.323509
+weight of 2 is -37.466667
+weight of 3 is -155.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.583442
+weight of 1 is -11.323584
+weight of 2 is -37.644444
+weight of 3 is -156.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.643100
+weight of 1 is -11.323659
+weight of 2 is -37.822222
+weight of 3 is -157.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.702757
+weight of 1 is -11.323734
+weight of 2 is -38.000000
+weight of 3 is -158.000000
+not used!
+deny
+deny
+weight of 0 is -26.762413
+weight of 1 is -11.323809
+weight of 2 is -38.177778
+weight of 3 is -159.000000
+not used!
+deny
+deny
+weight of 0 is -26.822068
+weight of 1 is -11.323884
+weight of 2 is -38.355556
+weight of 3 is -160.000000
+not used!
+deny
+deny
+weight of 0 is -26.881722
+weight of 1 is -11.323960
+weight of 2 is -38.533333
+weight of 3 is -161.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -26.941375
+weight of 1 is -11.324035
+weight of 2 is -38.711111
+weight of 3 is -162.000000
+not used!
+deny
+deny
+weight of 0 is -27.001028
+weight of 1 is -11.324110
+weight of 2 is -38.888889
+weight of 3 is -163.000000
+not used!
+deny
+deny
+weight of 0 is -27.060679
+weight of 1 is -11.324185
+weight of 2 is -39.066667
+weight of 3 is -164.000000
+not used!
+deny
+deny
+weight of 0 is -27.120330
+weight of 1 is -11.324260
+weight of 2 is -39.244444
+weight of 3 is -165.000000
+not used!
+deny
+deny
+weight of 0 is -27.179979
+weight of 1 is -11.324335
+weight of 2 is -39.422222
+weight of 3 is -166.000000
+not used!
+deny
+deny
+weight of 0 is -27.239628
+weight of 1 is -11.324411
+weight of 2 is -39.600000
+weight of 3 is -167.000000
+not used!
+deny
+deny
+weight of 0 is -27.299275
+weight of 1 is -11.324486
+weight of 2 is -39.777778
+weight of 3 is -168.000000
+not used!
+deny
+deny
+weight of 0 is -27.358922
+weight of 1 is -11.324561
+weight of 2 is -39.955556
+weight of 3 is -169.000000
+not used!
+deny
+deny
+weight of 0 is -27.418568
+weight of 1 is -11.324636
+weight of 2 is -40.133333
+weight of 3 is -170.000000
+not used!
+deny
+deny
+weight of 0 is -27.478213
+weight of 1 is -11.324711
+weight of 2 is -40.311111
+weight of 3 is -171.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.537857
+weight of 1 is -11.324786
+weight of 2 is -40.488889
+weight of 3 is -172.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.597500
+weight of 1 is -11.324861
+weight of 2 is -40.666667
+weight of 3 is -173.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.657142
+weight of 1 is -11.324937
+weight of 2 is -40.844444
+weight of 3 is -174.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.716783
+weight of 1 is -11.325012
+weight of 2 is -41.022222
+weight of 3 is -175.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.776424
+weight of 1 is -11.325087
+weight of 2 is -41.200000
+weight of 3 is -176.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -27.836063
+weight of 1 is -11.325162
+weight of 2 is -41.377778
+weight of 3 is -177.000000
+not used!
+deny
+deny
+weight of 0 is -27.895701
+weight of 1 is -11.325237
+weight of 2 is -41.555556
+weight of 3 is -178.000000
+not used!
+deny
+deny
+weight of 0 is -27.955339
+weight of 1 is -11.325312
+weight of 2 is -41.733333
+weight of 3 is -179.000000
+not used!
+deny
+deny
+weight of 0 is -28.014976
+weight of 1 is -11.325387
+weight of 2 is -41.911111
+weight of 3 is -180.000000
+not used!
+deny
+deny
+weight of 0 is -28.074611
+weight of 1 is -11.325463
+weight of 2 is -42.088889
+weight of 3 is -181.000000
+not used!
+deny
+deny
+weight of 0 is -28.134246
+weight of 1 is -11.325538
+weight of 2 is -42.266667
+weight of 3 is -182.000000
+not used!
+deny
+deny
+weight of 0 is -28.193880
+weight of 1 is -11.325613
+weight of 2 is -42.444444
+weight of 3 is -183.000000
+not used!
+deny
+deny
+weight of 0 is -28.253513
+weight of 1 is -11.325688
+weight of 2 is -42.622222
+weight of 3 is -184.000000
+not used!
+deny
+deny
+weight of 0 is -28.313145
+weight of 1 is -11.325763
+weight of 2 is -42.800000
+weight of 3 is -185.000000
+not used!
+deny
+deny
+weight of 0 is -28.372776
+weight of 1 is -11.325838
+weight of 2 is -42.977778
+weight of 3 is -186.000000
+not used!
+deny
+deny
+weight of 0 is -28.432406
+weight of 1 is -11.325913
+weight of 2 is -43.155556
+weight of 3 is -187.000000
+not used!
+deny
+deny
+weight of 0 is -28.492035
+weight of 1 is -11.325989
+weight of 2 is -43.333333
+weight of 3 is -188.000000
+not used!
+deny
+deny
+weight of 0 is -28.551664
+weight of 1 is -11.326064
+weight of 2 is -43.511111
+weight of 3 is -189.000000
+not used!
+deny
+deny
+weight of 0 is -28.611291
+weight of 1 is -11.326139
+weight of 2 is -43.688889
+weight of 3 is -190.000000
+not used!
+deny
+deny
+weight of 0 is -28.670917
+weight of 1 is -11.326214
+weight of 2 is -43.866667
+weight of 3 is -191.000000
+not used!
+deny
+deny
+weight of 0 is -28.730543
+weight of 1 is -11.326289
+weight of 2 is -44.044444
+weight of 3 is -192.000000
+not used!
+deny
+deny
+weight of 0 is -28.790168
+weight of 1 is -11.326364
+weight of 2 is -44.222222
+weight of 3 is -193.000000
+not used!
+deny
+deny
+weight of 0 is -28.849791
+weight of 1 is -11.326440
+weight of 2 is -44.400000
+weight of 3 is -194.000000
+not used!
+deny
+deny
+weight of 0 is -28.909414
+weight of 1 is -11.326515
+weight of 2 is -44.577778
+weight of 3 is -195.000000
+not used!
+deny
+deny
+weight of 0 is -28.969036
+weight of 1 is -11.326590
+weight of 2 is -44.755556
+weight of 3 is -196.000000
+not used!
+deny
+deny
+weight of 0 is -29.028657
+weight of 1 is -11.326665
+weight of 2 is -44.933333
+weight of 3 is -197.000000
+not used!
+deny
+deny
+weight of 0 is -29.088277
+weight of 1 is -11.326740
+weight of 2 is -45.111111
+weight of 3 is -198.000000
+not used!
+deny
+deny
+weight of 0 is -29.147896
+weight of 1 is -11.326815
+weight of 2 is -45.288889
+weight of 3 is -199.000000
+not used!
+deny
+deny
+weight of 0 is -29.207514
+weight of 1 is -11.326890
+weight of 2 is -45.466667
+weight of 3 is -200.000000
+not used!
+deny
+deny
+weight of 0 is -29.267131
+weight of 1 is -11.326966
+weight of 2 is -45.644444
+weight of 3 is -201.000000
+not used!
+deny
+deny
+weight of 0 is -29.326747
+weight of 1 is -11.327041
+weight of 2 is -45.822222
+weight of 3 is -202.000000
+not used!
+deny
+deny
+weight of 0 is -29.386363
+weight of 1 is -11.327116
+weight of 2 is -46.000000
+weight of 3 is -203.000000
+not used!
+deny
+deny
+weight of 0 is -29.445977
+weight of 1 is -11.327191
+weight of 2 is -46.177778
+weight of 3 is -204.000000
+not used!
+deny
+deny
+weight of 0 is -29.505591
+weight of 1 is -11.327266
+weight of 2 is -46.355556
+weight of 3 is -205.000000
+not used!
+deny
+deny
+weight of 0 is -29.565203
+weight of 1 is -11.327341
+weight of 2 is -46.533333
+weight of 3 is -206.000000
+not used!
+deny
+deny
+weight of 0 is -29.624815
+weight of 1 is -11.327416
+weight of 2 is -46.711111
+weight of 3 is -207.000000
+not used!
+deny
+deny
+weight of 0 is -29.684426
+weight of 1 is -11.327492
+weight of 2 is -46.888889
+weight of 3 is -208.000000
+not used!
+deny
+deny
+weight of 0 is -29.744036
+weight of 1 is -11.327567
+weight of 2 is -47.066667
+weight of 3 is -209.000000
+not used!
+deny
+deny
+weight of 0 is -29.803645
+weight of 1 is -11.327642
+weight of 2 is -47.244444
+weight of 3 is -210.000000
+not used!
+deny
+deny
+weight of 0 is -29.863253
+weight of 1 is -11.327717
+weight of 2 is -47.422222
+weight of 3 is -211.000000
+not used!
+deny
+deny
+weight of 0 is -29.922860
+weight of 1 is -11.327792
+weight of 2 is -47.600000
+weight of 3 is -212.000000
+not used!
+deny
+deny
+weight of 0 is -29.982466
+weight of 1 is -11.327867
+weight of 2 is -47.777778
+weight of 3 is -213.000000
+not used!
+deny
+deny
+weight of 0 is -30.042071
+weight of 1 is -11.327943
+weight of 2 is -47.955556
+weight of 3 is -214.000000
+not used!
+deny
+deny
+weight of 0 is -30.101675
+weight of 1 is -11.328018
+weight of 2 is -48.133333
+weight of 3 is -215.000000
+not used!
+deny
+deny
+weight of 0 is -30.161279
+weight of 1 is -11.328093
+weight of 2 is -48.311111
+weight of 3 is -216.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is -30.220881
+weight of 1 is -11.328168
+weight of 2 is -48.488889
+weight of 3 is -217.000000
+not used!
+deny
+deny
+weight of 0 is -30.280483
+weight of 1 is -11.328243
+weight of 2 is -48.666667
+weight of 3 is -218.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -30.265356
+weight of 1 is -10.498681
+weight of 2 is -48.666667
+weight of 3 is -217.000000
+used!
+weight of 0 is -30.250230
+weight of 1 is -9.669120
+weight of 2 is -48.666667
+weight of 3 is -216.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -30.235104
+weight of 1 is -9.665268
+weight of 2 is -48.666667
+weight of 3 is -215.000000
+used!
+weight of 0 is -30.219978
+weight of 1 is -9.661417
+weight of 2 is -48.666667
+weight of 3 is -214.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -30.204852
+weight of 1 is -8.131531
+weight of 2 is -48.666667
+weight of 3 is -213.000000
+used!
+weight of 0 is -30.189725
+weight of 1 is -6.601645
+weight of 2 is -48.666667
+weight of 3 is -212.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -30.144681
+weight of 1 is -3.231000
+weight of 2 is -48.666667
+weight of 3 is -211.000000
+used!
+weight of 0 is -30.099637
+weight of 1 is 0.139644
+weight of 2 is -48.666667
+weight of 3 is -210.000000
+used!
+deny
+deny
+weight of 0 is -30.054592
+weight of 1 is 3.511022
+weight of 2 is -48.666667
+weight of 3 is -209.000000
+used!
+weight of 0 is -30.009548
+weight of 1 is 6.882399
+weight of 2 is -48.666667
+weight of 3 is -208.000000
+used!
+deny
+deny
+weight of 0 is -29.964503
+weight of 1 is 6.882418
+weight of 2 is -48.666667
+weight of 3 is -207.000000
+used!
+weight of 0 is -29.919458
+weight of 1 is 6.882437
+weight of 2 is -48.666667
+weight of 3 is -206.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.904332
+weight of 1 is 6.906090
+weight of 2 is -48.666667
+weight of 3 is -205.000000
+used!
+weight of 0 is -29.889206
+weight of 1 is 6.929743
+weight of 2 is -48.666667
+weight of 3 is -204.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.874080
+weight of 1 is 6.930006
+weight of 2 is -48.666667
+weight of 3 is -203.000000
+used!
+weight of 0 is -29.858954
+weight of 1 is 6.930269
+weight of 2 is -48.666667
+weight of 3 is -202.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.843828
+weight of 1 is 8.448582
+weight of 2 is -48.666667
+weight of 3 is -201.000000
+used!
+weight of 0 is -29.828702
+weight of 1 is 9.966895
+weight of 2 is -48.666667
+weight of 3 is -200.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.813575
+weight of 1 is 9.966914
+weight of 2 is -48.666667
+weight of 3 is -199.000000
+used!
+weight of 0 is -29.798450
+weight of 1 is 9.966933
+weight of 2 is -48.666667
+weight of 3 is -198.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.783323
+weight of 1 is 10.486702
+weight of 2 is -48.666667
+weight of 3 is -197.000000
+used!
+weight of 0 is -29.768198
+weight of 1 is 11.006470
+weight of 2 is -48.666667
+weight of 3 is -196.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -29.194607
+weight of 1 is 13.280426
+weight of 2 is -48.666667
+weight of 3 is -195.000000
+used!
+weight of 0 is -28.621016
+weight of 1 is 15.554383
+weight of 2 is -48.666667
+weight of 3 is -194.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -28.047425
+weight of 1 is 15.567459
+weight of 2 is -48.666667
+weight of 3 is -193.000000
+used!
+weight of 0 is -27.473834
+weight of 1 is 15.580534
+weight of 2 is -48.666667
+weight of 3 is -192.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -26.881983
+weight of 1 is 17.066787
+weight of 2 is -47.955556
+weight of 3 is -191.000000
+used!
+weight of 0 is -26.290133
+weight of 1 is 18.553039
+weight of 2 is -47.244444
+weight of 3 is -190.000000
+used!
+deny
+deny
+weight of 0 is -25.716542
+weight of 1 is 18.553058
+weight of 2 is -47.244444
+weight of 3 is -189.000000
+used!
+weight of 0 is -25.142951
+weight of 1 is 18.553077
+weight of 2 is -47.244444
+weight of 3 is -188.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -24.569360
+weight of 1 is 19.590578
+weight of 2 is -47.244444
+weight of 3 is -187.000000
+used!
+weight of 0 is -23.995769
+weight of 1 is 20.628080
+weight of 2 is -47.244444
+weight of 3 is -186.000000
+used!
+deny
+deny
+weight of 0 is -23.422178
+weight of 1 is 22.114257
+weight of 2 is -47.244444
+weight of 3 is -185.000000
+used!
+weight of 0 is -22.848587
+weight of 1 is 23.600435
+weight of 2 is -47.244444
+weight of 3 is -184.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -22.256737
+weight of 1 is 25.086633
+weight of 2 is -46.355556
+weight of 3 is -183.000000
+used!
+weight of 0 is -21.664888
+weight of 1 is 26.572831
+weight of 2 is -45.466667
+weight of 3 is -182.000000
+used!
+deny
+deny
+weight of 0 is -21.091297
+weight of 1 is 28.059105
+weight of 2 is -45.466667
+weight of 3 is -181.000000
+used!
+weight of 0 is -20.517706
+weight of 1 is 29.545378
+weight of 2 is -45.466667
+weight of 3 is -180.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -19.944115
+weight of 1 is 29.605573
+weight of 2 is -45.466667
+weight of 3 is -179.000000
+used!
+weight of 0 is -19.370524
+weight of 1 is 29.665767
+weight of 2 is -45.466667
+weight of 3 is -178.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -18.796933
+weight of 1 is 29.665786
+weight of 2 is -45.466667
+weight of 3 is -177.000000
+used!
+weight of 0 is -18.223342
+weight of 1 is 29.665805
+weight of 2 is -45.466667
+weight of 3 is -176.000000
+used!
+deny
+deny
+weight of 0 is -17.649751
+weight of 1 is 30.760364
+weight of 2 is -45.466667
+weight of 3 is -175.000000
+used!
+weight of 0 is -17.076160
+weight of 1 is 31.854922
+weight of 2 is -45.466667
+weight of 3 is -174.000000
+used!
+deny
+deny
+weight of 0 is -16.502569
+weight of 1 is 32.944338
+weight of 2 is -45.466667
+weight of 3 is -173.000000
+used!
+weight of 0 is -15.928978
+weight of 1 is 34.033754
+weight of 2 is -45.466667
+weight of 3 is -172.000000
+used!
+deny
+deny
+weight of 0 is -15.355387
+weight of 1 is 34.033772
+weight of 2 is -45.466667
+weight of 3 is -171.000000
+used!
+weight of 0 is -14.781796
+weight of 1 is 34.033791
+weight of 2 is -45.466667
+weight of 3 is -170.000000
+used!
+deny
+deny
+weight of 0 is -14.208205
+weight of 1 is 34.033810
+weight of 2 is -45.466667
+weight of 3 is -169.000000
+used!
+weight of 0 is -13.634614
+weight of 1 is 34.033829
+weight of 2 is -45.466667
+weight of 3 is -168.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -13.073771
+weight of 1 is 35.164337
+weight of 2 is -44.222222
+weight of 3 is -167.000000
+used!
+weight of 0 is -12.512927
+weight of 1 is 36.294845
+weight of 2 is -42.977778
+weight of 3 is -166.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -11.939336
+weight of 1 is 36.666116
+weight of 2 is -42.977778
+weight of 3 is -165.000000
+used!
+weight of 0 is -11.365745
+weight of 1 is 37.037386
+weight of 2 is -42.977778
+weight of 3 is -164.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -10.792154
+weight of 1 is 37.091964
+weight of 2 is -42.977778
+weight of 3 is -163.000000
+used!
+weight of 0 is -10.218563
+weight of 1 is 37.146541
+weight of 2 is -42.977778
+weight of 3 is -162.000000
+used!
+deny
+deny
+weight of 0 is -9.644972
+weight of 1 is 38.189444
+weight of 2 is -42.977778
+weight of 3 is -161.000000
+used!
+weight of 0 is -9.071381
+weight of 1 is 39.232347
+weight of 2 is -42.977778
+weight of 3 is -160.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -8.497791
+weight of 1 is 39.341651
+weight of 2 is -42.977778
+weight of 3 is -159.000000
+used!
+weight of 0 is -7.924200
+weight of 1 is 39.450956
+weight of 2 is -42.977778
+weight of 3 is -158.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is -7.350609
+weight of 1 is 39.450974
+weight of 2 is -42.977778
+weight of 3 is -157.000000
+used!
+weight of 0 is -6.777018
+weight of 1 is 39.450993
+weight of 2 is -42.977778
+weight of 3 is -156.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.203427
+weight of 1 is 39.475680
+weight of 2 is -42.977778
+weight of 3 is -155.000000
+used!
+weight of 0 is -5.629836
+weight of 1 is 39.500366
+weight of 2 is -42.977778
+weight of 3 is -154.000000
+used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -5.056245
+weight of 1 is 40.582079
+weight of 2 is -42.977778
+weight of 3 is -153.000000
+used!
+weight of 0 is -4.482654
+weight of 1 is 41.663792
+weight of 2 is -42.977778
+weight of 3 is -152.000000
+used!
+deny
+deny
+weight of 0 is -3.909064
+weight of 1 is 41.663811
+weight of 2 is -42.977778
+weight of 3 is -151.000000
+used!
+weight of 0 is -3.335472
+weight of 1 is 41.663829
+weight of 2 is -42.977778
+weight of 3 is -150.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -2.761882
+weight of 1 is 41.663848
+weight of 2 is -42.977778
+weight of 3 is -149.000000
+used!
+weight of 0 is -2.188291
+weight of 1 is 41.663867
+weight of 2 is -42.977778
+weight of 3 is -148.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -1.614700
+weight of 1 is 41.718275
+weight of 2 is -42.977778
+weight of 3 is -147.000000
+used!
+weight of 0 is -1.041109
+weight of 1 is 41.772683
+weight of 2 is -42.977778
+weight of 3 is -146.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -1.025983
+weight of 1 is 42.522183
+weight of 2 is -42.977778
+weight of 3 is -145.000000
+used!
+weight of 0 is -1.010857
+weight of 1 is 43.271682
+weight of 2 is -42.977778
+weight of 3 is -144.000000
+used!
+deny
+deny
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -0.437266
+weight of 1 is 44.685613
+weight of 2 is -42.977778
+weight of 3 is -143.000000
+used!
+weight of 0 is 0.136325
+weight of 1 is 46.099544
+weight of 2 is -42.977778
+weight of 3 is -142.000000
+used!
+deny
+deny
+weight of 0 is 0.709916
+weight of 1 is 46.099563
+weight of 2 is -42.977778
+weight of 3 is -141.000000
+used!
+weight of 0 is 1.283507
+weight of 1 is 46.099582
+weight of 2 is -42.977778
+weight of 3 is -140.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 1.298633
+weight of 1 is 46.101141
+weight of 2 is -42.977778
+weight of 3 is -139.000000
+used!
+weight of 0 is 1.313759
+weight of 1 is 46.102700
+weight of 2 is -42.977778
+weight of 3 is -138.000000
+used!
+deny
+deny
+weight of 0 is 1.328885
+weight of 1 is 46.102719
+weight of 2 is -42.977778
+weight of 3 is -137.000000
+used!
+weight of 0 is 1.344011
+weight of 1 is 46.102738
+weight of 2 is -42.977778
+weight of 3 is -136.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 1.917602
+weight of 1 is 47.804047
+weight of 2 is -42.977778
+weight of 3 is -135.000000
+used!
+weight of 0 is 2.491193
+weight of 1 is 49.505357
+weight of 2 is -42.977778
+weight of 3 is -134.000000
+used!
+deny
+deny
+weight of 0 is 3.064784
+weight of 1 is 49.505376
+weight of 2 is -42.977778
+weight of 3 is -133.000000
+used!
+weight of 0 is 3.638375
+weight of 1 is 49.505394
+weight of 2 is -42.977778
+weight of 3 is -132.000000
+used!
+deny
+deny
+weight of 0 is 4.211966
+weight of 1 is 49.505413
+weight of 2 is -42.977778
+weight of 3 is -131.000000
+used!
+weight of 0 is 4.785557
+weight of 1 is 49.505432
+weight of 2 is -42.977778
+weight of 3 is -130.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 4.800683
+weight of 1 is 49.505451
+weight of 2 is -42.977778
+weight of 3 is -129.000000
+used!
+weight of 0 is 4.815809
+weight of 1 is 49.505469
+weight of 2 is -42.977778
+weight of 3 is -128.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 4.800683
+weight of 1 is 44.216359
+weight of 2 is -42.977778
+weight of 3 is -129.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is 5.374274
+weight of 1 is 46.534089
+weight of 2 is -42.977778
+weight of 3 is -128.000000
+used!
+weight of 0 is 5.947865
+weight of 1 is 48.851819
+weight of 2 is -42.977778
+weight of 3 is -127.000000
+used!
+deny
+deny
+weight of 0 is 6.521456
+weight of 1 is 48.851838
+weight of 2 is -42.977778
+weight of 3 is -126.000000
+used!
+weight of 0 is 7.095047
+weight of 1 is 48.851857
+weight of 2 is -42.977778
+weight of 3 is -125.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 7.668637
+weight of 1 is 48.966287
+weight of 2 is -42.977778
+weight of 3 is -124.000000
+used!
+weight of 0 is 8.242228
+weight of 1 is 49.080717
+weight of 2 is -42.977778
+weight of 3 is -123.000000
+used!
+deny
+deny
+weight of 0 is 8.815819
+weight of 1 is 49.080735
+weight of 2 is -42.977778
+weight of 3 is -122.000000
+used!
+weight of 0 is 9.389410
+weight of 1 is 49.080754
+weight of 2 is -42.977778
+weight of 3 is -121.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 9.344402
+weight of 1 is 44.185977
+weight of 2 is -44.044444
+weight of 3 is -122.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 9.299353
+weight of 1 is 38.952400
+weight of 2 is -44.400000
+weight of 3 is -123.000000
+not used!
+weight of 0 is 9.284226
+weight of 1 is 35.568130
+weight of 2 is -44.400000
+weight of 3 is -124.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 9.857817
+weight of 1 is 35.584888
+weight of 2 is -44.400000
+weight of 3 is -123.000000
+used!
+weight of 0 is 10.431408
+weight of 1 is 35.601646
+weight of 2 is -44.400000
+weight of 3 is -122.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 11.004999
+weight of 1 is 35.601665
+weight of 2 is -44.400000
+weight of 3 is -121.000000
+used!
+weight of 0 is 11.578590
+weight of 1 is 35.601684
+weight of 2 is -44.400000
+weight of 3 is -120.000000
+used!
+deny
+deny
+weight of 0 is 12.152181
+weight of 1 is 35.601702
+weight of 2 is -44.400000
+weight of 3 is -119.000000
+used!
+weight of 0 is 12.725772
+weight of 1 is 35.601721
+weight of 2 is -44.400000
+weight of 3 is -118.000000
+used!
+deny
+deny
+weight of 0 is 13.299363
+weight of 1 is 36.630487
+weight of 2 is -44.400000
+weight of 3 is -117.000000
+used!
+weight of 0 is 13.872954
+weight of 1 is 37.659253
+weight of 2 is -44.400000
+weight of 3 is -116.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 14.446545
+weight of 1 is 37.659271
+weight of 2 is -44.400000
+weight of 3 is -115.000000
+used!
+weight of 0 is 15.020136
+weight of 1 is 37.659290
+weight of 2 is -44.400000
+weight of 3 is -114.000000
+used!
+deny
+deny
+weight of 0 is 15.593727
+weight of 1 is 37.659365
+weight of 2 is -44.400000
+weight of 3 is -113.000000
+used!
+weight of 0 is 16.167318
+weight of 1 is 37.659440
+weight of 2 is -44.400000
+weight of 3 is -112.000000
+used!
+deny
+deny
+weight of 0 is 16.740909
+weight of 1 is 37.763706
+weight of 2 is -44.400000
+weight of 3 is -111.000000
+used!
+weight of 0 is 17.314500
+weight of 1 is 37.867971
+weight of 2 is -44.400000
+weight of 3 is -110.000000
+used!
+deny
+deny
+weight of 0 is 17.888091
+weight of 1 is 37.867990
+weight of 2 is -44.400000
+weight of 3 is -109.000000
+used!
+weight of 0 is 18.461682
+weight of 1 is 37.868009
+weight of 2 is -44.400000
+weight of 3 is -108.000000
+used!
+deny
+deny
+weight of 0 is 19.035273
+weight of 1 is 37.868102
+weight of 2 is -44.400000
+weight of 3 is -107.000000
+used!
+weight of 0 is 19.608864
+weight of 1 is 37.868196
+weight of 2 is -44.400000
+weight of 3 is -106.000000
+used!
+deny
+deny
+weight of 0 is 19.558103
+weight of 1 is 33.609227
+weight of 2 is -44.800000
+weight of 3 is -107.000000
+not used!
+deny
+deny
+deny
+deny
+weight of 0 is 20.131693
+weight of 1 is 33.624708
+weight of 2 is -44.800000
+weight of 3 is -106.000000
+used!
+weight of 0 is 20.705284
+weight of 1 is 33.640189
+weight of 2 is -44.800000
+weight of 3 is -105.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 21.278875
+weight of 1 is 33.643871
+weight of 2 is -44.800000
+weight of 3 is -104.000000
+used!
+weight of 0 is 21.852466
+weight of 1 is 33.647553
+weight of 2 is -44.800000
+weight of 3 is -103.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 22.426057
+weight of 1 is 33.648117
+weight of 2 is -44.800000
+weight of 3 is -102.000000
+used!
+weight of 0 is 22.999648
+weight of 1 is 33.648681
+weight of 2 is -44.800000
+weight of 3 is -101.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 23.573238
+weight of 1 is 33.648737
+weight of 2 is -44.800000
+weight of 3 is -100.000000
+used!
+weight of 0 is 24.146829
+weight of 1 is 33.648793
+weight of 2 is -44.800000
+weight of 3 is -99.000000
+used!
+deny
+deny
+weight of 0 is 24.720420
+weight of 1 is 33.648812
+weight of 2 is -44.800000
+weight of 3 is -98.000000
+used!
+weight of 0 is 25.294011
+weight of 1 is 33.648831
+weight of 2 is -44.800000
+weight of 3 is -97.000000
+used!
+deny
+deny
+weight of 0 is 25.867602
+weight of 1 is 33.648850
+weight of 2 is -44.800000
+weight of 3 is -96.000000
+used!
+weight of 0 is 26.441193
+weight of 1 is 33.648869
+weight of 2 is -44.800000
+weight of 3 is -95.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 26.426067
+weight of 1 is 27.947873
+weight of 2 is -44.800000
+weight of 3 is -96.000000
+not used!
+deny
+deny
+weight of 0 is 26.377770
+weight of 1 is 22.060023
+weight of 2 is -45.555556
+weight of 3 is -97.000000
+not used!
+deny
+deny
+weight of 0 is 26.951361
+weight of 1 is 23.084745
+weight of 2 is -45.555556
+weight of 3 is -96.000000
+used!
+weight of 0 is 27.524952
+weight of 1 is 24.109467
+weight of 2 is -45.555556
+weight of 3 is -95.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 28.098542
+weight of 1 is 24.109485
+weight of 2 is -45.555556
+weight of 3 is -94.000000
+used!
+weight of 0 is 28.672134
+weight of 1 is 24.109504
+weight of 2 is -45.555556
+weight of 3 is -93.000000
+used!
+deny
+deny
+weight of 0 is 29.245724
+weight of 1 is 24.109523
+weight of 2 is -45.555556
+weight of 3 is -92.000000
+used!
+weight of 0 is 29.819315
+weight of 1 is 24.109542
+weight of 2 is -45.555556
+weight of 3 is -91.000000
+used!
+deny
+deny
+weight of 0 is 30.392906
+weight of 1 is 24.109561
+weight of 2 is -45.555556
+weight of 3 is -90.000000
+used!
+weight of 0 is 30.966497
+weight of 1 is 24.109579
+weight of 2 is -45.555556
+weight of 3 is -89.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 31.540088
+weight of 1 is 24.109598
+weight of 2 is -45.555556
+weight of 3 is -88.000000
+used!
+weight of 0 is 32.113679
+weight of 1 is 24.109617
+weight of 2 is -45.555556
+weight of 3 is -87.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 32.687270
+weight of 1 is 24.247497
+weight of 2 is -45.555556
+weight of 3 is -86.000000
+used!
+weight of 0 is 33.260861
+weight of 1 is 24.385377
+weight of 2 is -45.555556
+weight of 3 is -85.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 33.834452
+weight of 1 is 24.385395
+weight of 2 is -45.555556
+weight of 3 is -84.000000
+used!
+weight of 0 is 34.408043
+weight of 1 is 24.385414
+weight of 2 is -45.555556
+weight of 3 is -83.000000
+used!
+deny
+deny
+weight of 0 is 34.981634
+weight of 1 is 24.386598
+weight of 2 is -45.555556
+weight of 3 is -82.000000
+used!
+weight of 0 is 35.555225
+weight of 1 is 24.387781
+weight of 2 is -45.555556
+weight of 3 is -81.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 36.128816
+weight of 1 is 24.390543
+weight of 2 is -45.555556
+weight of 3 is -80.000000
+used!
+weight of 0 is 36.702407
+weight of 1 is 24.393305
+weight of 2 is -45.555556
+weight of 3 is -79.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 37.293422
+weight of 1 is 26.916779
+weight of 2 is -45.022222
+weight of 3 is -78.000000
+used!
+weight of 0 is 37.884437
+weight of 1 is 29.440254
+weight of 2 is -44.488889
+weight of 3 is -77.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 37.899563
+weight of 1 is 31.114216
+weight of 2 is -44.488889
+weight of 3 is -76.000000
+used!
+weight of 0 is 37.914689
+weight of 1 is 32.788178
+weight of 2 is -44.488889
+weight of 3 is -75.000000
+used!
+deny
+deny
+deny
+deny
+weight of 0 is 37.929815
+weight of 1 is 32.788197
+weight of 2 is -44.488889
+weight of 3 is -74.000000
+used!
+weight of 0 is 37.944941
+weight of 1 is 32.788216
+weight of 2 is -44.488889
+weight of 3 is -73.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 37.960067
+weight of 1 is 33.017533
+weight of 2 is -44.488889
+weight of 3 is -72.000000
+used!
+weight of 0 is 37.975193
+weight of 1 is 33.246851
+weight of 2 is -44.488889
+weight of 3 is -71.000000
+used!
+deny
+deny
+weight of 0 is 37.427720
+weight of 1 is 28.733180
+weight of 2 is -45.022222
+weight of 3 is -72.000000
+not used!
+deny
+deny
+weight of 0 is 37.442846
+weight of 1 is 28.733199
+weight of 2 is -45.022222
+weight of 3 is -71.000000
+used!
+weight of 0 is 37.457972
+weight of 1 is 28.733217
+weight of 2 is -45.022222
+weight of 3 is -70.000000
+used!
+deny
+deny
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 37.473098
+weight of 1 is 30.636087
+weight of 2 is -45.022222
+weight of 3 is -69.000000
+used!
+weight of 0 is 37.488224
+weight of 1 is 32.538957
+weight of 2 is -45.022222
+weight of 3 is -68.000000
+used!
+deny
+deny
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 38.079241
+weight of 1 is 33.963801
+weight of 2 is -43.777778
+weight of 3 is -67.000000
+used!
+weight of 0 is 38.670258
+weight of 1 is 35.388644
+weight of 2 is -42.533333
+weight of 3 is -66.000000
+used!
+accept
+accept
+weight of 0 is 38.134190
+weight of 1 is 31.803732
+weight of 2 is -42.533333
+weight of 3 is -67.000000
+not used!
+accept
+accept
+deny
+deny
+deny
+deny
+weight of 0 is 38.725207
+weight of 1 is 31.803756
+weight of 2 is -42.355556
+weight of 3 is -66.000000
+used!
+weight of 0 is 39.316224
+weight of 1 is 31.803779
+weight of 2 is -42.177778
+weight of 3 is -65.000000
+used!
+deny
+deny
+weight of 0 is 39.907241
+weight of 1 is 31.803824
+weight of 2 is -41.644444
+weight of 3 is -64.000000
+used!
+weight of 0 is 40.498258
+weight of 1 is 31.803869
+weight of 2 is -41.111111
+weight of 3 is -63.000000
+used!
+deny
+deny
+weight of 0 is 41.089276
+weight of 1 is 31.803892
+weight of 2 is -39.866667
+weight of 3 is -62.000000
+used!
+weight of 0 is 41.680294
+weight of 1 is 31.803916
+weight of 2 is -38.622222
+weight of 3 is -61.000000
+used!
+deny
+deny
+weight of 0 is 42.271311
+weight of 1 is 31.803939
+weight of 2 is -37.733333
+weight of 3 is -60.000000
+used!
+weight of 0 is 42.862328
+weight of 1 is 31.803963
+weight of 2 is -36.844444
+weight of 3 is -59.000000
+used!
+deny
+deny
+weight of 0 is 43.453346
+weight of 1 is 31.803984
+weight of 2 is -36.844444
+weight of 3 is -58.000000
+used!
+weight of 0 is 44.044363
+weight of 1 is 31.804005
+weight of 2 is -36.844444
+weight of 3 is -57.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is 44.635381
+weight of 1 is 31.804028
+weight of 2 is -36.666667
+weight of 3 is -56.000000
+used!
+weight of 0 is 45.226399
+weight of 1 is 31.804052
+weight of 2 is -36.488889
+weight of 3 is -55.000000
+used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 45.817418
+weight of 1 is 31.804099
+weight of 2 is -36.311111
+weight of 3 is -54.000000
+used!
+weight of 0 is 46.408437
+weight of 1 is 31.804146
+weight of 2 is -36.133333
+weight of 3 is -53.000000
+used!
+deny
+deny
+weight of 0 is 46.999457
+weight of 1 is 31.804169
+weight of 2 is -35.600000
+weight of 3 is -52.000000
+used!
+weight of 0 is 47.590476
+weight of 1 is 31.804193
+weight of 2 is -35.066667
+weight of 3 is -51.000000
+used!
+deny
+deny
+weight of 0 is 48.181496
+weight of 1 is 31.804216
+weight of 2 is -33.822222
+weight of 3 is -50.000000
+used!
+weight of 0 is 48.772516
+weight of 1 is 31.804240
+weight of 2 is -32.577778
+weight of 3 is -49.000000
+used!
+deny
+deny
+weight of 0 is 49.363536
+weight of 1 is 31.804263
+weight of 2 is -31.688889
+weight of 3 is -48.000000
+used!
+weight of 0 is 49.954556
+weight of 1 is 31.804287
+weight of 2 is -30.800000
+weight of 3 is -47.000000
+used!
+deny
+deny
+weight of 0 is 50.545575
+weight of 1 is 31.804308
+weight of 2 is -30.800000
+weight of 3 is -46.000000
+used!
+weight of 0 is 51.136595
+weight of 1 is 31.804329
+weight of 2 is -30.800000
+weight of 3 is -45.000000
+used!
+deny
+deny
+weight of 0 is 51.727615
+weight of 1 is 31.804352
+weight of 2 is -30.622222
+weight of 3 is -44.000000
+used!
+weight of 0 is 52.318636
+weight of 1 is 31.804376
+weight of 2 is -30.444444
+weight of 3 is -43.000000
+used!
+deny
+deny
+weight of 0 is 52.909656
+weight of 1 is 31.804421
+weight of 2 is -29.911111
+weight of 3 is -42.000000
+used!
+weight of 0 is 53.500677
+weight of 1 is 31.804465
+weight of 2 is -29.377778
+weight of 3 is -41.000000
+used!
+deny
+deny
+weight of 0 is 54.091698
+weight of 1 is 31.804489
+weight of 2 is -28.133333
+weight of 3 is -40.000000
+used!
+weight of 0 is 54.682719
+weight of 1 is 31.804512
+weight of 2 is -26.888889
+weight of 3 is -39.000000
+used!
+deny
+deny
+weight of 0 is 55.273740
+weight of 1 is 31.804536
+weight of 2 is -26.000000
+weight of 3 is -38.000000
+used!
+weight of 0 is 55.864761
+weight of 1 is 31.804559
+weight of 2 is -25.111111
+weight of 3 is -37.000000
+used!
+deny
+deny
+weight of 0 is 56.455782
+weight of 1 is 31.804580
+weight of 2 is -25.111111
+weight of 3 is -36.000000
+used!
+weight of 0 is 57.046803
+weight of 1 is 31.804601
+weight of 2 is -25.111111
+weight of 3 is -35.000000
+used!
+deny
+deny
+weight of 0 is 57.637824
+weight of 1 is 31.804625
+weight of 2 is -24.933333
+weight of 3 is -34.000000
+used!
+weight of 0 is 58.228846
+weight of 1 is 31.804648
+weight of 2 is -24.755556
+weight of 3 is -33.000000
+used!
+deny
+deny
+weight of 0 is 58.819867
+weight of 1 is 31.804693
+weight of 2 is -24.222222
+weight of 3 is -32.000000
+used!
+weight of 0 is 59.410889
+weight of 1 is 31.804738
+weight of 2 is -23.688889
+weight of 3 is -31.000000
+used!
+deny
+deny
+weight of 0 is 60.001912
+weight of 1 is 31.804761
+weight of 2 is -22.444444
+weight of 3 is -30.000000
+used!
+weight of 0 is 60.592934
+weight of 1 is 31.804785
+weight of 2 is -21.200000
+weight of 3 is -29.000000
+used!
+accept
+accept
+weight of 0 is 61.183956
+weight of 1 is 31.804808
+weight of 2 is -20.311111
+weight of 3 is -28.000000
+used!
+weight of 0 is 61.774978
+weight of 1 is 31.804832
+weight of 2 is -19.422222
+weight of 3 is -27.000000
+used!
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is 62.366001
+weight of 1 is 31.804855
+weight of 2 is -19.244444
+weight of 3 is -26.000000
+used!
+weight of 0 is 62.957023
+weight of 1 is 31.804878
+weight of 2 is -19.066667
+weight of 3 is -25.000000
+used!
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is 63.548048
+weight of 1 is 31.804949
+weight of 2 is -17.822222
+weight of 3 is -24.000000
+used!
+weight of 0 is 64.139073
+weight of 1 is 31.805019
+weight of 2 is -16.577778
+weight of 3 is -23.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is 64.730099
+weight of 1 is 31.805111
+weight of 2 is -15.333333
+weight of 3 is -22.000000
+used!
+weight of 0 is 65.321124
+weight of 1 is 31.805203
+weight of 2 is -14.088889
+weight of 3 is -21.000000
+used!
+accept
+accept
+deny
+deny
+accept
+accept
+weight of 0 is 65.912151
+weight of 1 is 31.805294
+weight of 2 is -12.844444
+weight of 3 is -20.000000
+used!
+weight of 0 is 66.503178
+weight of 1 is 31.805386
+weight of 2 is -11.600000
+weight of 3 is -19.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 66.511638
+weight of 1 is 31.865186
+weight of 2 is -10.888889
+weight of 3 is -18.000000
+used!
+weight of 0 is 66.520098
+weight of 1 is 31.924986
+weight of 2 is -10.177778
+weight of 3 is -17.000000
+used!
+deny
+deny
+weight of 0 is 66.528619
+weight of 1 is 31.929917
+weight of 2 is -10.177778
+weight of 3 is -16.000000
+used!
+weight of 0 is 66.537140
+weight of 1 is 31.934849
+weight of 2 is -10.177778
+weight of 3 is -15.000000
+used!
+deny
+deny
+weight of 0 is 66.545585
+weight of 1 is 31.940974
+weight of 2 is -10.177778
+weight of 3 is -14.000000
+used!
+weight of 0 is 66.554030
+weight of 1 is 31.947098
+weight of 2 is -10.177778
+weight of 3 is -13.000000
+used!
+deny
+deny
+weight of 0 is 66.562490
+weight of 1 is 31.948301
+weight of 2 is -10.177778
+weight of 3 is -12.000000
+used!
+weight of 0 is 66.570950
+weight of 1 is 31.949503
+weight of 2 is -10.177778
+weight of 3 is -11.000000
+used!
+deny
+deny
+weight of 0 is 66.579471
+weight of 1 is 31.954444
+weight of 2 is -10.177778
+weight of 3 is -10.000000
+used!
+weight of 0 is 66.587992
+weight of 1 is 31.959385
+weight of 2 is -10.177778
+weight of 3 is -9.000000
+used!
+deny
+deny
+weight of 0 is 66.596438
+weight of 1 is 31.965510
+weight of 2 is -10.177778
+weight of 3 is -8.000000
+used!
+weight of 0 is 66.604883
+weight of 1 is 31.971634
+weight of 2 is -10.177778
+weight of 3 is -7.000000
+used!
+deny
+deny
+weight of 0 is 66.613343
+weight of 1 is 31.972837
+weight of 2 is -10.177778
+weight of 3 is -6.000000
+used!
+weight of 0 is 66.621804
+weight of 1 is 31.974039
+weight of 2 is -10.177778
+weight of 3 is -5.000000
+used!
+deny
+deny
+weight of 0 is 66.630325
+weight of 1 is 31.978980
+weight of 2 is -10.177778
+weight of 3 is -4.000000
+used!
+weight of 0 is 66.638846
+weight of 1 is 31.983921
+weight of 2 is -10.177778
+weight of 3 is -3.000000
+used!
+deny
+deny
+weight of 0 is 66.647292
+weight of 1 is 31.990046
+weight of 2 is -10.177778
+weight of 3 is -2.000000
+used!
+weight of 0 is 66.655738
+weight of 1 is 31.996171
+weight of 2 is -10.177778
+weight of 3 is -1.000000
+used!
+deny
+deny
+weight of 0 is 66.664198
+weight of 1 is 31.997373
+weight of 2 is -10.177778
+weight of 3 is 0.000000
+used!
+weight of 0 is 66.672659
+weight of 1 is 31.998575
+weight of 2 is -10.177778
+weight of 3 is 1.000000
+used!
+accept
+accept
+weight of 0 is 66.681180
+weight of 1 is 32.003516
+weight of 2 is -10.177778
+weight of 3 is 2.000000
+used!
+weight of 0 is 66.689701
+weight of 1 is 32.008457
+weight of 2 is -10.177778
+weight of 3 is 3.000000
+used!
+accept
+accept
+weight of 0 is 66.698147
+weight of 1 is 32.014582
+weight of 2 is -10.177778
+weight of 3 is 4.000000
+used!
+weight of 0 is 66.706593
+weight of 1 is 32.020707
+weight of 2 is -10.177778
+weight of 3 is 5.000000
+used!
+accept
+accept
+weight of 0 is 66.715054
+weight of 1 is 32.021909
+weight of 2 is -10.177778
+weight of 3 is 6.000000
+used!
+weight of 0 is 66.723515
+weight of 1 is 32.023112
+weight of 2 is -10.177778
+weight of 3 is 7.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 66.690606
+weight of 1 is 26.512237
+weight of 2 is -10.266667
+weight of 3 is 6.000000
+not used!
+accept
+accept
+weight of 0 is 66.675480
+weight of 1 is 22.101002
+weight of 2 is -10.266667
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 66.101889
+weight of 1 is 20.669033
+weight of 2 is -10.266667
+weight of 3 is 4.000000
+not used!
+weight of 0 is 65.510873
+weight of 1 is 19.237085
+weight of 2 is -10.266667
+weight of 3 is 3.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 65.503340
+weight of 1 is 16.403336
+weight of 2 is -10.266667
+weight of 3 is 2.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 64.912318
+weight of 1 is 16.403315
+weight of 2 is -10.266667
+weight of 3 is 1.000000
+not used!
+accept
+accept
+weight of 0 is 64.904785
+weight of 1 is 13.569209
+weight of 2 is -10.266667
+weight of 3 is 0.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is 64.897253
+weight of 1 is 10.735004
+weight of 2 is -10.266667
+weight of 3 is -1.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 64.306229
+weight of 1 is 10.734983
+weight of 2 is -10.266667
+weight of 3 is -2.000000
+not used!
+deny
+deny
+weight of 0 is 63.715204
+weight of 1 is 10.734962
+weight of 2 is -10.266667
+weight of 3 is -3.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 63.124177
+weight of 1 is 10.734941
+weight of 2 is -10.266667
+weight of 3 is -4.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 62.533149
+weight of 1 is 10.734920
+weight of 2 is -10.266667
+weight of 3 is -5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 61.942118
+weight of 1 is 10.734899
+weight of 2 is -10.266667
+weight of 3 is -6.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is 61.934587
+weight of 1 is 7.899825
+weight of 2 is -10.977778
+weight of 3 is -7.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 61.926064
+weight of 1 is 7.894847
+weight of 2 is -10.977778
+weight of 3 is -8.000000
+not used!
+deny
+deny
+weight of 0 is 61.917617
+weight of 1 is 7.888722
+weight of 2 is -10.977778
+weight of 3 is -9.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 61.912395
+weight of 1 is 7.082518
+weight of 2 is -11.333333
+weight of 3 is -10.000000
+not used!
+accept
+accept
+weight of 0 is 61.897269
+weight of 1 is 6.557883
+weight of 2 is -11.333333
+weight of 3 is -11.000000
+not used!
+accept
+accept
+weight of 0 is 61.873929
+weight of 1 is 3.426804
+weight of 2 is -12.044444
+weight of 3 is -12.000000
+not used!
+weight of 0 is 61.850590
+weight of 1 is 3.426630
+weight of 2 is -12.400000
+weight of 3 is -13.000000
+not used!
+weight of 0 is 61.828580
+weight of 1 is 3.318533
+weight of 2 is -13.111111
+weight of 3 is -14.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is 61.774262
+weight of 1 is -0.133123
+weight of 2 is -13.111111
+weight of 3 is -15.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is 61.746984
+weight of 1 is -0.133136
+weight of 2 is -13.511111
+weight of 3 is -16.000000
+not used!
+accept
+accept
+weight of 0 is 61.731858
+weight of 1 is -3.584722
+weight of 2 is -13.511111
+weight of 3 is -17.000000
+not used!
+weight of 0 is 61.704581
+weight of 1 is -7.036194
+weight of 2 is -13.866667
+weight of 3 is -18.000000
+not used!
+weight of 0 is 61.689455
+weight of 1 is -12.478555
+weight of 2 is -13.866667
+weight of 3 is -19.000000
+not used!
+weight of 0 is 61.662180
+weight of 1 is -17.920713
+weight of 2 is -14.577778
+weight of 3 is -20.000000
+not used!
+weight of 0 is 61.647054
+weight of 1 is -23.362439
+weight of 2 is -14.577778
+weight of 3 is -21.000000
+not used!
+deny
+deny
+accept
+accept
+weight of 0 is 62.233240
+weight of 1 is -22.337255
+weight of 2 is -14.577778
+weight of 3 is -20.000000
+used!
+weight of 0 is 62.819427
+weight of 1 is -21.312071
+weight of 2 is -14.577778
+weight of 3 is -19.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+weight of 0 is 62.804301
+weight of 1 is -21.312334
+weight of 2 is -14.577778
+weight of 3 is -20.000000
+not used!
+accept
+accept
+weight of 0 is 62.789175
+weight of 1 is -21.836255
+weight of 2 is -14.577778
+weight of 3 is -21.000000
+not used!
+Exiting @ tick 14372548000 because exiting with last active thread context

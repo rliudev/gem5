@@ -1,15 +1,15 @@
 Running SPEC test: exchange2
 
 /home/victorfu/cpu2017/benchspec/CPU/548.exchange2_r
-/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward/exchange2" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=87000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000 --options="6" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward-p3/exchange2" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=87000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="6" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 gem5 Simulator System.  http://gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 compiled Jun 14 2019 14:23:51
-gem5 started Jun 14 2019 15:13:53
-gem5 executing on tetracosa.cs.ucla.edu, pid 138784
-command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward/exchange2 /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=87000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 --options=6 --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+gem5 started Jun 14 2019 15:51:57
+gem5 executing on tetracosa.cs.ucla.edu, pid 347214
+command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward-p3/exchange2 /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=87000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 --options=6 --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 info: Standard input is not a terminal, disabling listeners.
 Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
@@ -21211,4 +21211,276 @@ weight of 1 is 10.199264
 weight of 2 is -9.133333
 weight of 3 is 0.000000
 not used!
-Exiting @ tick 8804679000 because a thread reached the max instruction count
+accept
+accept
+weight of 0 is 0.245114
+weight of 1 is 6.735604
+weight of 2 is -9.133333
+weight of 3 is -1.000000
+not used!
+accept
+accept
+weight of 0 is 0.229988
+weight of 1 is 3.271229
+weight of 2 is -9.133333
+weight of 3 is -2.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 0.245114
+weight of 1 is 3.278763
+weight of 2 is -9.133333
+weight of 3 is -1.000000
+used!
+weight of 0 is 0.260240
+weight of 1 is 3.286297
+weight of 2 is -9.133333
+weight of 3 is 0.000000
+used!
+accept
+accept
+weight of 0 is 0.275366
+weight of 1 is 3.286315
+weight of 2 is -9.133333
+weight of 3 is 1.000000
+used!
+weight of 0 is 0.290492
+weight of 1 is 3.286334
+weight of 2 is -9.133333
+weight of 3 is 2.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 0.275366
+weight of 1 is 3.286297
+weight of 2 is -9.133333
+weight of 3 is 1.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 0.260656
+weight of 1 is 3.274176
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+not used!
+accept
+accept
+accept
+accept
+weight of 0 is 0.245530
+weight of 1 is 3.274120
+weight of 2 is -9.311111
+weight of 3 is -1.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 0.260656
+weight of 1 is 3.274665
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+used!
+weight of 0 is 0.275782
+weight of 1 is 3.275210
+weight of 2 is -9.311111
+weight of 3 is 1.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 0.260656
+weight of 1 is 3.275153
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+not used!
+weight of 0 is 0.245530
+weight of 1 is 3.275097
+weight of 2 is -9.311111
+weight of 3 is -1.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is 0.260656
+weight of 1 is 3.277596
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+used!
+weight of 0 is 0.275782
+weight of 1 is 3.280094
+weight of 2 is -9.311111
+weight of 3 is 1.000000
+used!
+accept
+accept
+weight of 0 is 0.290908
+weight of 1 is 3.280113
+weight of 2 is -9.311111
+weight of 3 is 2.000000
+used!
+weight of 0 is 0.306034
+weight of 1 is 3.280132
+weight of 2 is -9.311111
+weight of 3 is 3.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 0.290908
+weight of 1 is 3.280076
+weight of 2 is -9.311111
+weight of 3 is 2.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is 0.275782
+weight of 1 is 3.278592
+weight of 2 is -9.311111
+weight of 3 is 1.000000
+not used!
+weight of 0 is 0.260656
+weight of 1 is 3.278047
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+not used!
+accept
+accept
+weight of 0 is -0.244896
+weight of 1 is 3.166375
+weight of 2 is -9.311111
+weight of 3 is -1.000000
+not used!
+accept
+accept
+weight of 0 is -0.832255
+weight of 1 is -0.186591
+weight of 2 is -9.311111
+weight of 3 is -2.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -0.817128
+weight of 1 is 3.301343
+weight of 2 is -9.311111
+weight of 3 is -1.000000
+used!
+weight of 0 is -0.802002
+weight of 1 is 6.789277
+weight of 2 is -9.311111
+weight of 3 is 0.000000
+used!
+accept
+accept
+weight of 0 is -0.786876
+weight of 1 is 6.789295
+weight of 2 is -9.311111
+weight of 3 is 1.000000
+used!
+weight of 0 is -0.771750
+weight of 1 is 6.789314
+weight of 2 is -9.311111
+weight of 3 is 2.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+Exiting @ tick 86548991000 because a thread reached the max instruction count

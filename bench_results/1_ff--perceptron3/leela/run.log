@@ -1,15 +1,15 @@
 Running SPEC test: leela
 
 /home/victorfu/cpu2017/benchspec/CPU/541.leela_r
-/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward/leela" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000 --options="ref.sgf" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+/home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir="/home/victorfu/output/bench_spec/fastforward-p3/leela" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="ref.sgf" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 gem5 Simulator System.  http://gem5.org
 gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 compiled Jun 14 2019 14:23:51
-gem5 started Jun 14 2019 15:13:53
-gem5 executing on tetracosa.cs.ucla.edu, pid 138766
-command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward/leela /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 --options=ref.sgf --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+gem5 started Jun 14 2019 15:51:57
+gem5 executing on tetracosa.cs.ucla.edu, pid 347138
+command line: /home/victorfu/finalproject/gem5/build/X86/gem6.opt --outdir=/home/victorfu/output/bench_spec/fastforward-p3/leela /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 --options=ref.sgf --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
 
 info: Standard input is not a terminal, disabling listeners.
 Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
@@ -60776,4 +60776,2611 @@ accept
 accept
 accept
 accept
-Exiting @ tick 10515490000 because a thread reached the max instruction count
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.284158
+weight of 1 is -16.644438
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+not used!
+weight of 0 is -6.317351
+weight of 1 is -16.953433
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+weight of 0 is -6.350559
+weight of 1 is -17.262389
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+weight of 0 is -6.387564
+weight of 1 is -17.571403
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.424583
+weight of 1 is -17.880453
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.457820
+weight of 1 is -18.189410
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+weight of 0 is -6.494854
+weight of 1 is -18.498423
+weight of 2 is -16.200000
+weight of 3 is 3.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.461608
+weight of 1 is -18.189467
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+used!
+weight of 0 is -6.428361
+weight of 1 is -17.880510
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+accept
+accept
+weight of 0 is -6.391317
+weight of 1 is -17.571497
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+weight of 0 is -6.354274
+weight of 1 is -17.262483
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+accept
+accept
+weight of 0 is -6.321027
+weight of 1 is -16.953489
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+weight of 0 is -6.287780
+weight of 1 is -16.644495
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.324829
+weight of 1 is -16.953545
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+weight of 0 is -6.358081
+weight of 1 is -17.262540
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.391348
+weight of 1 is -17.571497
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.428426
+weight of 1 is -17.880510
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.461723
+weight of 1 is -18.189467
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+weight of 0 is -6.498816
+weight of 1 is -18.498480
+weight of 2 is -16.200000
+weight of 3 is 3.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.465513
+weight of 1 is -18.189523
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+used!
+weight of 0 is -6.432209
+weight of 1 is -17.880566
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+accept
+accept
+weight of 0 is -6.395110
+weight of 1 is -17.571553
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+weight of 0 is -6.358010
+weight of 1 is -17.262540
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+accept
+accept
+weight of 0 is -6.324707
+weight of 1 is -16.953545
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+weight of 0 is -6.291403
+weight of 1 is -16.644551
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.328511
+weight of 1 is -16.953602
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+weight of 0 is -6.361823
+weight of 1 is -17.262596
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.395149
+weight of 1 is -17.571553
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+weight of 0 is -6.432271
+weight of 1 is -17.880566
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.465612
+weight of 1 is -18.189523
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+weight of 0 is -6.502750
+weight of 1 is -18.498536
+weight of 2 is -16.200000
+weight of 3 is 3.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.469399
+weight of 1 is -18.189579
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+used!
+weight of 0 is -6.436049
+weight of 1 is -17.880622
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+accept
+accept
+weight of 0 is -6.398902
+weight of 1 is -17.571609
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+weight of 0 is -6.361756
+weight of 1 is -17.262596
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+accept
+accept
+weight of 0 is -6.328405
+weight of 1 is -16.953602
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+weight of 0 is -6.295055
+weight of 1 is -16.644607
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.332207
+weight of 1 is -16.953658
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+weight of 0 is -6.365562
+weight of 1 is -17.262652
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.398933
+weight of 1 is -17.571609
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+accept
+accept
+weight of 0 is -6.436100
+weight of 1 is -17.880622
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.469485
+weight of 1 is -18.189579
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.436091
+weight of 1 is -17.880622
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+weight of 0 is -6.402697
+weight of 1 is -17.571666
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+accept
+accept
+weight of 0 is -6.365507
+weight of 1 is -17.262652
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+weight of 0 is -6.328317
+weight of 1 is -16.953639
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+accept
+accept
+weight of 0 is -6.294923
+weight of 1 is -16.644645
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+weight of 0 is -6.261528
+weight of 1 is -16.335650
+weight of 2 is -16.200000
+weight of 3 is 10.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.298725
+weight of 1 is -16.644701
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+not used!
+weight of 0 is -6.332126
+weight of 1 is -16.953696
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.365541
+weight of 1 is -17.262652
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+weight of 0 is -6.402752
+weight of 1 is -17.571666
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.436182
+weight of 1 is -17.880622
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+weight of 0 is -6.473408
+weight of 1 is -18.189636
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.439964
+weight of 1 is -17.880679
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+weight of 0 is -6.406520
+weight of 1 is -17.571722
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+accept
+accept
+weight of 0 is -6.369280
+weight of 1 is -17.262709
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+weight of 0 is -6.332040
+weight of 1 is -16.953696
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+accept
+accept
+weight of 0 is -6.298596
+weight of 1 is -16.644701
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+weight of 0 is -6.265152
+weight of 1 is -16.335707
+weight of 2 is -16.200000
+weight of 3 is 10.000000
+used!
+accept
+accept
+weight of 0 is -6.231708
+weight of 1 is -16.026712
+weight of 2 is -16.200000
+weight of 3 is 11.000000
+used!
+weight of 0 is -6.198264
+weight of 1 is -15.717718
+weight of 2 is -16.200000
+weight of 3 is 12.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.235505
+weight of 1 is -16.026731
+weight of 2 is -16.200000
+weight of 3 is 11.000000
+not used!
+accept
+accept
+weight of 0 is -6.268949
+weight of 1 is -16.335726
+weight of 2 is -16.200000
+weight of 3 is 10.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.302408
+weight of 1 is -16.644682
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+not used!
+weight of 0 is -6.339663
+weight of 1 is -16.953696
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.373137
+weight of 1 is -17.262652
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+weight of 0 is -6.410408
+weight of 1 is -17.571666
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.443896
+weight of 1 is -17.880622
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+weight of 0 is -6.481181
+weight of 1 is -18.189636
+weight of 2 is -16.200000
+weight of 3 is 4.000000
+not used!
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+deny
+weight of 0 is -6.447678
+weight of 1 is -17.880679
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+used!
+weight of 0 is -6.414174
+weight of 1 is -17.571722
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+used!
+accept
+accept
+weight of 0 is -6.376874
+weight of 1 is -17.262709
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+used!
+weight of 0 is -6.339574
+weight of 1 is -16.953696
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+used!
+accept
+accept
+weight of 0 is -6.306071
+weight of 1 is -16.644701
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+used!
+weight of 0 is -6.272567
+weight of 1 is -16.335707
+weight of 2 is -16.200000
+weight of 3 is 10.000000
+used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.309876
+weight of 1 is -16.644758
+weight of 2 is -16.200000
+weight of 3 is 9.000000
+not used!
+weight of 0 is -6.343389
+weight of 1 is -16.953752
+weight of 2 is -16.200000
+weight of 3 is 8.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.376908
+weight of 1 is -17.262746
+weight of 2 is -16.200000
+weight of 3 is 7.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+weight of 0 is -6.410441
+weight of 1 is -17.571703
+weight of 2 is -16.200000
+weight of 3 is 6.000000
+not used!
+weight of 0 is -6.447770
+weight of 1 is -17.880716
+weight of 2 is -16.200000
+weight of 3 is 5.000000
+not used!
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+deny
+deny
+deny
+deny
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+accept
+deny
+deny
+accept
+accept
+accept
+accept
+Exiting @ tick 72316686000 because a thread reached the max instruction count
