@@ -21,6 +21,20 @@ print_stats() {
   print_series "$odir/simple" "$stat" "${runtests[@]}"
 }
 
+print_stats_2d() {
+  for labl in ${runtests[@]}; do
+    print_line "$odir/simple/$labl/stats.txt" "$labl" $@
+  done
+}
+
+parse_args() {
+  if [ "$1" = "run" ]; then
+    start_runs
+  else
+    # print_stats $@
+    print_stats_2d $@
+  fi
+}
 
 parse_args $@
 

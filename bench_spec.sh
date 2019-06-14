@@ -135,7 +135,7 @@ run_series() {
 }
 
 
-# $1: output dir
+# $1: input dir
 # $2: metric you want
 # $3: [array] subrun dirs
 print_series() {
@@ -147,12 +147,4 @@ print_series() {
   done
 }
 
-
-parse_args() {
-  if [ "$1" = "run" ]; then
-    start_runs
-  else
-    print_stats $@
-  fi
-}
 

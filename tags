@@ -410,6 +410,7 @@ pageBytes	src/mem/cache/prefetch/base.hh	/^    const Addr pageBytes;$/;"	m	class
 pageIthBlockAddress	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageIthBlockAddress(Addr page, uint32_t blockIndex) const$/;"	f	class:BasePrefetcher
 pageOffset	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::pageOffset(Addr a) const$/;"	f	class:BasePrefetcher
 parent	src/mem/cache/prefetch/base.hh	/^        BasePrefetcher &parent;$/;"	m	class:BasePrefetcher::PrefetchListener
+parse_args	bench_simple.sh	/^parse_args() {$/;"	f
 parser	configs/example/se.py	/^parser = optparse.OptionParser()$/;"	v
 pattern_sequence_table_assoc	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_sequence_table_assoc = Param.Unsigned(16384,$/;"	v	class:STeMSPrefetcher
 pattern_sequence_table_entries	src/mem/cache/prefetch/Prefetcher.py	/^    pattern_sequence_table_entries = Param.MemorySize("16384",$/;"	v	class:STeMSPrefetcher
@@ -459,6 +460,9 @@ print_function	configs/common/MLConfig.py	/^from __future__ import print_functio
 print_function	configs/common/MLUConfig.py	/^from __future__ import print_function$/;"	i
 print_function	configs/common/Options.py	/^from __future__ import print_function$/;"	i
 print_function	configs/example/se.py	/^from __future__ import print_function$/;"	i
+print_series	bench_spec.sh	/^print_series() {$/;"	f
+print_stats	bench_simple.sh	/^print_stats() {$/;"	f
+print_stats_2d	bench_simple.sh	/^print_stats_2d() {$/;"	f
 priority	src/mem/cache/prefetch/queued.hh	/^        int32_t priority;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
 probeNotify	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::probeNotify(const PacketPtr &pkt, bool miss)$/;"	f	class:BasePrefetcher
 processEpochEvent	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::processEpochEvent()$/;"	f	class:AccessMapPatternMatching
@@ -547,6 +551,7 @@ startDegree	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^    const un
 start_conf	src/mem/cache/prefetch/Prefetcher.py	/^    start_conf = Param.Int(4, "Starting confidence for new entries")$/;"	v	class:StridePrefetcher
 start_degree	src/mem/cache/prefetch/Prefetcher.py	/^    start_degree = 2$/;"	v	class:SlimAccessMapPatternMatching
 start_degree	src/mem/cache/prefetch/Prefetcher.py	/^    start_degree = Param.Unsigned(4,$/;"	v	class:AccessMapPatternMatching
+start_runs	bench_simple.sh	/^start_runs() {$/;"	f
 startup	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatching::startup()$/;"	f	class:AccessMapPatternMatching
 states	src/mem/cache/prefetch/access_map_pattern_matching.hh	/^        std::vector<AccessMapState> states;$/;"	m	struct:AccessMapPatternMatching::AccessMapEntry
 stream_address_buffer_entries	src/mem/cache/prefetch/Prefetcher.py	/^    stream_address_buffer_entries = Param.Unsigned(7, "Entries in the SAB")$/;"	v	class:PIFPrefetcher
