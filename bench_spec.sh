@@ -138,12 +138,24 @@ run_series() {
 # $1: output dir
 # $2: metric you want
 # $3: [array] subrun dirs
-print_series() {
+print_files() {
   local odir="$1" && shift
   local stat="$1" && shift
   local arr=($@)
   for t in ${arr[@]}; do
-    print_line "$odir/$t/stats.txt" "$t" "$stat"
+    print_file "$odir/$t/stats.txt" "$t" "$stat"
+  done
+}
+
+# $1: output dir
+# $2: metric you want
+# $3: [array] subrun dirs
+print_stats() {
+  local odir="$1" && shift
+  local file="$1" && shift
+  local arr=($@)
+  for t in ${arr[@]}; do
+    print_stat "$odir/$t/stats.txt" "$t" "$stat"
   done
 }
 

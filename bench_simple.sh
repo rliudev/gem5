@@ -3,7 +3,6 @@
 # Author: Rach Liu
 
 source bench_spec.sh
-source bench_stat.sh
 
 
 # The tests to run
@@ -17,8 +16,12 @@ start_runs() {
 }
 
 print_stats() {
-  local stat="$1"
-  print_series "$odir/simple" "$stat" "${runtests[@]}"
+#  local stat="$1"
+#  print_series "$odir/simple" "$stat" "${runtests[@]}"
+  local stats=($@)
+  for file in ${runtests[@]}; do
+    print_stats  "$odir/simple" "$file" "${stats[@]}"
+  done
 }
 
 
