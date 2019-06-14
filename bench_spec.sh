@@ -130,7 +130,7 @@ run_series() {
   local arr=($@)
   for t in ${arr[@]}; do
     max_bg_procs 15
-    run $t --outdir="$odir/$t" &
+    run $t --outdir="$odir/$t" > "$odir/$t/run.log" 2>&1 &
   done
 }
 
