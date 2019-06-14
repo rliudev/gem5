@@ -1,0 +1,116 @@
+Running SPEC test: leela
+
+/home/victorfu/cpu2017/benchspec/CPU/541.leela_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward/leela" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000 --options="ref.sgf" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 14:52:43
+gem5 started Jun 14 2019 14:53:12
+gem5 executing on tetracosa.cs.ucla.edu, pid 125663
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward/leela /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=leela_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=71000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 --options=ref.sgf --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
+MLU-Prefetch Perceptron Enabled.
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+PerceptronUnit is in mode: PC_DELTA_ADDR
+warn: Sockets disabled, not accepting gdb connections
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+xn[0] = 1,  new weight for w[0] = -1
+xn[1] = 0,  new weight for w[1] = 0
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -2
+xn[1] = 0,  new weight for w[1] = 0
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -3
+xn[1] = 1002,  new weight for w[1] = -1002
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -4
+xn[1] = 1002,  new weight for w[1] = -2004
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -5
+xn[1] = 1002,  new weight for w[1] = -3006
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -6
+xn[1] = 1002,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -7
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -8
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -9
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -10
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -11
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -12
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -13
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -14
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -15
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -16
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -17
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -18
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -19
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -20
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -21
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -22
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -23
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -24
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -25
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -26
+xn[1] = 0,  new weight for w[1] = -4008
+xn[2] = 0,  new weight for w[2] = 0
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+info: Increasing stack size by one page.
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+Exiting @ tick 12514935000 because a thread reached the max instruction count
