@@ -1,0 +1,36 @@
+Running SPEC test: x264
+
+/home/victorfu/cpu2017/benchspec/CPU/525.x264_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward/x264" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=x264_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=22000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000 --options="--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720" --l2-hwp-type=TaggedPrefetcher 
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 12 2019 22:55:31
+gem5 started Jun 14 2019 14:39:31
+gem5 executing on tetracosa.cs.ucla.edu, pid 122814
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward/x264 /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=x264_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=22000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=10000000 '--options=--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720' --l2-hwp-type=TaggedPrefetcher
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
+Warning: no l2 prefetcher specified. Ignoring L2 Prefetch MLU config
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+warn: Sockets disabled, not accepting gdb connections
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+info: Increasing stack size by one page.
+yuv [info]: 1280x720p 0:0 @ 25/1 fps (cfr)
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+x264 [info]: using cpu capabilities: none!
+Exiting @ tick 5647921000 because a thread reached the max instruction count
