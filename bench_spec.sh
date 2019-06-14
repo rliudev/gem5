@@ -14,8 +14,8 @@ outdir="$HOME/output/bench_spec"
 pf=TaggedPrefetcher
 cpu=DerivO3CPU
 
-#cmd=$GEM5HOME/build/X86/gem5.opt
-cmd=echo
+cmd=$GEM5HOME/build/X86/gem5.opt
+#cmd=echo
 config=$GEM5HOME/configs/example/se.py
 
 build=victor_jun10-m64
@@ -44,6 +44,7 @@ run_perlbench() {
   run_bench "perlbench" "perlbench_r_base.$build" "$perl_opts" "$@"
 }
 
+
 run_gcc() {
   local gcc_opts="--options=\"ref32.c -O3 -fselective-scheduling -fselective-scheduling2 -o ref32.opts-O3_-fselective-scheduling_-fselective-scheduling2.s\""
   run_bench "gcc" "cpugcc_r_base.$build" "$gcc_opts" "$@"
@@ -65,7 +66,7 @@ run_xalancbmk() {
 }
 
 run_x264() {
-  local x264_opts="\"--options=\"--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720\""
+  local x264_opts="--options=\"--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720\""
   run_bench "x264" "x264_r_base.$build" "$x264_opts" "$@"
 }
 
