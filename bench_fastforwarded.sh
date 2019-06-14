@@ -52,6 +52,7 @@ start_runs() {
       c1=87000000
       c2=11000000
     fi
+    ml_opts="" # uncomment to turn off perceptron
     conf_opts="$ff_opts$c1 $conf_opts_copy"
 #    echo -e "conf_opts: $conf_opts\n"
     run_one "$odir" "$t"

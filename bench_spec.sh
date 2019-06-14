@@ -42,7 +42,8 @@ cd $SPECHOME && source shrc
 run_bench() {
   local name="$1" && shift
   local exe="$1"  && shift
-  bash -c "$cmd $m5_opts $conf --cmd=$exe $conf_opts $sim_opts $pf_opts $ml_opts"
+  local cmd="$cmd $m5_opts $conf --cmd=$exe $conf_opts $sim_opts $pf_opts $ml_opts"
+  bash -c "$cmd"
 }
 
 
