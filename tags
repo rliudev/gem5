@@ -455,15 +455,14 @@ prefetch_on_access	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_on_access
 prefetch_threshold	src/mem/cache/prefetch/Prefetcher.py	/^    prefetch_threshold = Param.Unsigned(2,$/;"	v	class:IndirectMemoryPrefetcher
 prefetchers	src/mem/cache/prefetch/Prefetcher.py	/^    prefetchers = VectorParam.BasePrefetcher([], "Array of prefetchers")$/;"	v	class:MultiPrefetcher
 prev_pfh	src/mem/cache/prefetch/perceptron_unit.hh	/^    std::unordered_map<const PrefetchInfo*, PFHistory*> prev_pfh; \/\/ store prev prefetches for soem prefetch addr$/;"	m	class:PerceptronUnit
-print_file	bench_stat.sh	/^print_file() {$/;"	f
 print_function	configs/common/CacheConfig.py	/^from __future__ import print_function$/;"	i
 print_function	configs/common/MLConfig.py	/^from __future__ import print_function$/;"	i
 print_function	configs/common/MLUConfig.py	/^from __future__ import print_function$/;"	i
 print_function	configs/common/Options.py	/^from __future__ import print_function$/;"	i
 print_function	configs/example/se.py	/^from __future__ import print_function$/;"	i
 print_header	bench_stat.sh	/^print_header() {$/;"	f
+print_line	bench_stat.sh	/^print_line() {$/;"	f
 print_series	bench_spec.sh	/^print_series() {$/;"	f
-print_stat	bench_stat.sh	/^print_stat() {$/;"	f
 print_stats	bench_simple.sh	/^print_stats() {$/;"	f
 print_stats_2d	bench_simple.sh	/^print_stats_2d() {$/;"	f
 priority	src/mem/cache/prefetch/queued.hh	/^        int32_t priority;$/;"	m	struct:QueuedPrefetcher::DeferredPacket
