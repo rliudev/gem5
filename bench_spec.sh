@@ -12,7 +12,8 @@ outdir="$HOME/output/bench_spec"
 pf=TaggedPrefetcher
 cpu=DerivO3CPU
 
-cmd=$GEM5HOME/build/X86/gem5.opt
+#cmd=$GEM5HOME/build/X86/gem5.opt
+cmd=echo
 config=$GEM5HOME/configs/example/se.py
 
 build=victor_jun10-m64
@@ -25,13 +26,13 @@ cd $SPECHOME && source shrc
 
 
 run_bench() {
-  local name="$1"
-  local exe="$2"
-  local opts="$3"
+  local name="$1" && shift
+  local exe="$1"  && shift
+  local opts="$1" && shift
 
   local arg="--caches  --l2cache --cmd=$exe  --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=$cpu  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000"
 
-  bash -c "$cmd $config $arg $opts --l2-hwp-type=$pf --mlu_pf_type=perceptron"
+  bash -c "$cmd $config $arg $opts --l2-hwp-type=$pf --mlu_pf_type=perceptron $@"
 }
 
 
