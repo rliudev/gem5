@@ -47,8 +47,8 @@ void
 TaggedPrefetcher::calculatePrefetch(const PrefetchInfo &pfi,
         std::vector<AddrPriority> &addresses)
 {
-    Addr blkAddr = blockAddress(pfi.getAddr());
-
+  //Addr blkAddr = blockAddress(pfi.getAddr());
+  Addr blkAddr = pfi.getAddr();
     for (int d = 1; d <= degree; d++) {
         Addr newAddr = blkAddr + d*(blkSize);
         addresses.push_back(AddrPriority(newAddr,0));

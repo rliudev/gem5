@@ -159,7 +159,7 @@ QueuedPrefetcher::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
         for (auto it = perceptronUnit->accept_table.begin(); it != perceptronUnit->accept_table.end(); it++) {
             auto itr = it->begin();
             while (itr != it->end()) {
-                if (std::get<0>(*itr) == blockAddress(pfi.getAddr())) {
+                if (blockAddress(std::get<0>(*itr)) == blockAddress(pfi.getAddr())) {
                     itr = it->erase(itr);
                 } else {
                     ++itr;
@@ -296,12 +296,12 @@ void QueuedPrefetcher::shouldPrefetch(const PrefetchInfo &pfi,
     while (it != addresses.end()) {
         std::vector<double> features;
         features.push_back(abs(pfi.getPC() - it->first)/277284307.1);
-        // if (perceptronUnit->last_pc == 0) {
-        //     features.push_back(0);
-        // } else {
-        //     features.push_back(abs(pfi.getAddr() - perceptronUnit->last_pc)/3406560.1);
-        // }
-        
+        if (perceptronUnit->last_pc == 0) {
+            features.push_back(0);
+        } else {
+            features.push_back(abs(pfi.getAddr() - perceptronUnit->last_pc)/3406560.1);
+        }
+        features.push_back(abs(it->first - blockAddress(it->first))/45.0);
         // bias
         features.push_back(1);
         bool shouldUse = perceptronUnit->lookup(features);
@@ -313,6 +313,7 @@ void QueuedPrefetcher::shouldPrefetch(const PrefetchInfo &pfi,
         }
         else {
             added_to_accept_table = true;
+            it->first = blockAddress(it->first);
             accept_features.push_back(std::tuple<Addr, std::vector<double>>(it->first, features));
             printf("accept\n");
             ++it;
