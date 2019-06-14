@@ -4,6 +4,7 @@
 #
 
 source bash_utils.sh
+source bench_stat.sh
 
 
 GEM5HOME="$HOME/finalproject/gem5"
@@ -124,7 +125,6 @@ cp_m5out() {
 }
 
 
-
 run_series() {
   local odir="$1" && shift
   local arr=($@)
@@ -135,5 +135,24 @@ run_series() {
 }
 
 
+# $1: output dir
+# $2: metric you want
+# $3: [array] subrun dirs
+print_series() {
+  local odir="$1" && shift
+  local stat="$1" && shift
+  local arr=($@)
+  for t in ${arr[@]}; do
+    print_line "$odir/$t/stats.txt" "$t" "$stat"
+  done
+}
 
+
+parse_args() {
+  if [ "$1" = "run" ]; then
+    start_runs
+  else
+    print_stats $@
+  fi
+}
 
