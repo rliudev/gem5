@@ -340,6 +340,7 @@ main	259tests/lfsr.c	/^int main(int argc, char* argv[]) {$/;"	f
 make	configs/common/CacheConfig.py	/^    def make(name):$/;"	f	function:ExternalCacheFactory
 masterId	src/mem/cache/prefetch/base.hh	/^    const MasterID masterId;$/;"	m	class:BasePrefetcher
 masterId	src/mem/cache/prefetch/prefetch_info.hh	/^  MasterID masterId;$/;"	m	class:PrefetchInfo
+max_bg_procs	bash_utils.sh	/^max_bg_procs() {$/;"	f
 max_conf	src/mem/cache/prefetch/Prefetcher.py	/^    max_conf = Param.Int(7, "Maximum confidence level")$/;"	v	class:StridePrefetcher
 max_prefetch_distance	src/mem/cache/prefetch/Prefetcher.py	/^    max_prefetch_distance = Param.Unsigned(16, "Maximum prefetch distance")$/;"	v	class:IndirectMemoryPrefetcher
 mem_mode	configs/example/se.py	/^                mem_mode = test_mem_mode,$/;"	v

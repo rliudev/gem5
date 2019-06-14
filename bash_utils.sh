@@ -2,6 +2,7 @@
 
 
 
+
 # A. McDaid, https://stackoverflow.com/questions/1537956/bash-limit-the-number-of-concurrent-jobs
 max_bg_procs() {
   if [[ $# -eq 0 ]] ; then
@@ -11,7 +12,8 @@ max_bg_procs() {
   fi
   local max_number=$((0 + ${1:-0}))
   while true; do
-    local current_number=$(jobs -pr | wc -l)
+    # local current_number=$(jobs -pr | wc -l)
+    local current_number=$(ps aux | grep `whoami` | grep 'gem5\.' | wc -l)
     if [[ $current_number -lt $max_number ]]; then
       break
     fi
