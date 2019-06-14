@@ -20,6 +20,8 @@ runtests="${tests[@]}"
 # Fast forwarding options
 ff_opts="--standard-switch=0 --warmup-insts="
 
+# View dir for stats
+vdir="./bench_results/1_ff--perceptron1"
 
 start_runs() {
   conf_opts_copy="$conf_opts" # copy the default settings before modification
@@ -72,7 +74,7 @@ print_stats_2d() {
     fi
   done
   for labl in ${runtests[@]}; do
-    print_line "$odir/$labl/stats.txt" "$labl" $@
+    print_line "$vdir/$labl/stats.txt" "$labl" $@
   done
 }
 
