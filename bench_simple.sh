@@ -2,8 +2,8 @@
 #
 # Author: Rach Liu
 
+#source bench_stat.sh
 source bench_spec.sh
-source bench_stat.sh
 
 # Truth dir
 gdir="./golden/taggedpf-100M/"
