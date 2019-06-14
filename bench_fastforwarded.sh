@@ -10,7 +10,8 @@
 source bench_spec.sh
 
 # Truth dir
-gdir="./golden/taggedpf-100M/"
+#gdir="./golden/taggedpf-100M/"
+gdir="./bench_results/1_ff--perceptron1/"
 
 # The tests to run
 odir="$outdir/fastforward"
@@ -21,7 +22,7 @@ runtests="${tests[@]}"
 ff_opts="--standard-switch=0 --warmup-insts="
 
 # View dir for stats
-vdir="./bench_results/1_ff--perceptron1"
+vdir="./bench_results/1_ff--perceptron3"
 
 start_runs() {
   conf_opts_copy="$conf_opts" # copy the default settings before modification

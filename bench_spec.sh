@@ -16,6 +16,7 @@ pf=TaggedPrefetcher
 cpu=DerivO3CPU
 
 cmd=$GEM5HOME/build/X86/gem5.opt
+#cmd=$GEM5HOME/build/X86/gem6.opt
 #cmd=echo
 conf=$GEM5HOME/configs/example/se.py
 
@@ -23,7 +24,7 @@ conf=$GEM5HOME/configs/example/se.py
 #    Just override these if need to 'parametrize' over them in some outter loop
 #    Set them every time before a call
 m5_opts=""
-conf_opts="--caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=$cpu  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=10000000"
+conf_opts="--caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=$cpu  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000"
 sim_opts=""
 pf_opts="--l2-hwp-type=$pf"
 ml_opts="--mlu_pf_type=perceptron"
