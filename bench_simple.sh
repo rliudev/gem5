@@ -5,6 +5,8 @@
 source bench_spec.sh
 source bench_stat.sh
 
+# Truth dir
+gdir="./golden/taggedpf-100M/"
 
 # The tests to run
 odir="$outdir"
@@ -22,6 +24,12 @@ print_stats() {
 }
 
 print_stats_2d() {
+  for labl in ${runtests[@]}; do
+    local gf="$gdir/$labl/stats.txt"
+    if [ -f $gf ]; then
+      print_line "$gdir/$labl/stats.txt" "$labl" $@
+    fi
+  done
   for labl in ${runtests[@]}; do
     print_line "$odir/simple/$labl/stats.txt" "$labl" $@
   done
