@@ -13,7 +13,7 @@ source bench_spec.sh
 gdir="./golden/taggedpf-100M/"
 
 # The tests to run
-odir="$outdir"
+odir="$outdir/fastforward"
 runtests="${tests[@]}"
 #runtests=(perlbench gcc mcf omnetpp xalancbmk x264)
 
@@ -54,13 +54,13 @@ start_runs() {
     fi
     conf_opts="$ff_opts$c1 $conf_opts_copy"
 #    echo -e "conf_opts: $conf_opts\n"
-    run_one "$odir/fastforward" "$t"
+    run_one "$odir" "$t"
   done
 }
 
 print_stats() {
   local stat="$1"
-  print_series "$odir/simple" "$stat" "${runtests[@]}"
+  print_series "$odir" "$stat" "${runtests[@]}"
 }
 
 print_stats_2d() {
@@ -71,7 +71,7 @@ print_stats_2d() {
     fi
   done
   for labl in ${runtests[@]}; do
-    print_line "$odir/simple/$labl/stats.txt" "$labl" $@
+    print_line "$odir/$labl/stats.txt" "$labl" $@
   done
 }
 

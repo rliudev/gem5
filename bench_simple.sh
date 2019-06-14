@@ -9,18 +9,18 @@ source bench_spec.sh
 gdir="./golden/taggedpf-100M/"
 
 # The tests to run
-odir="$outdir"
+odir="$outdir/simple"
 runtests="${tests[@]}"
 #runtests=(perlbench gcc mcf omnetpp xalancbmk x264)
 
 
 start_runs() {
-  run_series "$odir/simple" "${runtests[@]}"
+  run_series "$odir" "${runtests[@]}"
 }
 
 print_stats() {
   local stat="$1"
-  print_series "$odir/simple" "$stat" "${runtests[@]}"
+  print_series "$odir" "$stat" "${runtests[@]}"
 }
 
 print_stats_2d() {
@@ -31,7 +31,7 @@ print_stats_2d() {
     fi
   done
   for labl in ${runtests[@]}; do
-    print_line "$odir/simple/$labl/stats.txt" "$labl" $@
+    print_line "$odir/$labl/stats.txt" "$labl" $@
   done
 }
 
