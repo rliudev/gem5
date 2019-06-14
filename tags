@@ -491,6 +491,7 @@ register	src/mem/cache/prefetch/Prefetcher.py	/^    def register(self):$/;"	m	cl
 register	src/mem/cache/prefetch/Prefetcher.py	/^    def register(self):$/;"	m	class:HWPProbeEventRetiredInsts
 reject_all	src/mem/cache/prefetch/Perceptron.py	/^    reject_all = Param.Bool(False, "Reject all prefetch addresses.")$/;"	v	class:PerceptronUnit
 reject_all	src/mem/cache/prefetch/perceptron_unit.hh	/^    bool reject_all;             \/\/ reject all offered prefetch addresses?$/;"	m	class:PerceptronUnit
+remote_get	remote.sh	/^remote_get() {$/;"	f
 replacement_policy	src/mem/cache/prefetch/Prefetcher.py	/^    replacement_policy = Param.BaseReplacementPolicy(RandomRP(),$/;"	v	class:StridePrefetcher
 reset	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DeltaCorrelatingPredictionTables::DCPTEntry::reset()$/;"	f	class:DeltaCorrelatingPredictionTables::DCPTEntry
 reset	src/mem/cache/prefetch/perceptron.hh	/^  void reset()$/;"	f	class:Perceptron
