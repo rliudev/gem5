@@ -39,14 +39,28 @@ print_header() {
   echo -e "$xvar\t${arr[*]}"
 }
 
-# Print results for given file
-print_line() {
+# Print file results for given stats, on a single line
+print_file() {
   local file="$1" && shift
   local labl="$1" && shift
-  local vars=($@)
+  local stats=($@)
   arr=()
-  for v in ${vars[@]}; do
-    get-lines "$file" "$v"
+  for stat in ${stats[@]}; do
+    get-lines "$file" "$stat"
+    arr+=("$_ret\t")
+  done
+  echo -e "$labl\t${arr[*]}"
+}
+
+
+# Print stat result for given files, on a single line
+print_stat() {
+  local stat="$1" && shift
+  local labl="$1" && shift
+  local files=($@)
+  arr=()
+  for file in ${files[@]}; do
+    get-lines "$file" "$stat"
     arr+=("$_ret\t")
   done
   echo -e "$labl\t${arr[*]}"
