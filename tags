@@ -186,6 +186,7 @@ core	configs/common/CacheConfig.py	/^            import cores.arm.HPI as core$/;
 core	configs/common/CacheConfig.py	/^            import cores.arm.O3_ARM_v7a as core$/;"	i
 cores	configs/common/CacheConfig.py	/^            import cores.arm.HPI as core$/;"	i
 cores	configs/common/CacheConfig.py	/^            import cores.arm.O3_ARM_v7a as core$/;"	i
+cp_m5out	bench_spec.sh	/^cp_m5out() {$/;"	f
 create	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AMPMPrefetcherParams::create()$/;"	f	class:AMPMPrefetcherParams
 create	src/mem/cache/prefetch/access_map_pattern_matching.cc	/^AccessMapPatternMatchingParams::create()$/;"	f	class:AccessMapPatternMatchingParams
 create	src/mem/cache/prefetch/delta_correlating_prediction_tables.cc	/^DCPTPrefetcherParams::create()$/;"	f	class:DCPTPrefetcherParams
@@ -494,7 +495,15 @@ ruby_port	configs/example/se.py	/^        ruby_port = system.ruby._cpu_ports[i]$
 run	bench1.sh	/^run () {$/;"	f
 run	bench_spec.sh	/^run() {$/;"	f
 run_bench	bench_spec.sh	/^run_bench() {$/;"	f
+run_exchange2	bench_spec.sh	/^run_exchange2() {$/;"	f
 run_gcc	bench_spec.sh	/^run_gcc() {$/;"	f
+run_leela	bench_spec.sh	/^run_leela() {$/;"	f
+run_mcf	bench_spec.sh	/^run_mcf() {$/;"	f
+run_omnetpp	bench_spec.sh	/^run_omnetpp() {$/;"	f
+run_perlbench	bench_spec.sh	/^run_perlbench() {$/;"	f
+run_series	bench_spec.sh	/^run_series() {$/;"	f
+run_x264	bench_spec.sh	/^run_x264() {$/;"	f
+run_xalancbmk	bench_spec.sh	/^run_xalancbmk() {$/;"	f
 sameAddr	src/mem/cache/prefetch/prefetch_info.hh	/^  bool sameAddr(PrefetchInfo const &pfi) const$/;"	f	class:PrefetchInfo
 samePage	src/mem/cache/prefetch/base.cc	/^BasePrefetcher::samePage(Addr a, Addr b) const$/;"	f	class:BasePrefetcher
 sandbox_entries	src/mem/cache/prefetch/Prefetcher.py	/^    sandbox_entries = Param.Int(1024, "Size of the address buffer")$/;"	v	class:SBOOEPrefetcher
