@@ -1,0 +1,53 @@
+Running SPEC test: x264
+
+/home/victorfu/cpu2017/benchspec/CPU/525.x264_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward-no-pf-no-pcept/x264" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=x264_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=22000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720"  
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 18:48:06
+gem5 started Jun 14 2019 19:47:32
+gem5 executing on tetracosa.cs.ucla.edu, pid 443320
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward-no-pf-no-pcept/x264 /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=x264_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=22000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 '--options=--pass 2 --stats x264_stats.log --bitrate 1000 --dumpyuv 200 --frames 1000 -o BuckBunny_New.264 BuckBunny.yuv 1280x720'
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: no l2 prefetcher specified. Ignoring L2 Prefetch MLU config
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+warn: Sockets disabled, not accepting gdb connections
+Switch at instruction count:1
+info: Entering event queue @ 0.  Starting simulation...
+Switched CPUS @ tick 119000
+switching cpus
+info: Entering event queue @ 119000.  Starting simulation...
+warn: ClockedObject: Already in the requested power state, request ignored
+Switch at instruction count:22000000
+info: Entering event queue @ 8066000.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+yuv [info]: 1280x720p 0:0 @ 25/1 fps (cfr)
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+x264 [info]: using cpu capabilities: none!
+Switching CPUS @ tick 71980128000
+Simulation ends instruction count:100000000
+switching cpus
+info: Entering event queue @ 71980128000.  Starting simulation...
+**** REAL SIMULATION ****
+info: Entering event queue @ 71988288500.  Starting simulation...
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+x264 [error]: ratecontrol_init: can't open stats file
+x264 [error]: x264_encoder_open failed
+Exiting @ tick 81994867000 because exiting with last active thread context
+Simulated exit code not 0! Exit code is 255

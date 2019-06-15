@@ -10,8 +10,8 @@
 source bench_spec.sh
 
 # Truth dir
-#gdir="./golden/taggedpf-100M/"
-gdir="./bench_results/1_ff--perceptron1/"
+gdir="./golden/2_fastforward-prefetcher-on-perceptron-off"
+#gdir="./bench_results/1_ff--perceptron1/"
 
 # The tests to run
 odir="$outdir/fastforward"
@@ -22,7 +22,7 @@ runtests="${tests[@]}"
 ff_opts="--standard-switch=0 --warmup-insts="
 
 # View dir for stats
-vdir="./bench_results/1_ff--perceptron3"
+vdir="./bench_results/1_ff--perceptron1"
 
 start_runs() {
   conf_opts_copy="$conf_opts" # copy the default settings before modification
@@ -55,6 +55,7 @@ start_runs() {
       c1=87000000
       c2=11000000
     fi
+    pf_opts=""
     ml_opts="" # uncomment to turn off perceptron
     conf_opts="$ff_opts$c1 $conf_opts_copy"
 #    echo -e "conf_opts: $conf_opts\n"
@@ -71,7 +72,7 @@ print_stats_2d() {
   for labl in ${runtests[@]}; do
     local gf="$gdir/$labl/stats.txt"
     if [ -f $gf ]; then
-      print_line "$gdir/$labl/stats.txt" "$labl" $@
+      print_line "$gf" "$labl" $@
     fi
   done
   for labl in ${runtests[@]}; do

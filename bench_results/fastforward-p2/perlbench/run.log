@@ -1,0 +1,150 @@
+Running SPEC test: perlbench
+
+/home/victorfu/cpu2017/benchspec/CPU/500.perlbench_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward-p2/perlbench" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=perlbench_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=26000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="-I./lib checkspam.pl 2500 5 25 11 150 1 1 1 1" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 19:49:55
+gem5 started Jun 14 2019 19:50:33
+gem5 executing on tetracosa.cs.ucla.edu, pid 444167
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward-p2/perlbench /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=perlbench_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=26000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 '--options=-I./lib checkspam.pl 2500 5 25 11 150 1 1 1 1' --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
+MLU-Prefetch Perceptron Enabled.
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+PerceptronUnit is in mode: PC_DELTA_ADDR
+warn: Sockets disabled, not accepting gdb connections
+Switch at instruction count:1
+info: Entering event queue @ 0.  Starting simulation...
+Switched CPUS @ tick 120000
+switching cpus
+info: Entering event queue @ 120000.  Starting simulation...
+warn: ClockedObject: Already in the requested power state, request ignored
+Switch at instruction count:26000000
+info: Entering event queue @ 8066000.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+xn[0] = 1,  new weight for w[0] = -1
+xn[1] = 2,  new weight for w[1] = -2
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -2
+xn[1] = 2,  new weight for w[1] = -4
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -3
+xn[1] = 2,  new weight for w[1] = -6
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -4
+xn[1] = 2,  new weight for w[1] = -8
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -5
+xn[1] = 149,  new weight for w[1] = -157
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -6
+xn[1] = 149,  new weight for w[1] = -306
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -7
+xn[1] = 149,  new weight for w[1] = -455
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -8
+xn[1] = 149,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -9
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -10
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -11
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -12
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -13
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -14
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -15
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -16
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -17
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -18
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -19
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -20
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -21
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -22
+xn[1] = 0,  new weight for w[1] = -604
+xn[2] = 0,  new weight for w[2] = 0
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+Switching CPUS @ tick 130450241000
+Simulation ends instruction count:100000000
+switching cpus
+info: Entering event queue @ 130450241000.  Starting simulation...
+**** REAL SIMULATION ****
+info: Entering event queue @ 130460975250.  Starting simulation...
+gem5.opt: build/X86/mem/cache/prefetch/prefetch_info.hh:112: Addr PrefetchInfo::getPC() const: Assertion `hasPC()' failed.
+Program aborted at tick 368603414000
+--- BEGIN LIBC BACKTRACE ---
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_Z15print_backtracev+0x15)[0x87ba35]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_Z12abortHandleri+0x36)[0x885b56]
+/lib64/libpthread.so.0(+0xf5d0)[0x7fd19c01b5d0]
+/lib64/libc.so.6(gsignal+0x37)[0x7fd19a865207]
+/lib64/libc.so.6(abort+0x148)[0x7fd19a8668f8]
+/lib64/libc.so.6(+0x2f026)[0x7fd19a85e026]
+/lib64/libc.so.6(+0x2f0d2)[0x7fd19a85e0d2]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt[0x6f672a]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN14PerceptronUnit14shouldPrefetchERK12PrefetchInfoRSt6vectorISt4pairImiESaIS5_EE+0x0)[0xf97120]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN14PerceptronUnit14shouldPrefetchERK12PrefetchInfoRSt6vectorISt4pairImiESaIS5_EE+0x44)[0xf97164]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN16QueuedPrefetcher6notifyERKP6PacketRK12PrefetchInfo+0x281)[0xf91751]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN14BasePrefetcher11probeNotifyERKP6Packetb+0x102)[0xf8a362]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN9BaseCache13recvTimingReqEP6Packet+0x230)[0xf08820]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN5Cache13recvTimingReqEP6Packet+0x23b)[0xf146db]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN9BaseCache11CpuSidePort13recvTimingReqEP6Packet+0x67)[0xefa3c7]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN12CoherentXBar13recvTimingReqEP6Packets+0x808)[0xe7ed88]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN9BaseCache19sendMSHRQueuePacketEP4MSHR+0x5ec)[0xf0c23c]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN5Cache19sendMSHRQueuePacketEP4MSHR+0x40)[0xf14a30]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN9BaseCache19CacheReqPacketQueue18sendDeferredPacketEv+0xc1)[0xf094b1]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN11PacketQueue5retryEv+0x2f)[0xea04ff]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN8BaseXBar5LayerI9SlavePort10MasterPortE12retryWaitingEv+0x4d)[0xed7b4d]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN8BaseXBar5LayerI9SlavePort10MasterPortE12releaseLayerEv+0x7d)[0xed7ccd]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_ZN10EventQueue10serviceOneEv+0xa1)[0x881c01]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_Z9doSimLoopP10EventQueue+0x38)[0x8910d8]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt(_Z8simulatem+0xaae)[0x891f0e]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt[0xf549e0]
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt[0x8c1976]
+/lib64/libpython2.7.so.1.0(PyEval_EvalFrameEx+0x730a)[0x7fd19b91e20a]
+/lib64/libpython2.7.so.1.0(PyEval_EvalCodeEx+0x7ed)[0x7fd19b92003d]
+/lib64/libpython2.7.so.1.0(PyEval_EvalFrameEx+0x663c)[0x7fd19b91d53c]
+/lib64/libpython2.7.so.1.0(PyEval_EvalCodeEx+0x7ed)[0x7fd19b92003d]
+/lib64/libpython2.7.so.1.0(PyEval_EvalFrameEx+0x663c)[0x7fd19b91d53c]
+--- END LIBC BACKTRACE ---
+bench_spec.sh: line 43: 444167 Aborted                 bash -c "$cmd"

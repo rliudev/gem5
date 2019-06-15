@@ -1,0 +1,49 @@
+Running SPEC test: gcc
+
+/home/victorfu/cpu2017/benchspec/CPU/502.gcc_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward-no-pcept/gcc" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=24000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000  --l2-hwp-type=TaggedPrefetcher 
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 18:48:06
+gem5 started Jun 14 2019 19:47:56
+gem5 executing on tetracosa.cs.ucla.edu, pid 443410
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward-no-pcept/gcc /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=24000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 --l2-hwp-type=TaggedPrefetcher
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
+Warning: no l2 prefetcher specified. Ignoring L2 Prefetch MLU config
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+warn: Sockets disabled, not accepting gdb connections
+Switch at instruction count:1
+info: Entering event queue @ 0.  Starting simulation...
+Switched CPUS @ tick 120000
+switching cpus
+info: Entering event queue @ 120000.  Starting simulation...
+warn: ClockedObject: Already in the requested power state, request ignored
+Switch at instruction count:24000000
+info: Entering event queue @ 8066000.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+info: Increasing stack size by one page.
+warn: getrlimit: unimplemented resource 9
+warn: getrlimit: unimplemented resource 9
+warn: getrlimit: unimplemented resource 5
+warn: getrlimit: unimplemented resource 9
+Switching CPUS @ tick 40690521000
+Simulation ends instruction count:100000000
+switching cpus
+info: Entering event queue @ 40690521000.  Starting simulation...
+**** REAL SIMULATION ****
+info: Entering event queue @ 40693560750.  Starting simulation...
+Exiting @ tick 18446744073709551615 because simulate() limit reached

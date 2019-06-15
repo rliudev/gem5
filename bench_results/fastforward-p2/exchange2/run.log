@@ -1,0 +1,141 @@
+Running SPEC test: exchange2
+
+/home/victorfu/cpu2017/benchspec/CPU/548.exchange2_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward-p2/exchange2" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=87000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000 --options="6" --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 19:49:55
+gem5 started Jun 14 2019 19:50:34
+gem5 executing on tetracosa.cs.ucla.edu, pid 444244
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward-p2/exchange2 /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=exchange2_r_base.victor_jun10-m64 --standard-switch=1 --warmup-insts=87000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000 --options=6 --l2-hwp-type=TaggedPrefetcher --mlu_pf_type=perceptron
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: l2-hwp-type is set ( TaggedPrefetcher ), but the current l2 has a default Hardware Prefetcher of type <class 'm5.params.NullSimObject'> , using the specified by the flag option.
+MLU-Prefetch Perceptron Enabled.
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+PerceptronUnit is in mode: PC_DELTA_ADDR
+warn: Sockets disabled, not accepting gdb connections
+Switch at instruction count:1
+info: Entering event queue @ 0.  Starting simulation...
+Switched CPUS @ tick 120000
+switching cpus
+info: Entering event queue @ 120000.  Starting simulation...
+warn: ClockedObject: Already in the requested power state, request ignored
+Switch at instruction count:87000000
+info: Entering event queue @ 8066000.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+xn[0] = 1,  new weight for w[0] = -1
+xn[1] = 2,  new weight for w[1] = -2
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -2
+xn[1] = 2,  new weight for w[1] = -4
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -3
+xn[1] = 2,  new weight for w[1] = -6
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -4
+xn[1] = 2,  new weight for w[1] = -8
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -5
+xn[1] = 277,  new weight for w[1] = -285
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -6
+xn[1] = 277,  new weight for w[1] = -562
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -7
+xn[1] = 277,  new weight for w[1] = -839
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -8
+xn[1] = 277,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -9
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -10
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -11
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -12
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -13
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -14
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -15
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -16
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -17
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -18
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -19
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -20
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -21
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+xn[0] = 1,  new weight for w[0] = -22
+xn[1] = 0,  new weight for w[1] = -1116
+xn[2] = 0,  new weight for w[2] = 0
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: instruction 'fwait' unimplemented
+warn: instruction 'fnclex' unimplemented
+info: Increasing stack size by one page.
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+
+Puzzle 1
+  0  1  0  0  0  0  0  0  2
+  3  0  0  0  0  4  0  0  0
+  0  0  0  0  5  0  6  0  0
+  0  0  0  0  0  3  0  7  0
+  0  0  6  0  4  0  5  0  0
+  0  2  0  7  0  0  0  0  0
+  0  0  5  0  2  0  0  0  0
+  0  0  0  8  0  0  0  0  3
+  7  0  0  0  0  0  0  4  0
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+info: Increasing stack size by one page.
+Switching CPUS @ tick 326072455000
+Simulation ends instruction count:100000000
+switching cpus
+info: Entering event queue @ 326072455000.  Starting simulation...
+**** REAL SIMULATION ****
+info: Entering event queue @ 326080785000.  Starting simulation...
+Exiting @ tick 413497012000 because a thread reached the max instruction count
