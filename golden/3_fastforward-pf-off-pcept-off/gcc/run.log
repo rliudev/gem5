@@ -1,0 +1,36 @@
+Running SPEC test: gcc
+
+/home/victorfu/cpu2017/benchspec/CPU/502.gcc_r
+/home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir="/home/victorfu/output/bench_spec/fastforward/gcc" /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches  --l2cache --l1i_size=16kB  --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU  --mem-type=DDR3_1600_8x8  --cpu-clock=1GHz --maxinsts=100000000   
+
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jun 14 2019 15:49:24
+gem5 started Jun 14 2019 18:00:29
+gem5 executing on tetracosa.cs.ucla.edu, pid 425104
+command line: /home/victorfu/finalproject/gem5/build/X86/gem5.opt --outdir=/home/victorfu/output/bench_spec/fastforward/gcc /home/victorfu/finalproject/gem5/configs/example/se.py --cmd=cpugcc_r_base.victor_jun10-m64 --standard-switch=0 --warmup-insts=24000000 --caches --l2cache --l1i_size=16kB --l1d_size=64kB --l2_size=256kB --cpu-type=DerivO3CPU --mem-type=DDR3_1600_8x8 --cpu-clock=1GHz --maxinsts=100000000
+
+info: Standard input is not a terminal, disabling listeners.
+Warning: no l2 prefetcher specified. Ignoring L2 Prefetch MLU config
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+warn: Sockets disabled, not accepting gdb connections
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+info: Increasing stack size by one page.
+warn: ignoring syscall access(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall mprotect(...)
+warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+info: Increasing stack size by one page.
+warn: getrlimit: unimplemented resource 9
+warn: getrlimit: unimplemented resource 9
+warn: getrlimit: unimplemented resource 5
+warn: getrlimit: unimplemented resource 9
+Exiting @ tick 15704766000 because exiting with last active thread context
